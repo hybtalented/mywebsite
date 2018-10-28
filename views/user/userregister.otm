@@ -1,0 +1,14 @@
+#include "user.h"
+
+#init
+tfetch(QVariantMap,user)
+
+@title ~= controller()->name() + " " + controller()->activeAction()
+
+@entry_register |== formTag(urla("userregister"))
+
+@notice ~=$ notice 
+
+@username |== inputTextTag("user[name]",user["name"])
+
+@password |== inputPasswordTag("user[password]",user["password"])

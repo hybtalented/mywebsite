@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title data-tf="@head_title"></title>
+  <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+  <div class="mynavbar"></div>
+<p style="color: red" data-tf="@error_msg"></p>
+<p style="color: green" data-tf="@notice_msg"></p>
+
+<div class="container">
+  <h1>修改博客内容</h1>
+</div>
+
+<div class="container-fluid">
+
+  <form  method="post" data-tf="@edit_form">
+    <div class="form-group">
+      <label>编号 </label>
+      <input class="form-control" data-tf="@id" />
+    </div>
+    <div>
+      <label>标题</label>
+      <input class="form-control" data-tf="@title" />
+    </div>
+    <div>
+      <label>正文 </label>
+      <textarea class="form-control" data-tf="@body"  rows="10"></textarea>
+    </div>
+    <div class="btn-group">
+      <input  class="btn btn-primary" type="submit" value="保存" />
+      <a class="btn btn-info" href="#" data-tf="@link_to_show">Show</a> 
+      <a class="btn btn-light" href="#" data-tf="@link_to_index">Back</a>
+    </div>
+  </form>
+</div>
+
+<script src="/js/bootstrap/jquery-3.3.1.min.js"  ></script>
+    <script src="/js/bootstrap/popper.min.js"  ></script>
+    <script src="/js//bootstrap/bootstrap.min.js"  ></script>
+    <script src="/js/mysetting/navbar.js" ></script>
+    <script>
+        $(document).ready(function(){
+            $("#i_login").addClass("active");
+        })
+    </script>
+
+</body>
+</html>

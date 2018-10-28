@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title data-tf="@head_title">hello</title>
+   <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css"  >
+</head>
+<body>
+<p style="color: red" data-tf="@error_msg"></p>
+<p style="color: green" data-tf="@notice_msg"></p>
+ <div class="mynavbar"></div>
+<div class="container">
+  <p class="h1 bg-transparent text-dark"> 创建博客: </p>
+</div>
+<div class="container-fluid">
+
+  <form method="POST" data-tf="@entry_form">
+  <div class="form-group">
+    <label> 标题 </label>
+    <input class="form-control" data-tf="@title" />
+  </div>
+  <div class="form-group">
+    <label>正文</label>
+    <input type="file" data-tf="@blogfile" class="form-control-file" id="inputfile">
+    <small class="form-text form-muted"> 键盘输入或者打开文本文件</small>
+    <textarea class="form-control"  data-tf=@body id="inputtext"></textarea>
+  </div>
+  <div class="btn-group">
+    <input type="submit" class="btn btn-primary md-2" value="创建博客" />
+    <a class="btn btn-light" href="#" data-tf="@link_to_index">返回</a>
+  </div>
+</form>
+</div>
+
+<script src="/js/bootstrap/jquery-3.3.1.min.js"  ></script>
+<script src="/js/bootstrap/popper.min.js"  ></script>
+<script src="/js//bootstrap/bootstrap.min.js"  ></script>
+<script src="/js/mysetting/navbar.js" ></script>
+<script>
+  $("#inputfile").change(function(){
+    var reader =  new FileReader()
+    reader.readAsText($("#inputfile").get(0).files[0]);
+    reader.onloadend =function(){
+      $("#inputtext").val(reader.result);
+    };
+  })
+  $(document).ready(function(){
+    $("#i_blog").addClass("active");
+  })
+  </script>
+</body>
+</html>

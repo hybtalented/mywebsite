@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title data-tf="@head_title"></title>
+   <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+  <div class="mynavbar"></div>
+<p style="color: red" data-tf="@error_msg"></p>
+<p style="color: green" data-tf="@notice_msg"></p>
+
+<div class="container">
+  <h1>博客内容</h1>
+</div>
+<div class="container-fluid">
+    <dl class="row">
+      <dt class="col-sm-2">博客ID</dt><dd class="col-sm-10" data-tf="@id">(id)</dd><br />
+      <dt class="col-sm-2">标题</dt><dd  class="col-sm-10" data-tf="@title">(title)</dd><br />
+      <dt class="col-sm-2">正文</dt><dd class="col-sm-10"><textarea class="form-control" readonly="readonly" cols="100" rows="20" data-tf="@body">(body) </textarea></dd><br />
+      <dt class="col-sm-2">创建时间</dt><dd class="col-sm-10" data-tf="@created_at">(createdAt)</dd><br />
+      <dt class="col-sm-2">更新时间</dt><dd class="col-sm-10" data-tf="@updated_at">(updatedAt)</dd><br />
+      <dt class="col-sm-2">修改次数</dt><dd class="col-sm-10" data-tf="@lock_revision">(lockRevision)</dd><br />
+    </dl>
+</div>
+<div class="container-fluid btn-group">
+  <a href="#" data-tf="@link_to_index" class="btn btn-light">Back</a>
+  <a class="btn btn-primary" href="#" data-tf="@link_to_edit">Edit</a> 
+</div>
+<script src="/js/bootstrap/jquery-3.3.1.min.js"  ></script>
+    <script src="/js/bootstrap/popper.min.js"  ></script>
+    <script src="/js//bootstrap/bootstrap.min.js"  ></script>
+    <script src="/js/mysetting/navbar.js" ></script>
+    <script>
+        $(document).ready(function(){
+            $("#i_login").addClass("active");
+        })
+    </script>
+</body>
+</html>

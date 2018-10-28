@@ -1,0 +1,28 @@
+HEADERS += blog_createView.moc
+SOURCES += blog_createView.cpp
+HEADERS += blog_indexView.moc
+SOURCES += blog_indexView.cpp
+HEADERS += blog_saveView.moc
+SOURCES += blog_saveView.cpp
+HEADERS += blog_showView.moc
+SOURCES += blog_showView.cpp
+HEADERS += user_loginView.moc
+SOURCES += user_loginView.cpp
+HEADERS += user_userregisterView.moc
+SOURCES += user_userregisterView.cpp
+
+# include view files in the project
+views.files += C:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/blog/create.html
+views.files += C:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/blog/create.otm
+views.files += C:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/blog/index.html
+views.files += C:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/blog/index.otm
+views.files += C:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/blog/save.html
+views.files += C:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/blog/save.otm
+views.files += C:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/blog/show.html
+views.files += C:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/blog/show.otm
+views.files += C:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/user/login.html
+views.files += C:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/user/login.otm
+views.files += C:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/user/userregister.html
+views.files += C:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/user/userregister.otm
+views.path = .dummy
+INSTALLS += views

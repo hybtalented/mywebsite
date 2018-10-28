@@ -1,0 +1,26 @@
+#include "blog.h"
+
+#init
+ tfetch(Blog, blog);
+
+@head_title ~= controller()->name() + ": " + controller()->activeAction()
+
+@error_msg ~=$ error
+
+@notice_msg ~=$ notice
+
+@id ~= blog.id()
+
+@title ~= blog.title()
+
+@body ~= blog.body()
+
+@created_at ~= blog.createdAt()
+
+@updated_at ~= blog.updatedAt()
+
+@lock_revision ~= blog.lockRevision()
+
+@link_to_edit |== linkTo("编辑", urla("save", blog.id()))
+
+@link_to_index |== linkTo("后退", urla("index"))

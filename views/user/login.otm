@@ -1,0 +1,15 @@
+#include "user.h"
+#pragma execution_character_set("utf-8") 
+
+#init 
+tfetch(QString,notice) 
+
+@notice_msg ~== notice + "前往" + linkTo("注册",urla("userregister"))
+
+@head_title ~= controller()->name()+" "+controller()->activeAction()
+
+@entry_login |== formTag(urla("login"))
+
+@username |== inputTextTag("user[name]","");
+
+@password |== inputPasswordTag("user[password]","")

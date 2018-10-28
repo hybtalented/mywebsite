@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css"  >
+    <title data-tf="@title"> </title>
+  </head>
+  <body>
+    <div class="mynavbar"></div>
+    <div class="container">
+        <p class="h1 text-dark" >用户注册</p>
+    </div>
+    <div class="alert alert-danger alert-dismissible fade show" id="notice_bar">
+        <p data-tf="@notice" id="notice"></p>
+        <button class="close" data-dismisse="alert" aria-label="close">
+            <span aria-hidden="true">x</span>
+        </button>
+    </div>
+    <form action="post" method="post" data-tf="@entry_register">
+        <div class="form-group">
+            <label for="username">用户名： </label>
+            <input type="text" class="form-control" id="username" data-tf="@username">
+            <label for="password">密码: </label>
+            <input type="text" class="form-control" id="password" data-tf="@password">
+        </div>
+        <div class="form-group">
+            <label for="email">邮箱: </label>
+            <input type="email" class="" id="email" data-tf="@email">
+            <div class="fade show">
+                <form action="" method="post" data-tf="@emailsend"></form>
+            </div>
+        </div>
+
+    </form>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/js/bootstrap/jquery-3.3.1.min.js"  ></script>
+    <script src="/js/bootstrap/popper.min.js"  ></script>
+    <script src="/js//bootstrap/bootstrap.min.js"  ></script>
+    <script src="/js/mysetting/navbar.js" ></script>
+    <script>
+        $(document).ready(function(){
+            $("#i_login").addClass("active");
+            if($("#notice").text().length==0){
+                $("#notice_bar").hide();
+            }
+        })
+    </script>
+  </body>
+</html>

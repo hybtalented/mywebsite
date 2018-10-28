@@ -1,0 +1,35 @@
+﻿<html>
+<header>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title data-tf="@head_title"></title>
+     <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css"  >
+</header>
+<body>
+    <div class="mynavbar"></div>
+    <h1>用户登陆</h1>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" >
+        <p   data-tf="@notice_msg"></p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <form data-tf="@entry_login" method="post" >
+        <div class="form-group">
+            <label for="exampleInputUsename1">用户名： </label> <input class="form-control" data-tf="@username" placeholder="User name">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">密码: </label> <input class="form-control" data-tf="@password" placeholder="password">
+        </div>
+            <input class="btn btn-primary" type="submit" value="登录">
+       </form> 
+    <script src="/js/bootstrap/jquery-3.3.1.min.js"></script>
+    <script src="/js/bootstrap/popper.min.js"  ></script>
+    <script src="/js/bootstrap/bootstrap.min.js"  ></script>
+    <script src="/js/mysetting/navbar.js" ></script>
+    <script>
+        $(document).ready(function(){
+            $("#i_login").addClass("active");
+        })
+    </script>
+</body>
+</html>

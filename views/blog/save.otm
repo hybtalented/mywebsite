@@ -1,0 +1,22 @@
+#include "blog.h"
+
+#init
+ tfetch(QVariantMap, blog);
+
+@head_title ~= controller()->name() + ": " + controller()->activeAction()
+
+@error_msg ~=$ error
+
+@notice_msg ~=$ notice
+
+@edit_form |== formTag(urla("save", blog["id"]))
+
+@id |== inputTextTag("blog[id]", blog["id"].toString(), a("readonly", "readonly"));
+
+@title |== inputTextTag("blog[title]", blog["title"].toString());
+
+@body |== textAreaTag("blog[body]", 20,100,blog["body"].toString());
+
+@link_to_show |== linkTo("详情", urla("show", blog["id"]))
+
+@link_to_index |== linkTo("后退", urla("index"))

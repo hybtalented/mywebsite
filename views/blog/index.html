@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title data-tf="@head_title"></title>
+  <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+ <div class="mynavbar"></div>
+
+ <div class="container">
+   <p  class="h1 bg-transparent text-dark">博客列表</p>
+</div>
+
+<div class="alert alert-info">
+  <a href="#" data-tf="@link_to_entry">创建博客</a><br />
+
+</div>
+<br />
+<table border="1" cellpadding="5" class="table table-hover" style="border: 1px #d0d0d0 solid; border-collapse: collapse;">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">用户ID</th>
+      <th scope="col">标题</th>
+      <th scope="col">内容</th>
+      <th scope="col">操作</th>
+      <th></th>
+    </tr>
+  </thead>
+  <th scope="row"></th>
+    <tr data-tf="@for" >
+      <td data-tf="@id"></td>
+      <td data-tf="@title"></td>
+      <td><textarea data-tf="@body" readonly="readonly"></textarea></td>
+      <td>
+        <div class="btn-group">
+          <a href="#" data-tf="@link_to_show" class="btn btn-primary">详情</a>
+          <a href="#" data-tf="@link_to_edit" class="btn btn-success">编辑</a>
+          <a href="#" data-tf="@link_to_remove" class="btn btn-danger">删除</a>
+        </div>
+    </td>
+  </tr>
+</table>
+    <script src="/js/bootstrap/jquery-3.3.1.min.js"  ></script>
+    <script src="/js/bootstrap/popper.min.js"  ></script>
+    <script src="/js//bootstrap/bootstrap.min.js"  ></script>
+    <script src="/js/mysetting/navbar.js" ></script>
+    <script>
+        $(document).ready(function(){
+            $("#i_login").addClass("active");
+        })
+    </script>
+
+</body>
+</html>
