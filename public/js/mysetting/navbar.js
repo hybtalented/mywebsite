@@ -14,7 +14,7 @@ $(document).ready(
         </div>\
          <ul class="navbar-nav mr-auto float-right">\
             <li class="nav-item" id="i_login"> <a href="/User/login" class="nav-link"><span class="glyphicon glyphicon-user"></span> 登录 </a> </li>\
-            <li class="nav-item" id="i_register"> <a href="/User/userregitser" class="nav-link"><span class="glyphicon glyphicon-log-in"></span> 注册</a></li>\
+            <li class="nav-item" id="i_register"> <a href="/User/userregister" class="nav-link"><span class="glyphicon glyphicon-log-in"></span> 注册</a></li>\
         </ul>\
     </nav>')
     }); 
