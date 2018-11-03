@@ -38,14 +38,13 @@ MakeFile
 *.out
 *.app
 
-<<<<<<< HEAD
 # Tree generate files
 log/
 views/_src/*
 lib/*
 Makefile
 db/
-=======
+tmp/
+
 # QT MOC Files
 moc_*.cpp
->>>>>>> 8fb247eca02522fb227d92bf20525715267636c9
