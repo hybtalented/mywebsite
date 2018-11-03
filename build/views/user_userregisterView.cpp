@@ -13,7 +13,7 @@ public:
 
 QString user_userregisterView::toString()
 {
-  responsebody.reserve(3212);
+  responsebody.reserve(3224);
   tfetch(QVariantMap,user);
   responsebody += QLatin1String("<!doctype html>\r\n");
     responsebody += QLatin1String("<html lang=\"zh-CN\">\r\n  <head>\r\n    <!-- Required meta tags -->\r\n    <meta charset=\"utf-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\r\n    <!-- Bootstrap CSS -->\r\n    <link rel=\"stylesheet\" href=\"/css/bootstrap/bootstrap.min.css\">\r\n    <title>");
@@ -32,7 +32,7 @@ QString user_userregisterView::toString()
   do { THtmlParser ___pr = THtmlParser::mergeElements(tr("<input type=\"text\" class=\"form-control\" id=\"password\">\r\n        "), (inputPasswordTag("user[password]",user["password"]))); echo(___pr.at(1).attributesString());
   responsebody += QLatin1String(">");
   eh(___pr.at(1).text); echo(___pr.childElementsToString(1)); } while (0);
-  responsebody += tr("</div>\r\n        <div class=\"form-group\">\r\n            <label for=\"email\">邮箱: </label>\r\n            <input type=\"email\" class=\"\" id=\"email\">\r\n            <div class=\"fade show\">\r\n                <form action=\"\" method=\"post\"></form>\r\n            </div>\r\n        </div>\r\n\r\n    </form>\r\n\r\n    <!-- Optional JavaScript -->\r\n    <!-- jQuery first, then Popper.js, then Bootstrap JS -->\r\n    <script src=\"/js/bootstrap/jquery-3.3.1.min.js\"></script>\r\n    <script src=\"/js/bootstrap/popper.min.js\"></script>\r\n    <script src=\"/js//bootstrap/bootstrap.min.js\"></script>\r\n    <script src=\"/js/mysetting/navbar.js\"></script>\r\n    <script>\r\n        $(document).ready(function(){\r\n            $(\"#i_login\").addClass(\"active\");\r\n            if($(\"#notice\").text().length==0){\r\n                $(\"#notice_bar\").hide();\r\n            }\r\n        })\r\n    </script>\r\n  </body>\r\n</html>");
+  responsebody += tr("</div>\r\n        <div class=\"form-group\">\r\n            <label for=\"email\">邮箱: </label>\r\n            <input type=\"email\" class=\"form-control\" id=\"email\">\r\n            <div class=\"fade show\">\r\n                <form action=\"\" method=\"post\"></form>\r\n            </div>\r\n        </div>\r\n\r\n    </form>\r\n\r\n    <!-- Optional JavaScript -->\r\n    <!-- jQuery first, then Popper.js, then Bootstrap JS -->\r\n    <script src=\"/js/bootstrap/jquery-3.3.1.min.js\"></script>\r\n    <script src=\"/js/bootstrap/popper.min.js\"></script>\r\n    <script src=\"/js//bootstrap/bootstrap.min.js\"></script>\r\n    <script src=\"/js/mysetting/navbar.js\"></script>\r\n    <script>\r\n        $(document).ready(function(){\r\n            $(\"#i_login\").addClass(\"active\");\r\n            if($(\"#notice\").text().length==0){\r\n                $(\"#notice_bar\").hide();\r\n            }\r\n        })\r\n    </script>\r\n  </body>\r\n</html>");
 
   return responsebody;
 }

@@ -765,3 +765,27 @@ if __name__ == "__main__":
 2018-10-22 15:23:39  [34980] [BEGIN] [databaseId:0]
 2018-10-22 15:23:39  [34980] SELECT "id","title","body","created_at","updated_at","lock_revision" FROM "blog" t0
 2018-10-22 15:23:39  [34980] [COMMIT] [databaseId:0]
+2018-10-29 10:30:07  [23444] PRAGMA journal_mode=WAL
+2018-10-29 10:30:07  [23444] PRAGMA foreign_keys=ON
+2018-10-29 10:30:07  [23444] PRAGMA busy_timeout=5000
+2018-10-29 10:30:07  [23444] PRAGMA synchronous=NORMAL
+2018-10-29 10:30:07  [23444] [BEGIN] [databaseId:0]
+2018-10-29 10:30:07  [23444] SELECT "id","title","body","created_at","updated_at","lock_revision" FROM "blog" t0
+2018-10-29 10:30:07  [23444] [COMMIT] [databaseId:0]
+2018-10-29 10:31:55  [14208] PRAGMA journal_mode=WAL
+2018-10-29 10:31:55  [14208] PRAGMA foreign_keys=ON
+2018-10-29 10:31:55  [14208] PRAGMA busy_timeout=5000
+2018-10-29 10:31:55  [14208] PRAGMA synchronous=NORMAL
+2018-10-29 10:31:55  [14208] [BEGIN] [databaseId:0]
+2018-10-29 10:31:55  [14208] SELECT "id","title","body","created_at","updated_at","lock_revision" FROM "blog" t0
+2018-10-29 10:31:55  [14208] [COMMIT] [databaseId:0]
+2018-10-29 10:31:59  [14208] [BEGIN] [databaseId:0]
+2018-10-29 10:31:59  [14208] SELECT "id","title","body","created_at","updated_at","lock_revision" FROM "blog" t0
+2018-10-29 10:31:59  [14208] [COMMIT] [databaseId:0]
+2018-10-29 19:28:45  [33916] PRAGMA journal_mode=WAL
+2018-10-29 19:28:45  [33916] PRAGMA foreign_keys=ON
+2018-10-29 19:28:45  [33916] PRAGMA busy_timeout=5000
+2018-10-29 19:28:45  [33916] PRAGMA synchronous=NORMAL
+2018-10-29 19:28:45  [33916] [BEGIN] [databaseId:0]
+2018-10-29 19:28:45  [33916] SELECT "id","title","body","created_at","updated_at","lock_revision" FROM "blog" t0
+2018-10-29 19:28:45  [33916] [COMMIT] [databaseId:0]

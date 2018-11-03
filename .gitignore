@@ -9,6 +9,9 @@ MakeFile
 *.slo
 *.lo
 *.o
+*.dll
+*.a
+*.lib
 *.obj
 
 # Precompiled Headers
@@ -34,3 +37,6 @@ MakeFile
 *.exe
 *.out
 *.app
+
+# QT MOC Files
+moc_*.cpp
