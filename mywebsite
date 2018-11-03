@@ -1,0 +1,84 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:        mywebsite
+# Required-Start:   
+# Required-Stop:   
+# Default-Start:   
+# Default-Stop:    
+# Short-Description: Start MYWEBSITE daemon
+### END INIT INFO
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+. /lib/lsb/init-functions
+
+DAEMON=/usr/bin/treefrog
+APP_DIR=/home/hybtalented/Documents/repositories/cplusplus/mywebsite
+APP_MOD=dev
+
+
+
+LOCKFILE=/var/lock/mywebsite
+
+lock_mywebsiteate() {
+	if [ -x /usr/bin/lockfile-create ]; then
+		lockfile-create $LOCKFILE
+		lockfile-touch $LOCKFILE &
+		LOCKTOUCHPID="$!"
+	fi
+}
+
+unlock_mywebsiteate() {
+	if [ -x /usr/bin/lockfile-create ] ; then
+		kill $LOCKTOUCHPID
+		lockfile-remove $LOCKFILE
+	fi
+}
+
+RUNASUSER=hybtalented
+UGID=$(getent passwd $RUNASUSER | cut -f 3,4 -d:) || true
+if test "$(uname -s)" = "Linux"; then
+        NTPD_OPTS="$NTPD_OPTS -u $UGID"
+fi
+
+case $1 in
+	start)
+		log_daemon_msg "Starting My personal website server" "mywebsite"
+		if [ -z "$UGID" ]; then
+			log_failure_msg "user \"$RUNASUSER\" does not exist"
+			exit 1
+		fi
+		lock_mywebsiteate
+  		start-stop-daemon --start --chdir $APP_DIR --oknodo --background -name treefrog --startas $DAEMON -- -e $APP_MOD 
+		status=$?
+		unlock_mywebsiteate
+		log_end_msg "$status"
+  		;;
+	stop)
+		log_daemon_msg "Stopping My personal website server" "mywebsite"
+  		start-stop-daemon --stop --oknodo --name treefrog
+		log_end_msg $?
+		rm -f $PIDFILE
+  		;;
+	restart|force-reload)
+		$0 stop && sleep 2 && $0 start
+  		;;
+	try-restart)
+		if $0 status >/dev/null; then
+			$0 restart
+		else
+			exit 0
+		fi
+		;;
+	reload)
+		exit 3
+		;;
+	status)
+		status_of_proc $DAEMON "my Website"
+		;;
+	*)
+		echo "Usage: $0 {start|stop|restart|try-restart|force-reload|status}"
+		exit 2
+		;;
+esac
