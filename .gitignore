@@ -34,3 +34,10 @@ MakeFile
 *.exe
 *.out
 *.app
+
+# Tree generate files
+log/
+views/_src/*
+lib/*
+Makefile
+db/
