@@ -1,0 +1,154 @@
+/****************************************************************************
+**
+** Copyright (C) 2016 Pelagicore AG
+** Contact: https://www.qt.io/licensing/
+**
+** This file is part of the QmlLive tool.
+**
+** $QT_BEGIN_LICENSE:GPL-QTAS$
+** Commercial License Usage
+** Licensees holding valid commercial Qt Automotive Suite licenses may use
+** this file in accordance with the commercial license agreement provided
+** with the Software or, alternatively, in accordance with the terms
+** contained in a written agreement between you and The Qt Company.  For
+** licensing terms and conditions see https://www.qt.io/terms-conditions.
+** For further information use the contact form at https://www.qt.io/contact-us.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3 or (at your option) any later version
+** approved by the KDE Free Qt Foundation. The licenses are as published by
+** the Free Software Foundation and appearing in the file LICENSE.GPL3
+** included in the packaging of this file. Please review the following
+** information to ensure the GNU General Public License requirements will
+** be met: https://www.gnu.org/licenses/gpl-3.0.html.
+**
+** $QT_END_LICENSE$
+**
+** SPDX-License-Identifier: GPL-3.0
+**
+****************************************************************************/
+
+/*!
+
+\page qmllive-installation.html
+\title Installation
+
+\chapter Dependencies
+
+\list
+    \li Windows, Linux or macOS
+    \li Qt5.4 or higher
+\endlist
+
+
+\chapter Building for desktop
+
+\code
+    $ qmake
+    $ make
+\endcode
+
+QmlLive Bench can be started directly from build directory by executing
+\c{./bin/qmllivebench}. Optionally it can be installed with
+
+\code
+    $ make install
+\endcode
+
+
+\chapter Building for device
+
+\e{Note: Only needed when you want to have live reloading enabled on the
+target.}
+
+\code
+    # using qmake from cross compiler toolchain
+    $ qmake "CONFIG+=skip-bench skip-examples static-link-runtime"
+    $ make
+\endcode
+
+You need to cross-compile QmlLive and copy the \c{./bin/qmlliveruntime} binary onto the
+target.
+
+Optionally it can be packaged with the help of
+
+\code
+    $ make install INSTALL_ROOT=...
+\endcode
+
+
+\chapter Building documentation
+
+\code
+    $ qmake CONFIG+=force_independent
+    $ make docs
+\endcode
+
+The documentation will be available at \tt{doc/qmllive/index.html}.
+
+
+\chapter Build options reference
+
+The following values can be added to qmake \c CONFIG variable:
+
+\table
+\header
+    \li Option
+    \li Description
+
+\row
+    \li skip-bench
+    \li Do not build \l{The Workbench}{QmlLive Bench}
+
+\row
+    \li skip-examples
+    \li Do not build examples
+
+\row
+    \li skip-runtime
+    \li Do not build \l{QmlLive Runtime}
+
+\row
+    \li skip-tests
+    \li Do not build tests
+
+\row
+    \li static-link-runtime
+    \li Produce a single-binary QmlLive Runtime executable. Without this option
+        enabled QmlLive Runtime executable requires the \c libqmllive dynamic
+        library to be copied to the target.
+\endtable
+
+The following custom qmake variables are recognized:
+
+\table
+\header
+    \li Variable
+    \li Description
+
+\row
+    \li PREFIX
+    \li Installation prefix. Defaults to \c{$$[QT_INSTALL_PREFIX]}.
+
+\row
+    \li EXAMPLES_PREFIX
+    \li Installation prefix for examples. Defaults to
+        \c{$$[QT_INSTALL_LIBS]/qmllive/examples}.
+
+\row
+    \li QMLLIVE_VERSION_EXTRA
+    \li Distribution specific version description (spaces allowed).
+
+\row
+    \li QMLLIVE_REVISION
+    \li The VCS revision number.
+
+\row
+    \li QMLLIVE_SETTINGS_VARIANT
+    \li Overrides \c QCoreApplication::organizationName which is used to determine
+        application specific \c QSettings storage.
+\endtable
+
+
+*/

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- installation.qdoc -->
+  <title>Installation | Qt QmlLive 1.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="qmllive-index.html">Qt QmlLive</a></td><td >Installation</td></tr></table><table class="buildversion"><tr>
+<td id="buildversion" width="100%" align="right">Qt QmlLive 1.0.0</td>
+        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Installation</h1>
+<span class="subtitle"></span>
+<!-- $$$qmllive-installation.html-description -->
+<div class="descr"> <a name="details"></a>
+<p><b class="redFont"><code>\chapter</code></b>Dependencies</p>
+<ul>
+<li>Windows, Linux or macOS</li>
+<li>Qt5.4 or higher</li>
+</ul>
+<p><b class="redFont"><code>\chapter</code></b>Building for desktop</p>
+<pre class="cpp">
+
+  $ qmake
+  $ make
+
+</pre>
+<p>QmlLive Bench can be started directly from build directory by executing <code>./bin/qmllivebench</code>. Optionally it can be installed with</p>
+<pre class="cpp">
+
+  $ make install
+
+</pre>
+<p><b class="redFont"><code>\chapter</code></b>Building for device</p>
+<p><i>Note: Only needed when you want to have live reloading enabled on the target.</i></p>
+<pre class="cpp">
+
+  <span class="preprocessor"># using qmake from cross compiler toolchain</span>
+  $ qmake <span class="string">&quot;CONFIG+=skip-bench skip-examples static-link-runtime&quot;</span>
+  $ make
+
+</pre>
+<p>You need to cross-compile QmlLive and copy the <code>./bin/qmlliveruntime</code> binary onto the target.</p>
+<p>Optionally it can be packaged with the help of</p>
+<pre class="cpp">
+
+  $ make install INSTALL_ROOT<span class="operator">=</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>
+
+</pre>
+<p><b class="redFont"><code>\chapter</code></b>Building documentation</p>
+<pre class="cpp">
+
+  $ qmake CONFIG<span class="operator">+</span><span class="operator">=</span>force_independent
+  $ make docs
+
+</pre>
+<p>The documentation will be available at <code>doc/qmllive/index.html</code>.</p>
+<p><b class="redFont"><code>\chapter</code></b>Build options reference</p>
+<p>The following values can be added to qmake <code>CONFIG</code> variable:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Option</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd"><td >skip-bench</td><td >Do not build QmlLive Bench</td></tr>
+<tr valign="top" class="even"><td >skip-examples</td><td >Do not build examples</td></tr>
+<tr valign="top" class="odd"><td >skip-runtime</td><td >Do not build QmlLive Runtime</td></tr>
+<tr valign="top" class="even"><td >skip-tests</td><td >Do not build tests</td></tr>
+<tr valign="top" class="odd"><td >static-link-runtime</td><td >Produce a single-binary QmlLive Runtime executable. Without this option enabled QmlLive Runtime executable requires the <code>libqmllive</code> dynamic library to be copied to the target.</td></tr>
+</table></div>
+<p>The following custom qmake variables are recognized:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Variable</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd"><td >PREFIX</td><td >Installation prefix. Defaults to <code>$$[QT_INSTALL_PREFIX]</code>.</td></tr>
+<tr valign="top" class="even"><td >EXAMPLES_PREFIX</td><td >Installation prefix for examples. Defaults to <code>$$[QT_INSTALL_LIBS]/qmllive/examples</code>.</td></tr>
+<tr valign="top" class="odd"><td >QMLLIVE_VERSION_EXTRA</td><td >Distribution specific version description (spaces allowed).</td></tr>
+<tr valign="top" class="even"><td >QMLLIVE_REVISION</td><td >The VCS revision number.</td></tr>
+<tr valign="top" class="odd"><td >QMLLIVE_SETTINGS_VARIANT</td><td >Overrides <code>QCoreApplication::organizationName</code> which is used to determine application specific <code>QSettings</code> storage.</td></tr>
+</table></div>
+</div>
+<!-- @@@qmllive-installation.html -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2016 Pelagicore AG.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

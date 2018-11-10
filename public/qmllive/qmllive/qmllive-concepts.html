@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- concepts.qdoc -->
+  <title>Concepts | Qt QmlLive 1.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="qmllive-index.html">Qt QmlLive</a></td><td >Concepts</td></tr></table><table class="buildversion"><tr>
+<td id="buildversion" width="100%" align="right">Qt QmlLive 1.0.0</td>
+        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#local-sessions">Local Sessions</a></li>
+<li class="level1"><a href="#remote-sessions-putting-delight-on-your-devices">Remote Sessions - <i>putting delight on your devices</i></a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Concepts</h1>
+<span class="subtitle"></span>
+<!-- $$$qmllive-concepts.html-description -->
+<div class="descr"> <a name="details"></a>
+<p><b class="redFont"><code>\chapter</code></b>Live Reloading</p>
+<p>During a typical user interface design phase, designers create many graphical documents describing the desired user interface. Transferring such graphical visions into a running source code is difficult and time consuming.</p>
+<p class="centerAlign"><img src="images/workbench.png" alt="" /></p><p>Not only is it a tedious process, it often comes with great compromises on both sides. The designer's vision is often not fully replicable with the underlying technology. So it takes many iterations to come to an optimal solution.</p>
+<p>A lot of time-consuming editing is needed to finally reach a compromise that satisfies the designer's vision and how it is realized in code. Each iteration is a small step towards the desired user experience goal. Qt, with the Qt Quick technology, already shortens the gap between vision and product by introducing a more design oriented language (QML). However, there is still room for improvement, which is why QmlLive was created.</p>
+<p>QmlLive is managed by a central bench watching your project workspace. A change on a file inside the workspace is automatically detected and immediately reflected onto one or more local rendering areas or to connected remote clients. A team can develop a user interface very quickly and precisely on a PC and simultaneously display it on one or several local and/or remote clients. The clients can run on any desktop or networked embedded device that supports Qt5 and QmlLive.</p>
+<p class="centerAlign"><img src="images/concept.png" alt="" /></p><a name="local-sessions"></a>
+<h2 id="local-sessions">Local Sessions</h2>
+<p>For a local session you only need the QmlLive Bench. It contains all of the required components in an easy-to-use interface. You type and save, we show you the outcome on your PC in a fraction of a second. This is ideally suited for a multi-monitor setup where you see your code on one display and the the live results of your changes on the other display. Seamless user interface creation is the target, where you see every change immediately. This is great for sketching out a scene or getting the last touch on animation behavior. It also encourages you to think in terms of components; instead of developing a whole scene, you can can break apart the scene into smaller parts or components. You can work on these small components and see how they look standalone or embedded into a larger scene.</p>
+<p class="centerAlign"><img src="images/client.png" alt="" /></p><a name="remote-sessions-putting-delight-on-your-devices"></a>
+<h2 id="remote-sessions-putting-delight-on-your-devices">Remote Sessions - <i>putting delight on your devices</i></h2>
+<p>A scene rendered on a PC display will rarely look the same as on the target display for the embedded device. There are subtle changes in the color appearance, pixel density, font rendering and proportions. So it is vital to ensure that a user experience designed on a PC looks just as brilliant on the embedded device. In the past this was always cumbersome and required that you manually copy the code to the device and restart the application. With QmlLive Bench and QmlLive Runtime you simply connect to the device, propagate your workspace and from then on all changes are reflected on the device display. Of course, you can also connect more devices, or devices with different sizes.</p>
+<p class="centerAlign"><img src="images/runtime.png" alt="" /></p><p><b class="redFont"><code>\chapter</code></b>Display, Screens, Panels, Components, Fragments</p>
+<pre class="cpp">
+
+  <span class="operator">+</span><span class="operator">-</span> Display
+     <span class="operator">|</span>
+     <span class="operator">+</span><span class="operator">-</span> Panel
+     <span class="operator">|</span>
+     <span class="operator">+</span><span class="operator">-</span> Screen
+        <span class="operator">|</span>
+        <span class="operator">+</span><span class="operator">-</span> Panel
+           <span class="operator">|</span>
+           <span class="operator">+</span><span class="operator">-</span> Component
+              <span class="operator">|</span>
+              <span class="operator">+</span><span class="operator">-</span> Fragment
+
+</pre>
+<p>To better structure a user interface, we normally assume a hierarchy of user interface elements. For simplicity we name them <i>display</i>, <i>screen</i>, <i>panel</i>, <i>component</i>, and <i>fragment</i>. They form a hierarchy from large chunks of user interfaces to the smaller entities and internals of the user interface. The main benefit is that it allows us to share a common vocabulary with the customers and ensures the design is aligned with the shared definition of user interface elements.</p>
+<p>We define the user interface as a root element called the display. The display contains a collection of screens or panels, where each screen covers the entire physical display. A screen consists of several panels providing the visual structure defined by the design team. Each panel itself consists of a set of components, which are reusable user interface elements. These components contain fragments, which are user interface elements, an internal structure which is not exposed to the user interface developer.</p>
+<p>Designing a user interface requires an understanding of the initial display layout and its screen navigation structure, and of the structure of individual screens and their panels. It is also required to define a common set of components to be used inside the panels. The fragments are implementation-specific.</p>
+<p><b class="redFont"><code>\chapter</code></b>UX Sheets - <i>visual component testing</i></p>
+<p>UXSheet gives guidance on how to successfully develop user interface components with the QmlLive live-preview technology.</p>
+<p>Over time, developing applications in QML can become complex, especially if there is no clear concept for (isolated) components. Exactly the same is true for designing user interfaces. For a successful translation of the designer's vision into a programmer's code, the vision needs to be broken down into smaller user interface elements (i.e&#x2e; screen, panel, components and so on). Each user interface element needs to be validated on its own and translated into source code.</p>
+<p>Now, to better compare this vision with what a programmer understands, a graphics sheet can be directly implemented with Qt Quick as a series of standalone documents collectively called a UXSheet. These sheets act as the interface between designer and programmer. The screen below shows how a sample sheet could look.</p>
+</div>
+<!-- @@@qmllive-concepts.html -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2016 Pelagicore AG.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instructionals module="QmlLive">
+    <examples>
+        <example name="ContentPlugin Example" docUrl="qthelp://io.qt.qmllive.100/qmllive/qmllive-contentplugin-example.html" projectPath="contentplugin/contentplugin.pro" imageUrl="qthelp://io.qt.qmllive.100/qmllive/images/contentplugin-example.png">
+            <description><![CDATA[Demonstrates how to write a Content Plugin for QmlLive]]></description>
+            <tags>contentplugin,live,qml</tags>
+        </example>
+    </examples>
+</instructionals>

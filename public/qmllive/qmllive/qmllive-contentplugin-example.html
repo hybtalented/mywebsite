@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- contentplugin.qdoc -->
+  <title>ContentPlugin Example | Qt QmlLive 1.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="qmllive-index.html">Qt QmlLive</a></td><td >ContentPlugin Example</td></tr></table><table class="buildversion"><tr>
+<td id="buildversion" width="100%" align="right">Qt QmlLive 1.0.0</td>
+        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#mycontentadapterplugin">MyContentAdapterPlugin</a></li>
+<li class="level1"><a href="#plugin-qml">plugin.qml</a></li>
+<li class="level1"><a href="#the-resource-file">The Resource File</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">ContentPlugin Example</h1>
+<span class="subtitle"></span>
+<!-- $$$contentplugin-brief -->
+<p>Demonstrates how to write a Content Plugin for QmlLive.</p>
+<!-- @@@contentplugin -->
+<!-- $$$contentplugin-description -->
+<div class="descr"> <a name="details"></a>
+<p class="centerAlign"><img src="images/contentplugin-example.png" alt="Screenshot of the Plugin in Action" /></p><p>The plugin written in this example displays images like the built-in Imageviewer in QmlLive, but it shows the content rotated only works on *.png files.</p>
+<p>We will start by reviewing the interface defined in <code>contentadapterinterface.h</code> in the QmlLive source code. This interface can be used to add a new ContentAdapter to QmlLive. The ContentAdapter will be used to display any content that shouldn't be handled by the QmlLive Runtime, like displaying an image.</p>
+<pre class="cpp">
+
+  <span class="keyword">class</span> QMLLIVESHARED_EXPORT ContentAdapterInterface
+  {
+  <span class="keyword">public</span>:
+
+      <span class="keyword">enum</span> Feature {
+          <span class="type">QtQuickControls</span> <span class="operator">=</span> <span class="number">0x1</span>
+      };
+      Q_DECLARE_FLAGS(Features<span class="operator">,</span> Feature)
+
+      <span class="keyword">virtual</span> <span class="operator">~</span>ContentAdapterInterface() {}
+
+      <span class="keyword">virtual</span> <span class="type">void</span> cleanUp() {}
+
+      <span class="keyword">virtual</span> bool canPreview(<span class="keyword">const</span> <span class="type">QString</span><span class="operator">&amp;</span> path) <span class="keyword">const</span> <span class="operator">=</span> <span class="number">0</span>;
+      <span class="keyword">virtual</span> <span class="type">QImage</span> preview(<span class="keyword">const</span> <span class="type">QString</span><span class="operator">&amp;</span> path<span class="operator">,</span> <span class="keyword">const</span> <span class="type">QSize</span> <span class="operator">&amp;</span>requestedSize) <span class="operator">=</span> <span class="number">0</span>;
+
+      <span class="keyword">virtual</span> bool canAdapt(<span class="keyword">const</span> <span class="type">QUrl</span><span class="operator">&amp;</span> url) <span class="keyword">const</span> <span class="operator">=</span> <span class="number">0</span>;
+      <span class="keyword">virtual</span> bool isFullScreen() <span class="keyword">const</span> { <span class="keyword">return</span> <span class="keyword">false</span>; }
+
+      <span class="type">void</span> setAvailableFeatures(ContentAdapterInterface<span class="operator">::</span>Features features) { m_features <span class="operator">=</span> features; }
+      ContentAdapterInterface<span class="operator">::</span>Features availableFeatures() { <span class="keyword">return</span> m_features; }
+
+      <span class="keyword">virtual</span> <span class="type">QUrl</span> adapt(<span class="keyword">const</span> <span class="type">QUrl</span><span class="operator">&amp;</span> url<span class="operator">,</span> <span class="type">QQmlContext</span><span class="operator">*</span> context) <span class="operator">=</span> <span class="number">0</span>;
+
+  <span class="keyword">private</span>:
+      Features m_features;
+  };
+
+</pre>
+<p>The <code>ContentAdapterInterface</code> class declares four functions. The first function <code>canAdapt(const QUrl&amp;)</code> returns whether the plugin can display the given file or directory.</p>
+<p>The second function <code>adapt(const QUrl&amp; url, QDeclarativeContext* context)</code> returns a custom QUrl which will be used by QmlLive to display the given QUrl. The returned QUrl always has to point to a QML file used to display the content. To be able to control the returned QML file, <code>context</code> can be used to set custom properties which will be exported to the QML file.</p>
+<p>canPreview() and preview() are used for generating preview thumbnails. We use the easiest implementation for these two methods.</p>
+<a name="mycontentadapterplugin"></a>
+<h2 id="mycontentadapterplugin">MyContentAdapterPlugin</h2>
+<pre class="cpp">
+
+  <span class="keyword">class</span> MyContentAdapterPlugin : <span class="keyword">public</span> <span class="type">QObject</span><span class="operator">,</span> <span class="keyword">public</span> ContentAdapterInterface
+  {
+      Q_OBJECT
+      Q_INTERFACES(ContentAdapterInterface)
+  <span class="keyword">public</span>:
+      <span class="keyword">explicit</span> MyContentAdapterPlugin(<span class="type">QObject</span> <span class="operator">*</span>parent <span class="operator">=</span> <span class="number">0</span>);
+
+      bool canPreview(<span class="keyword">const</span> <span class="type">QString</span><span class="operator">&amp;</span> path) <span class="keyword">const</span>;
+      <span class="type">QImage</span> preview(<span class="keyword">const</span> <span class="type">QString</span><span class="operator">&amp;</span> path<span class="operator">,</span> <span class="keyword">const</span> <span class="type">QSize</span> <span class="operator">&amp;</span>requestedSize);
+
+      bool canAdapt(<span class="keyword">const</span> <span class="type">QUrl</span><span class="operator">&amp;</span> url) <span class="keyword">const</span>;
+      <span class="type">QUrl</span> adapt(<span class="keyword">const</span> <span class="type">QUrl</span><span class="operator">&amp;</span> url<span class="operator">,</span> <span class="type">QDeclarativeContext</span><span class="operator">*</span> context);
+
+  };
+
+</pre>
+<p>The <a href="qmllive-contentplugin-example.html#mycontentadapterplugin">MyContentAdapterPlugin</a> implements the interface to QmlLive. It subclasses QObject and the required <code>ContentAdapterInterface</code>.</p>
+<pre class="cpp">
+
+      Q_INTERFACES(ContentAdapterInterface)
+
+</pre>
+<p>The <code>Q_INTERFACES</code> macro will be used to register the plugin to Qt's plugin system.</p>
+<p>We have to overload the <code>canAdapt(const QUrl&amp;)</code> function if we want it to be called for the right file type: <i>*.png.&quot;</i> That's why we check the file ending on the given url and return true when it's a png file.</p>
+<pre class="cpp">
+
+  bool MyContentAdapterPlugin<span class="operator">::</span>canAdapt(<span class="keyword">const</span> <span class="type">QUrl</span> <span class="operator">&amp;</span>url) <span class="keyword">const</span>
+  {
+      <span class="keyword">return</span> url<span class="operator">.</span>toLocalFile()<span class="operator">.</span>endsWith(<span class="string">&quot;.png&quot;</span>);
+  }
+
+</pre>
+<p>If the plugin accepts the file, <code>adapt(const QUrl&amp; url, QDeclarativeContext* context)</code> will be called. Here we export the path to the image as a special property in the context to be able to access the fileName from within our QML file. Afterwards we return a QUrl pointing to our QML file which is inside a ResourceFile.</p>
+<pre class="cpp">
+
+  <span class="type">QUrl</span> MyContentAdapterPlugin<span class="operator">::</span>adapt(<span class="keyword">const</span> <span class="type">QUrl</span> <span class="operator">&amp;</span>url<span class="operator">,</span> <span class="type">QDeclarativeContext</span> <span class="operator">*</span>context)
+  {
+      context<span class="operator">-</span><span class="operator">&gt;</span>setContextProperty(<span class="string">&quot;imageSource&quot;</span><span class="operator">,</span> url);
+
+      <span class="keyword">return</span> <span class="type">QString</span>(<span class="string">&quot;qrc:/mycontentadatperplugin/plugin.qml&quot;</span>);
+  }
+
+</pre>
+<p>Now only the implementation of canPreview() and preview() are missing. Here we just add some dummy implementation because we don't want to add this functionality.</p>
+<pre class="cpp">
+
+  bool MyContentAdapterPlugin<span class="operator">::</span>canPreview(<span class="keyword">const</span> <span class="type">QString</span> <span class="operator">&amp;</span>path) <span class="keyword">const</span>
+  {
+      Q_UNUSED(path)
+
+      <span class="keyword">return</span> <span class="keyword">false</span>;
+  }
+
+  <span class="type">QImage</span> MyContentAdapterPlugin<span class="operator">::</span>preview(<span class="keyword">const</span> <span class="type">QString</span> <span class="operator">&amp;</span>path<span class="operator">,</span> <span class="keyword">const</span> <span class="type">QSize</span> <span class="operator">&amp;</span>requestedSize)
+  {
+      Q_UNUSED(path);
+      Q_UNUSED(requestedSize);
+
+      <span class="keyword">return</span> <span class="type">QImage</span>();
+  }
+
+</pre>
+<a name="plugin-qml"></a>
+<h2 id="plugin-qml">plugin.qml</h2>
+<p>The plugin.qml file is our ImageViewer. In it we create an <code>Image Element</code> and set the source to our exported property <code>imageSource</code>. The rotation property will be set to 180.</p>
+<pre class="qml">
+
+  import QtQuick 1.1
+
+  <span class="type">Rectangle</span> {
+      <span class="name">width</span>: <span class="number">300</span>
+      <span class="name">height</span>: <span class="number">300</span>
+
+      <span class="type">Image</span> {
+          <span class="name">anchors</span>.centerIn: <span class="name">parent</span>
+
+          <span class="name">rotation</span>: <span class="number">180</span>
+          <span class="name">source</span>: <span class="name">imageSource</span>
+      }
+  }
+
+</pre>
+<a name="the-resource-file"></a>
+<h2 id="the-resource-file">The Resource File</h2>
+<p>Because we don't want to fiddle around with paths, we include our QML file into a resource file. It is important to use a unique prefix in the resource file in order to avoid conflicts with QmlLive, which also uses resource files. The best approach is to use the plugin name as a prefix.</p>
+<p>Files:</p>
+<ul>
+<li><a href="qmllive-contentplugin-contentplugin-pro.html">contentplugin/contentplugin.pro</a></li>
+<li><a href="qmllive-contentplugin-mycontentadapterplugin-cpp.html">contentplugin/mycontentadapterplugin.cpp</a></li>
+<li><a href="qmllive-contentplugin-mycontentadapterplugin-h.html">contentplugin/mycontentadapterplugin.h</a></li>
+<li><a href="qmllive-contentplugin-plugin-qml.html">contentplugin/plugin.qml</a></li>
+<li><a href="qmllive-contentplugin-res-qrc.html">contentplugin/res.qrc</a></li>
+</ul>
+</div>
+<!-- @@@contentplugin -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2016 Pelagicore AG.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

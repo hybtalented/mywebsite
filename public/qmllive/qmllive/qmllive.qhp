@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+    <namespace>io.qt.qmllive.100</namespace>
+    <virtualFolder>qmllive</virtualFolder>
+    <customFilter name="QmlLive 1.0.0">
+        <filterAttribute>1.0.0</filterAttribute>
+        <filterAttribute>QmlLive</filterAttribute>
+    </customFilter>
+    <filterSection>
+        <filterAttribute>1.0.0</filterAttribute>
+        <filterAttribute>QmlLive</filterAttribute>
+        <toc>
+            <section ref="qmllive-index.html" title="Qt QmlLive">
+                <section ref="qmllive-installation.html" title="Installation"/>
+                <section ref="qmllive-usage.html" title="Usage"/>
+                <section ref="qmllive-concepts.html" title="Concepts"/>
+                <section ref="qmllive-reference.html" title="Reference">
+                    <section ref="qmllive-module.html" title="QmlLive"/>
+                    <section ref="ipc-module.html" title="IPC"/>
+                </section>
+                <section ref="qmllive-examples.html" title="Examples"/>
+            </section>
+        </toc>
+        <keywords>
+            <keyword name="API Reference" id="API Reference" ref="qmllive-reference.html"/>
+            <keyword name="Concepts" id="Concepts" ref="qmllive-concepts.html"/>
+            <keyword name="ContentPlugin Example" id="ContentPlugin Example" ref="qmllive-contentplugin-example.html"/>
+            <keyword name="Installation" id="Installation" ref="qmllive-installation.html"/>
+            <keyword name="IpcClient" id="IpcClient" ref="ipcclient.html"/>
+            <keyword name="IpcServer" id="IpcServer" ref="ipcserver.html"/>
+            <keyword name="Pelagicore QmlLive Reference Documentation" id="Pelagicore QmlLive Reference Documentation" ref="qmllive-index.html"/>
+            <keyword name="Qt QmlLive" id="Qt QmlLive" ref="qmllive-index.html"/>
+            <keyword name="Usage" id="Usage" ref="qmllive-usage.html"/>
+            <keyword name="ipc" id="ipc" ref="ipc-module.html"/>
+            <keyword name="qmllive" id="qmllive" ref="qmllive-module.html"/>
+            <keyword name="qmllive-examples" id="qmllive-examples" ref="qmllive-examples.html"/>
+        </keywords>
+        <files>
+            <file>images/arrow_bc.png</file>
+            <file>images/bgrContent.png</file>
+            <file>images/btn_next.png</file>
+            <file>images/btn_prev.png</file>
+            <file>images/bullet_dn.png</file>
+            <file>images/bullet_sq.png</file>
+            <file>images/client.png</file>
+            <file>images/concept.png</file>
+            <file>images/contentplugin-example.png</file>
+            <file>images/creator_result.png</file>
+            <file>images/creator_shortcut.png</file>
+            <file>images/creator_tool.png</file>
+            <file>images/home.png</file>
+            <file>images/ico_note.png</file>
+            <file>images/ico_note_attention.png</file>
+            <file>images/ico_out.png</file>
+            <file>images/logo.png</file>
+            <file>images/runtime.png</file>
+            <file>images/workbench.png</file>
+            <file>ipc-module.html</file>
+            <file>ipcclient.html</file>
+            <file>ipcserver.html</file>
+            <file>qmllive-concepts.html</file>
+            <file>qmllive-contentplugin-contentplugin-pro.html</file>
+            <file>qmllive-contentplugin-example.html</file>
+            <file>qmllive-contentplugin-mycontentadapterplugin-cpp.html</file>
+            <file>qmllive-contentplugin-mycontentadapterplugin-h.html</file>
+            <file>qmllive-contentplugin-plugin-qml.html</file>
+            <file>qmllive-contentplugin-res-qrc.html</file>
+            <file>qmllive-examples.html</file>
+            <file>qmllive-index.html</file>
+            <file>qmllive-installation.html</file>
+            <file>qmllive-module.html</file>
+            <file>qmllive-reference.html</file>
+            <file>qmllive-usage.html</file>
+            <file>style/offline-simple.css</file>
+            <file>style/offline.css</file>
+        </files>
+    </filterSection>
+</QtHelpProject>

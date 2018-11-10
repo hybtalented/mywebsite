@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- usage.qdoc -->
+  <title>Usage | Qt QmlLive 1.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="qmllive-index.html">Qt QmlLive</a></td><td >Usage</td></tr></table><table class="buildversion"><tr>
+<td id="buildversion" width="100%" align="right">Qt QmlLive 1.0.0</td>
+        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Usage</h1>
+<span class="subtitle"></span>
+<!-- $$$qmllive-usage.html-description -->
+<div class="descr"> <a name="details"></a>
+<p><b class="redFont"><code>\chapter</code></b>Introduction</p>
+<p>The QmlLive system was designed from the ground up to support your needs. It is structured in a modular fashion to be able to meet various usage requirements.</p>
+<p>In the early phase of a project you normally want to use QmlLive <b>Bench</b>, which has everything included in a typical desktop application.</p>
+<p>Later in the project you may want to test your UI code on a device. For this we have designed the QmlLive Bench in combination with the QmlLive <b>Runtime</b>. This combi pack offers you a default QML renderer to be run on the device and a small remote application on the desktop to control it.</p>
+<p>For C++ developers, we also offer the ability to integrate the QmlLive system into your own custom runtime using our LiveNodeEngine class with a few lines of code and then use the QmlLive Bench to control it.</p>
+<p><b class="redFont"><code>\chapter</code></b>The Workbench</p>
+<p>The standard workbench is the all inclusive QML live reloading tool. It allows you to select a workspace to watch over and provides a default QML runtime for the active selected QML document.</p>
+<p class="centerAlign"><img src="images/workbench.png" alt="The Workbench" /></p><p>You launch it by just executing the <code>qmllivebench</code> executable</p>
+<pre class="cpp">
+
+  $(QMLIVEPROJECT)<span class="operator">/</span>bin<span class="operator">/</span>qmllivebench<span class="operator">[</span><span class="operator">.</span>exe<span class="operator">]</span>
+
+</pre>
+<p>The QmlLive Bench can also be passed a few command line arguments</p>
+<pre class="cpp">
+
+  Usage qmllivebench <span class="operator">[</span>options<span class="operator">]</span> <span class="operator">&lt;</span>workspace<span class="operator">&gt;</span>
+  Usage qmllivebench <span class="operator">[</span>options<span class="operator">]</span> <span class="operator">&lt;</span>workspace<span class="operator">/</span>file<span class="operator">.</span>qml<span class="operator">&gt;</span>
+
+  options:
+    <span class="operator">-</span>pluginpath <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>path to QmlLive plugins
+    <span class="operator">-</span>importpath <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>path to the QML import path
+    <span class="operator">-</span>stayontop <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>keep viewer window on top
+
+</pre>
+<p><b class="redFont"><code>\chapter</code></b>Qt Creator Integration</p>
+<p>You can integrate the QmlLive Bench into Qt Creator as an external tool. For this you need to open the Settings/Options dialog from Qt Creator and open the <b>Environment</b> group. There you will find the <b>External Tools</b> tab.</p>
+<p>Under <b>Executable</b> enter the path to your QmlLive Bench executable.</p>
+<p class="centerAlign"><img src="images/creator_tool.png" alt="Qt Creator" /></p><p>Now QmlLive Bench is availabe under the menu entry <b>Tool &gt; External &gt; QmlLive Bench</b>. To be able to easier launch QmlLive Bench you can also assign a shortcut to the tool.</p>
+<p class="centerAlign"><img src="images/creator_shortcut.png" alt="Qt Creator" /></p><p>Now when you press <b>Alt-F8</b> QmlLive Bench will be launched with the current project root folder open as workspace.</p>
+<p class="centerAlign"><img src="images/creator_result.png" alt="Qt Creator" /></p><p><b class="redFont"><code>\chapter</code></b>QmlLive Runtime</p>
+<p>A default runtime is provided by the QmlLive Runtime tool. It provides a default qml viewer and listens on a given port for IPC calls from the remote. As such it's ideal to start developing on a target device, when no extra c++ code is required.</p>
+<p class="centerAlign"><img src="images/runtime.png" alt="QmlLive Runtime" /></p><p>Calling the runtime</p>
+<pre class="cpp">
+
+  $(QMLIVEPROJECT)<span class="operator">/</span>bin<span class="operator">/</span>qmlliveruntime<span class="operator">[</span><span class="operator">.</span>exe<span class="operator">]</span>
+
+</pre>
+<p>Usage of the runtime</p>
+<pre class="cpp">
+
+  Usage qmlliveruntime <span class="operator">[</span>options<span class="operator">]</span> <span class="operator">&lt;</span>workspace<span class="operator">&gt;</span>
+
+   options:
+    <span class="operator">-</span>ipcport <span class="operator">&lt;</span>port<span class="operator">&gt;</span> <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>the port the IPC shall listen on
+    <span class="operator">-</span>updates<span class="operator">-</span>as<span class="operator">-</span>overlay <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>allow receiving updates with read only workspace
+    <span class="operator">-</span>update<span class="operator">-</span>on<span class="operator">-</span>connect <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>update all workspace documents initially (blocking)
+    <span class="operator">-</span>pluginpath <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>path to QmlLive plugins
+    <span class="operator">-</span>importpath <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>path to the QML import path
+    <span class="operator">-</span>fullscreen <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>shows in fullscreen mode
+    <span class="operator">-</span>transparent <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>Make the window transparent
+    <span class="operator">-</span>frameless <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>run with no window frame
+    <span class="operator">-</span>stayontop <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>keep viewer window on top
+
+</pre>
+<p>Not all projects are designed so that they allow working on isolated panels or screens and it may be necessary to deploy whole project to a target device in order to execute it. Receiving updates normally requires write access to the deployed files. Depending on the target platform, the project may be deployed to a location which is not user writable. In most cases hacking on the file permissions after deployment can help, but a more convenient method is available - let QmlLive Runtime store all updates in a writable workspace overlay. Use the <code>-updates-as-overlay</code> option to enable this feature.</p>
+<p>Another constraints may exist on updating documents later after application startup. If this is the case the <code>-update-on-connect</code> option can help - when this is used all workspace documents will be updated prior to instantiation of any QML component.</p>
+<p><b class="redFont"><code>\chapter</code></b>Custom Runtime</p>
+<p>You can create your own custom runtime with the QmlLive features. This allows you to use your QML view setup with your additional C++ code together with the QmlLive system.</p>
+<p>For this you need to use the LiveNodeEngine class to be able to receive workspace changes and active document updates. By default, the IPC will listen on the port 10234.</p>
+<p>Here is a short example of a minimal custom QmlLive runtime:</p>
+<pre class="cpp">
+
+  <span class="preprocessor">#include &lt;QtGui&gt;</span>
+  <span class="preprocessor">#include &lt;QtQuick&gt;</span>
+
+  <span class="comment">// Use QmlLive headers</span>
+  <span class="preprocessor">#include &quot;livenodeengine.h&quot;</span>
+  <span class="preprocessor">#include &quot;remotereceiver.h&quot;</span>
+
+  <span class="keyword">class</span> MyQmlApplicationEngine : <span class="keyword">public</span> <span class="type">QQmlApplicationEngine</span>
+  {
+      Q_OBJECT
+
+  <span class="keyword">public</span>:
+      MyQmlApplicationEngine(<span class="keyword">const</span> <span class="type">QString</span> <span class="operator">&amp;</span>mainQml); <span class="comment">// Perform some setup here</span>
+
+      <span class="type">QString</span> mainQml() <span class="keyword">const</span>;
+      <span class="type">QQuickWindow</span> <span class="operator">*</span>mainWindow();
+      <span class="type">QList</span><span class="operator">&lt;</span><span class="type">QQmlError</span><span class="operator">&gt;</span> warnings() <span class="keyword">const</span>;
+
+      <span class="comment">// ...</span>
+  };
+
+  <span class="type">int</span> main(<span class="type">int</span> argc<span class="operator">,</span> <span class="type">char</span> <span class="operator">*</span><span class="operator">*</span>argv)
+  {
+      <span class="type">QGuiApplication</span> app(argc<span class="operator">,</span> argv);
+      MyQmlApplicationEngine engine(<span class="type">QStringLiteral</span>(<span class="string">&quot;qml/window.qml&quot;</span>));
+
+      <span class="keyword">if</span> (<span class="operator">!</span>qEnvironmentVariableIsSet(<span class="string">&quot;MY_APP_ENABLE_QMLLIVE&quot;</span>))
+          <span class="keyword">return</span> app<span class="operator">.</span>exec();
+
+  <span class="preprocessor">#if defined(QT_NO_DEBUG)</span>
+      qWarning() <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;QmlLive support was disabled at compile time&quot;</span>;
+  <span class="preprocessor">#else</span>
+      LiveNodeEngine node;
+
+      <span class="comment">// Let QmlLive know your runtime</span>
+      node<span class="operator">.</span>setQmlEngine(<span class="operator">&amp;</span>engine);
+
+      <span class="comment">// Allow it to display QML components with non-QQuickWindow root object</span>
+      <span class="type">QQuickView</span> fallbackView(<span class="operator">&amp;</span>engine<span class="operator">,</span> <span class="number">0</span>);
+      node<span class="operator">.</span>setFallbackView(<span class="operator">&amp;</span>fallbackView);
+
+      <span class="comment">// Tell it where file updates should be stored relative to</span>
+      node<span class="operator">.</span>setWorkspace(app<span class="operator">.</span>applicationDirPath()<span class="operator">,</span>
+                        LiveNodeEngine<span class="operator">::</span>AllowUpdates <span class="operator">|</span> LiveNodeEngine<span class="operator">::</span>UpdatesAsOverlay);
+
+      <span class="comment">// Listen to IPC call from remote QmlLive Bench</span>
+      RemoteReceiver receiver;
+      receiver<span class="operator">.</span>registerNode(<span class="operator">&amp;</span>node);
+      receiver<span class="operator">.</span>listen(<span class="number">10234</span>);
+
+      <span class="comment">// Advanced use: let it know the initially loaded QML component (do this</span>
+      <span class="comment">// only after registering to receiver!)</span>
+      node<span class="operator">.</span>usePreloadedDocument(engine<span class="operator">.</span>mainQml()<span class="operator">,</span> engine<span class="operator">.</span>mainWindow()<span class="operator">,</span> engine<span class="operator">.</span>warnings());
+  <span class="preprocessor">#endif</span>
+
+      <span class="keyword">return</span> app<span class="operator">.</span>exec();
+  }
+
+</pre>
+<p>On platforms where pkg-config is supported simply add the following to your project file if QmlLive is installed on your build host:</p>
+<pre class="cpp">
+
+  CONFIG <span class="operator">+</span><span class="operator">=</span> link_pkgconfig
+  PKGCONFIG <span class="operator">+</span><span class="operator">=</span> qmllive
+
+</pre>
+<p>Another option is to compile everything directly into your application by including <code>$(QMLLIVEPROJECT)/src/src.pri</code> in your project file.</p>
+</div>
+<!-- @@@qmllive-usage.html -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2016 Pelagicore AG.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>
