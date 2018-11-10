@@ -39,7 +39,7 @@ MakeFile
 *.app
 
 # Tree generate files
-log/
+log/*
 views/_src/*
 lib/*
 Makefile
