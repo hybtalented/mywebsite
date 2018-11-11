@@ -45,6 +45,12 @@ lib/*
 Makefile
 db/
 tmp/
+controllers/.obj/*
+helpers/.obj/*
+lib/*
+models/.obj/*
+views/_src/.obj/*
+*~
 
 # QT MOC Files
 moc_*.cpp
