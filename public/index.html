@@ -10,19 +10,57 @@
     <title>主页</title>
   </head>
   <body>
-      <div class="mynavbar"></div>
-      <p>Hello world!</p>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark bd-navbar" role="navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse float-left" id="navbarNavDropdown">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item" id="i_index"><a href="index-page.html" class="nav-link"> <span class="gybphicon glyphicon-index"></span> 主页</a></li>
+                  <li class="nav-item" id="i_face"><a href="index-page.html" class="nav-link"> <span class="gybphicon glyphicon-index"></span> 人脸识别</a></li>
+                  <li class="nav-item" id="i_blog"><a href="/Blog" class="nav-link"> <span class="gybphicon glyphicon-index"></span> 博客 </a></li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="docdropdown"  href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    文档
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="docdropdown">
+                      <a href="/doc/qtdoc/qtdoc/index.html" class="dropdown-item">QT文档</a>
+                      <a class="dropdown-item" href="/doc/qmllive/qmllive/qmllive-index.html"> QMLLive文档</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="http://ai.baidu.com/docs#/Face-Detect-V3/top">百度人脸识别文档</a>
+                    </div>
+                   </li>
+              </ul>
+          </div>
+           <ul class="navbar-nav mr-auto float-right">
+              <li class="nav-item" id="i_login"> <a href="/User/login" class="nav-link"><span class="glyphicon glyphicon-user"></span> 登录 </a> </li>
+              <li class="nav-item" id="i_register"> <a href="/User/userregister" class="nav-link"><span class="glyphicon glyphicon-log-in"></span> 注册</a></li>
+          </ul>
+      </nav>
+      <div class="embed-responsive col-12 embed-responsive-21by9" width="100%">
+         <iframe class="embed-responsive-item " id="main-page" src="index-page.html" frameborder="0"></iframe>
+      </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="/js/bootstrap/jquery-3.3.1.min.js"  ></script>
     <script src="/js/bootstrap/popper.min.js"  ></script>
     <script src="/js/bootstrap/bootstrap.min.js"  ></script>
-    <script src="/js/mysetting/navbar.js"></script>
     <script>
-        $(document).ready(function(){
-            $("#i_index").addClass("active");
-        })
+      $(document).ready(function(){
+           $("[href]").click(function(){
+             if($(this).hasClass("nav-item")){
+               $(".nav-item").removeClass("active");
+               $(this).addClass("active");
+             }
+          if(!$(this).hasClass("dropdown-toggle")){
+            $(".dropdown-menu").removeClass("show");
+            var mainpage= document.getElementById("main-page");
+            mainpage.src=this.href;
+            return false;
+          }
+        });
+    });
     </script>
   </body>
 </html>
