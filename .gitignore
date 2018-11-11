@@ -43,7 +43,6 @@ log/*
 views/_src/*
 lib/*
 Makefile
-db/
 tmp/
 controllers/.obj/*
 helpers/.obj/*
