@@ -9,7 +9,6 @@
     <title data-tf="@title"> </title>
   </head>
   <body>
-    <div class="mynavbar"></div>
     <div class="container">
         <p class="h1 text-dark" >用户注册</p>
     </div>
@@ -41,14 +40,8 @@
     <script src="/js/bootstrap/jquery-3.3.1.min.js"  ></script>
     <script src="/js/bootstrap/popper.min.js"  ></script>
     <script src="/js//bootstrap/bootstrap.min.js"  ></script>
-    <script src="/js/mysetting/navbar.js" ></script>
     <script>
-        $(document).ready(function(){
-            $("#i_login").addClass("active");
-            if($("#notice").text().length==0){
-                $("#notice_bar").hide();
-            }
-        })
+        $(function(){if($("#notice").text().empty())$("#notice").hide();});
     </script>
   </body>
 </html>
