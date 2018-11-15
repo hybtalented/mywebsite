@@ -16,33 +16,33 @@
 
 </div>
 <br />
+<div class="table-responsive"></div>
 <table border="1" cellpadding="5" class="table table-hover" style="border: 1px #d0d0d0 solid; border-collapse: collapse;">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">用户ID</th>
-      <th scope="col">标题</th>
-      <th scope="col">内容</th>
-      <th scope="col">操作</th>
-      <th></th>
+      <th  scope="col">用户ID</th>
+      <th  scope="col">标题</th>
+      <th  scope="col">内容</th>
+      <th  scope="col">操作</th>
     </tr>
   </thead>
-  <th scope="row"></th>
+  <tbody>
     <tr data-tf="@for" >
-      <td data-tf="@id"></td>
-      <td data-tf="@title"></td>
-      <td><textarea data-tf="@body" readonly="readonly"></textarea></td>
-      <td>
+      <td  data-tf="@id"></td>
+      <td  data-tf="@title"></td>
+      <td  data-tf="@body"></td>
+      <td >
         <div class="btn-group">
           <a href="#" data-tf="@link_to_show" class="btn btn-primary">详情</a>
           <a href="#" data-tf="@link_to_edit" class="btn btn-success">编辑</a>
           <a href="#" data-tf="@link_to_remove" class="btn btn-danger">删除</a>
         </div>
-    </td>
-  </tr>
+      </td>
+    </tr>
+  </tbody>
 </table>
     <script src="/js/bootstrap/jquery-3.3.1.min.js"  ></script>
     <script src="/js/bootstrap/popper.min.js"  ></script>
     <script src="/js//bootstrap/bootstrap.min.js"  ></script>
-    <script src="/js/mysetting/navbar.js" ></script>
 </body>
 </html>
