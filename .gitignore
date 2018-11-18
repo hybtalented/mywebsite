@@ -50,6 +50,8 @@ lib/*
 models/.obj/*
 views/_src/.obj/*
 *~
+build/
+
 
 # QT MOC Files
 moc_*.cpp
