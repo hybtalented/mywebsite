@@ -18,7 +18,8 @@
     <dl class="row">
       <dt class="col-lg-2 col-sm-2">博客ID</dt><dd class="col-lg-10 col-sm-10" data-tf="@id">(id)</dd><br />
       <dt class="col-lg-2 col-sm-2">标题</dt><dd  class="col-lg-10 col-sm-10" data-tf="@title">(title)</dd><br />
-      <dt class="col-lg-2 col-sm-2">正文</dt><dd class="col-lg-10 col-sm-10">
+      <dt class="col-lg-2 col-sm-2">正文</dt><br/>
+      <dd class="col-lg-12 col-sm-12">
         <div id="layout">
           <div id="blog-show"> 
             <textarea id="blog-content" style="display:none" class="form-control" readonly="readonly" cols="100" rows="20" data-tf="@body">(body) </textarea> 
@@ -41,9 +42,9 @@
     <script>
        var testEditor;
        $(function() {
-          testEditor = editormd("blog-show", {
-          width: "90%",
-          height: 740,
+        testEditor = editormd("blog-show", {
+          width: "100%",
+          height: 540,
           path : '/modules/editor.md/lib/',
           theme : "dark",
           previewTheme : "dark",
@@ -54,6 +55,7 @@
           searchReplace : true,
           //watch : false,                // 关闭实时预览
           htmlDecode : "style,script,iframe|on*",            // 开启 HTML 标签解析，为了安全性，默认不开启    
+          tocContainer:"#blog-toc",
           //toolbar  : false,             //关闭工具栏
           //previewCodeHighlight : false, // 关闭预览 HTML 的代码块高亮，默认开启
           readOnly:true,
@@ -71,8 +73,11 @@
           imageUpload : true,
           imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
           imageUploadURL : "./php/upload.php",
+          onload:function(){
+             testEditor.previewing();
+          },
+        });
       });
-    });
     </script>
 </body>
 </html>
