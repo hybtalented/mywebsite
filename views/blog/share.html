@@ -3,41 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title data-tf="@head_title"></title>
-   <link rel="stylesheet" href="/modules/editor.md/examples/css/style.css" />
-   <link rel="stylesheet" href="/modules/editor.md/css/editormd.min.css" />
-   <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="/modules/editor.md/examples/css/style.css" />
+  <link rel="stylesheet" href="/modules/editor.md/css/editormd.min.css" />
+  <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
 </head>
 <body>
-<p style="color: red" data-tf="@error_msg"></p>
-<p style="color: green" data-tf="@notice_msg"></p>
-
-<div class="container">
-  <h1>博客内容</h1>
-</div>
-<div class="container-fluid">
-    <dl class="row">
-      <dt class="col-lg-2 col-sm-2">博客ID</dt><dd class="col-lg-10 col-sm-10" data-tf="@id">(id)</dd><br />
-      <dt class="col-lg-2 col-sm-2">标题</dt><dd  class="col-lg-10 col-sm-10" data-tf="@title">(title)</dd><br />
-      <dt class="col-lg-2 col-sm-2">正文</dt><br/>
-      <dd class="col-lg-12 col-sm-12">
+  <div class="container">
         <div id="layout">
-          <div id="blog-show"> 
-            <textarea id="blog-content" style="display:none" class="form-control" readonly="readonly" cols="100" rows="20" data-tf="@body">(body) </textarea> 
-          </div>
+            <div id="blog-show"> 
+                <textarea id="blog-content" style="display:none" class="form-control" readonly="readonly" cols="100" rows="20" data-tf="@body">(body) </textarea> 
+            </div>
         </div>
-      </dd><br />
-      <dt class="col-lg-2 col-sm-2">创建时间</dt><dd class="col-lg-10 col-sm-10" data-tf="@created_at">(createdAt)</dd><br />
-      <dt class="col-lg-2 col-sm-2">更新时间</dt><dd class="col-lg-10 col-sm-10" data-tf="@updated_at">(updatedAt)</dd><br />
-      <dt class="col-lg-2 col-sm-2">修改次数</dt><dd class="col-lg-10 col-sm-10" data-tf="@lock_revision">(lockRevision)</dd><br />
-    </dl>
-</div>
-<div class="container-fluid btn-group">
-  <a href="#" data-tf="@link_to_index" class="btn btn-light">Back</a>
-  <a class="btn btn-primary" href="#" data-tf="@link_to_edit">Edit</a> 
-  <a class="btn btn-danger" target="_blank" href="#" data-tf="@link_to_share">Share</a>
-</div>
+  </div>
 <script src="/js/bootstrap/jquery-3.3.1.min.js"  ></script>
-<script src="/js//bootstrap/bootstrap.min.js"  ></script>
 <script src="/modules/editor.md/editormd.min.js"></script>   
 <script src="/js/bootstrap/popper.min.js"  ></script>
     <script>
@@ -45,7 +23,7 @@
        $(function() {
         testEditor = editormd("blog-show", {
           width: "100%",
-          height: 540,
+          height:window.innerHeight.toString(),
           path : '/modules/editor.md/lib/',
           theme : "dark",
           previewTheme : "dark",

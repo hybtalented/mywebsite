@@ -1,0 +1,13 @@
+#include "blog.h"
+
+#init
+ tfetch(Blog, blog);
+
+@head_title ~= controller()->name() + ": " + controller()->activeAction() +" " + blog.title();
+
+@title ~= blog.title()
+
+@body ~= blog.body()
+
+
+
