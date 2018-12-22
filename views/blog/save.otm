@@ -15,7 +15,8 @@
 
 @title |== inputTextTag("blog[title]", blog["title"].toString());
 
-@body |== textAreaTag("blog[body]", 20,100,blog["body"].toString());
+@body ~= blog["body"].toString();
+
 
 @link_to_show |== linkTo("详情", urla("show", blog["id"]))
 

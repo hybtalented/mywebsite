@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=10">
+    <title>Document</title>
+    <style>
+    .dbbutton{
+    display: inline;
+    background-color:#5c9f8a;
+    border-radius: 10px;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+  }
+.dbbutton:hover {
+    background: #509F90;
+    border-top:1px solid #717171; /*边框变化实现按下去的效果*/
+    border-left:1px solid #717171;
+}
+.dbbutton:active {
+    position:relative;
+    border-bottom-color: #000000;
+    top:1px;
+}
+    </style>
+   
+</head>
+<body>
+     <!-- <SCRIPT   LANGUAGE=javascript   FOR="myactivextest"   EVENT="sendTables(table)"> 
+    onTables(table);
+    </SCRIPT>  
+     <SCRIPT   LANGUAGE=javascript   FOR="myactivextest"   EVENT="sendError(err)"> 
+    onError(err);
+     </SCRIPT> -->
+     <button onclick="sqlactivex.addConnection()" id="openDB" class="dbbutton">打开数据库</button>
+        <object id="sqlactivex" CODEBASE="activeX/sqlbrowser.CAB" CLASSID="CLSID:ac3c78f9-ed96-482e-8531-42fcc2e15a42" width=100% height="window.innerHeight">dll加载失败</object>
+        <script>
+            // function myactivextest::onTables(table){
+            //     console.log(table);
+            // }
+            function sqlactivex::statusMessage(err){
+                alert(err);
+            }
+            window.onload = function(){
+                sqlactivex.about();
+                sqlactivex.addConnection();
+                sqlactivex.height = window.innerHeight;
+                window.onresize = function(){
+                    sqlactivex.height = window.innerHeight;
+                };
+            }
+        </script>
+</boy>
+</html>

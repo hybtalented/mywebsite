@@ -1,0 +1,9 @@
+<map id="Browser::addConnection" name="Browser::addConnection">
+<area shape="rect" id="node2" href="$class_q_sql_connection_dialog.html#a5c41648fca78a23db6b9a19c3144aa21" title="QSqlConnectionDialog\l::useInMemoryDatabase" alt="" coords="216,5,379,47"/>
+<area shape="rect" id="node3" href="$class_q_sql_connection_dialog.html#af124a559ce936a95bf6bcf4c181c772e" title="QSqlConnectionDialog\l::driverName" alt="" coords="221,71,373,112"/>
+<area shape="rect" id="node4" href="$class_q_sql_connection_dialog.html#a0711b930bf46e918ad5efd76197c04aa" title="QSqlConnectionDialog\l::databaseName" alt="" coords="221,136,373,177"/>
+<area shape="rect" id="node5" href="$class_q_sql_connection_dialog.html#acecb4b465461c92fbf374129865bfdef" title="QSqlConnectionDialog\l::hostName" alt="" coords="221,201,373,243"/>
+<area shape="rect" id="node6" href="$class_q_sql_connection_dialog.html#a8eccfc3e8cb48b48dd6be84fad9c50d1" title="QSqlConnectionDialog\l::userName" alt="" coords="221,267,373,308"/>
+<area shape="rect" id="node7" href="$class_q_sql_connection_dialog.html#a08f3287a33a0c57001f03386540999c2" title="QSqlConnectionDialog\l::password" alt="" coords="221,332,373,373"/>
+<area shape="rect" id="node8" href="$class_q_sql_connection_dialog.html#ab348388216b7f915726c3f46449cc4df" title="QSqlConnectionDialog\l::port" alt="" coords="221,397,373,439"/>
+</map>
