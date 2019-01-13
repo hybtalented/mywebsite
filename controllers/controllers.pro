@@ -19,3 +19,5 @@ HEADERS += blogcontroller.h
 SOURCES += blogcontroller.cpp
 HEADERS += usercontroller.h
 SOURCES += usercontroller.cpp
+HEADERS += jstoolscontroller.h
+SOURCES += jstoolscontroller.cpp
