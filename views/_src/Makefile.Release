@@ -50,6 +50,7 @@ SOURCES       = blog_createView.cpp \
 		blog_saveView.cpp \
 		blog_shareView.cpp \
 		blog_showView.cpp \
+		jstools_base64transferView.cpp \
 		user_loginView.cpp \
 		user_userregisterView.cpp 
 OBJECTS       = .obj\blog_createView.obj \
@@ -57,6 +58,7 @@ OBJECTS       = .obj\blog_createView.obj \
 		.obj\blog_saveView.obj \
 		.obj\blog_shareView.obj \
 		.obj\blog_showView.obj \
+		.obj\jstools_base64transferView.obj \
 		.obj\user_loginView.obj \
 		.obj\user_userregisterView.obj
 
@@ -65,12 +67,14 @@ DIST          =  blog_createView.moc \
 		blog_saveView.moc \
 		blog_shareView.moc \
 		blog_showView.moc \
+		jstools_base64transferView.moc \
 		user_loginView.moc \
 		user_userregisterView.moc blog_createView.cpp \
 		blog_indexView.cpp \
 		blog_saveView.cpp \
 		blog_shareView.cpp \
 		blog_showView.cpp \
+		jstools_base64transferView.cpp \
 		user_loginView.cpp \
 		user_userregisterView.cpp
 QMAKE_TARGET  = view
@@ -109,20 +113,20 @@ all: Makefile.Release  $(DESTDIR_TARGET)
 
 $(DESTDIR_TARGET):  $(OBJECTS) source.list
 	$(LINKER) $(LFLAGS) /MANIFEST:embed /OUT:$(DESTDIR_TARGET) @<<
-.obj\blog_createView.obj .obj\blog_indexView.obj .obj\blog_saveView.obj .obj\blog_shareView.obj .obj\blog_showView.obj .obj\user_loginView.obj .obj\user_userregisterView.obj
+.obj\blog_createView.obj .obj\blog_indexView.obj .obj\blog_saveView.obj .obj\blog_shareView.obj .obj\blog_showView.obj .obj\jstools_base64transferView.obj .obj\user_loginView.obj .obj\user_userregisterView.obj
 $(LIBS)
 <<
 
 qmake: FORCE
-	@$(QMAKE) -o Makefile.Release _src.pro "CONFIG+=debug"
+	@$(QMAKE) -o Makefile.Release _src.pro "CONFIG+=debug¡°"
 
 qmake_all: FORCE
 
 dist:
-	$(ZIP) view.zip $(SOURCES) $(DIST) ..\..\blogapp_cmake.pro C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\spec_pre.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\common\angle.conf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\common\windows-vulkan.conf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\common\msvc-desktop.conf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\qconfig.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3danimation.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3danimation_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dextras.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3drender.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_accessibility_support_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axbase.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axserver.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_charts.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_charts_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_core.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_edid_support_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_egl_support_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gamepad.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gamepad_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_help.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_location.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_location_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_network.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_networkauth.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_networkauth_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_nfc.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioning.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioningquick.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioningquick_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_scxml.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sensors.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialbus.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialport.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_texttospeech.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_texttospeech_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_theme_support_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_vulkan_support_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webengine.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webengine_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webenginecore.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webenginecore_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webenginecoreheaders_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webenginewidgets.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webenginewidgets_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_websockets.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webview.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webview_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_winextras.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\qt_functions.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\qt_config.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\win32-msvc\qmake.conf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\spec_post.prf ..\..\.qmake.stash C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\exclusive_builds.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\common\msvc-version.conf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\toolchain.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\default_pre.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\win32\default_pre.prf ..\..\appbase.pri source.list C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\resolve_config.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\exclusive_builds_post.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\default_post.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\build_pass.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\precompile_header.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\warn_on.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\qt.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\resources.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\moc.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\qmake_use.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\file_copies.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\win32\windows.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\testcase_targets.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\exceptions.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\yacc.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\lex.prf _src.pro C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\lib\Qt5Qml.prl C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\lib\Qt5Network.prl C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\lib\Qt5Xml.prl C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\lib\Qt5Core.prl    C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\data\dummy.cpp blog_createView.moc blog_indexView.moc blog_saveView.moc blog_shareView.moc blog_showView.moc user_loginView.moc user_userregisterView.moc  blog_createView.cpp blog_indexView.cpp blog_saveView.cpp blog_shareView.cpp blog_showView.cpp user_loginView.cpp user_userregisterView.cpp    
+	$(ZIP) view.zip $(SOURCES) $(DIST) ..\..\blogapp_cmake.pro C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\spec_pre.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\common\angle.conf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\common\windows-vulkan.conf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\common\msvc-desktop.conf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\qconfig.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3danimation.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3danimation_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dextras.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3drender.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_accessibility_support_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axbase.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axserver.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_charts.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_charts_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_core.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_edid_support_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_egl_support_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gamepad.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gamepad_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_help.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_location.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_location_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_network.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_networkauth.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_networkauth_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_nfc.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioning.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioningquick.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioningquick_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_scxml.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sensors.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialbus.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialport.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_texttospeech.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_texttospeech_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_theme_support_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_vulkan_support_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webengine.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webengine_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webenginecore.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webenginecore_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webenginecoreheaders_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webenginewidgets.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webenginewidgets_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_websockets.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webview.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webview_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_winextras.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\qt_functions.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\qt_config.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\win32-msvc\qmake.conf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\spec_post.prf ..\..\.qmake.stash C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\exclusive_builds.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\common\msvc-version.conf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\toolchain.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\default_pre.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\win32\default_pre.prf ..\..\appbase.pri source.list C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\resolve_config.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\exclusive_builds_post.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\default_post.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\build_pass.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\precompile_header.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\warn_on.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\qt.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\resources.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\moc.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\qmake_use.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\file_copies.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\win32\windows.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\testcase_targets.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\exceptions.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\yacc.prf C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\lex.prf _src.pro C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\lib\Qt5Qml.prl C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\lib\Qt5Network.prl C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\lib\Qt5Xml.prl C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\lib\Qt5Core.prl    C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\features\data\dummy.cpp blog_createView.moc blog_indexView.moc blog_saveView.moc blog_shareView.moc blog_showView.moc jstools_base64transferView.moc user_loginView.moc user_userregisterView.moc  blog_createView.cpp blog_indexView.cpp blog_saveView.cpp blog_shareView.cpp blog_showView.cpp jstools_base64transferView.cpp user_loginView.cpp user_userregisterView.cpp    
 
 clean: compiler_clean 
-	-$(DEL_FILE) .obj\blog_createView.obj .obj\blog_indexView.obj .obj\blog_saveView.obj .obj\blog_shareView.obj .obj\blog_showView.obj .obj\user_loginView.obj .obj\user_userregisterView.obj
+	-$(DEL_FILE) .obj\blog_createView.obj .obj\blog_indexView.obj .obj\blog_saveView.obj .obj\blog_shareView.obj .obj\blog_showView.obj .obj\jstools_base64transferView.obj .obj\user_loginView.obj .obj\user_userregisterView.obj
 	-$(DEL_FILE) *.cpp *.moc *.o source.list ..\..\lib\view.exp
 
 distclean: clean 
@@ -155,9 +159,9 @@ compiler_moc_header_make_all:
 compiler_moc_header_clean:
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
-compiler_moc_source_make_all: .obj\blog_createView.moc .obj\blog_indexView.moc .obj\blog_saveView.moc .obj\blog_shareView.moc .obj\blog_showView.moc .obj\user_loginView.moc .obj\user_userregisterView.moc
+compiler_moc_source_make_all: .obj\blog_createView.moc .obj\blog_indexView.moc .obj\blog_saveView.moc .obj\blog_shareView.moc .obj\blog_showView.moc .obj\jstools_base64transferView.moc .obj\user_loginView.moc .obj\user_userregisterView.moc
 compiler_moc_source_clean:
-	-$(DEL_FILE) .obj\blog_createView.moc .obj\blog_indexView.moc .obj\blog_saveView.moc .obj\blog_shareView.moc .obj\blog_showView.moc .obj\user_loginView.moc .obj\user_userregisterView.moc
+	-$(DEL_FILE) .obj\blog_createView.moc .obj\blog_indexView.moc .obj\blog_saveView.moc .obj\blog_shareView.moc .obj\blog_showView.moc .obj\jstools_base64transferView.moc .obj\user_loginView.moc .obj\user_userregisterView.moc
 .obj\blog_createView.moc: C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QtCore \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QtCoreDepends \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qglobal.h \
@@ -441,7 +445,7 @@ compiler_moc_source_clean:
 		blog_createView.cpp \
 		.obj\moc_predefs.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe
-	C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Caiyi/source/repos/cplusplus/mywebsite/views/_src/.obj/moc_predefs.h -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/mkspecs/win32-msvc -IC:/Users/Caiyi/source/repos/cplusplus/mywebsite/views/_src -IC:/Users/Caiyi/source/repos/cplusplus/mywebsite/helpers -IC:/Users/Caiyi/source/repos/cplusplus/mywebsite/models -IC:/TreeFrog/1.22.0/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtQml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtNetwork -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtXml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" blog_createView.cpp -o .obj\blog_createView.moc
+	C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/_src/.obj/moc_predefs.h -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/mkspecs/win32-msvc -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/_src -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/helpers -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/models -IC:/TreeFrog/1.22.0/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtQml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtNetwork -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtXml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" blog_createView.cpp -o .obj\blog_createView.moc
 
 .obj\blog_indexView.moc: C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QtCore \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QtCoreDepends \
@@ -726,7 +730,7 @@ compiler_moc_source_clean:
 		blog_indexView.cpp \
 		.obj\moc_predefs.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe
-	C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Caiyi/source/repos/cplusplus/mywebsite/views/_src/.obj/moc_predefs.h -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/mkspecs/win32-msvc -IC:/Users/Caiyi/source/repos/cplusplus/mywebsite/views/_src -IC:/Users/Caiyi/source/repos/cplusplus/mywebsite/helpers -IC:/Users/Caiyi/source/repos/cplusplus/mywebsite/models -IC:/TreeFrog/1.22.0/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtQml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtNetwork -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtXml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" blog_indexView.cpp -o .obj\blog_indexView.moc
+	C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/_src/.obj/moc_predefs.h -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/mkspecs/win32-msvc -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/_src -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/helpers -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/models -IC:/TreeFrog/1.22.0/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtQml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtNetwork -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtXml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" blog_indexView.cpp -o .obj\blog_indexView.moc
 
 .obj\blog_saveView.moc: C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QtCore \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QtCoreDepends \
@@ -1011,7 +1015,7 @@ compiler_moc_source_clean:
 		blog_saveView.cpp \
 		.obj\moc_predefs.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe
-	C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Caiyi/source/repos/cplusplus/mywebsite/views/_src/.obj/moc_predefs.h -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/mkspecs/win32-msvc -IC:/Users/Caiyi/source/repos/cplusplus/mywebsite/views/_src -IC:/Users/Caiyi/source/repos/cplusplus/mywebsite/helpers -IC:/Users/Caiyi/source/repos/cplusplus/mywebsite/models -IC:/TreeFrog/1.22.0/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtQml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtNetwork -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtXml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" blog_saveView.cpp -o .obj\blog_saveView.moc
+	C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/_src/.obj/moc_predefs.h -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/mkspecs/win32-msvc -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/_src -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/helpers -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/models -IC:/TreeFrog/1.22.0/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtQml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtNetwork -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtXml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" blog_saveView.cpp -o .obj\blog_saveView.moc
 
 .obj\blog_shareView.moc: C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QtCore \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QtCoreDepends \
@@ -1296,7 +1300,7 @@ compiler_moc_source_clean:
 		blog_shareView.cpp \
 		.obj\moc_predefs.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe
-	C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Caiyi/source/repos/cplusplus/mywebsite/views/_src/.obj/moc_predefs.h -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/mkspecs/win32-msvc -IC:/Users/Caiyi/source/repos/cplusplus/mywebsite/views/_src -IC:/Users/Caiyi/source/repos/cplusplus/mywebsite/helpers -IC:/Users/Caiyi/source/repos/cplusplus/mywebsite/models -IC:/TreeFrog/1.22.0/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtQml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtNetwork -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtXml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" blog_shareView.cpp -o .obj\blog_shareView.moc
+	C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/_src/.obj/moc_predefs.h -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/mkspecs/win32-msvc -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/_src -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/helpers -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/models -IC:/TreeFrog/1.22.0/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtQml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtNetwork -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtXml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" blog_shareView.cpp -o .obj\blog_shareView.moc
 
 .obj\blog_showView.moc: C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QtCore \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QtCoreDepends \
@@ -1581,7 +1585,294 @@ compiler_moc_source_clean:
 		blog_showView.cpp \
 		.obj\moc_predefs.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe
-	C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Caiyi/source/repos/cplusplus/mywebsite/views/_src/.obj/moc_predefs.h -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/mkspecs/win32-msvc -IC:/Users/Caiyi/source/repos/cplusplus/mywebsite/views/_src -IC:/Users/Caiyi/source/repos/cplusplus/mywebsite/helpers -IC:/Users/Caiyi/source/repos/cplusplus/mywebsite/models -IC:/TreeFrog/1.22.0/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtQml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtNetwork -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtXml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" blog_showView.cpp -o .obj\blog_showView.moc
+	C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/_src/.obj/moc_predefs.h -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/mkspecs/win32-msvc -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/_src -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/helpers -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/models -IC:/TreeFrog/1.22.0/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtQml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtNetwork -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtXml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" blog_showView.cpp -o .obj\blog_showView.moc
+
+.obj\jstools_base64transferView.moc: C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QtCore \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QtCoreDepends \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qglobal.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qconfig-bootstrapped.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qconfig.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtcore-config.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsystemdetection.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qprocessordetection.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qcompilerdetection.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtypeinfo.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsysinfo.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qlogging.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qflags.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qatomic.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qbasicatomic.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qgenericatomic.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qatomic_msvc.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qglobalstatic.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qmutex.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qnumeric.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qversiontagging.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qabstractanimation.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qobject.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qobjectdefs.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qnamespace.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstring.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qchar.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qbytearray.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qrefcount.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qarraydata.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstringliteral.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstringalgorithms.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstringview.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstringbuilder.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qlist.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qalgorithms.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qiterator.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qhashfunctions.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qpair.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qbytearraylist.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstringlist.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qregexp.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstringmatcher.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qcoreevent.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qscopedpointer.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qmetatype.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qvarlengtharray.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qcontainerfwd.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qobject_impl.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qabstracteventdispatcher.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qeventloop.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qvariant.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qmap.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qdebug.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qhash.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtextstream.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qiodevice.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qlocale.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qshareddata.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qvector.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qpoint.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qset.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qcontiguouscache.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsharedpointer.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qabstractnativeeventfilter.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qabstractproxymodel.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qabstractstate.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qabstracttransition.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qanimationgroup.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qarraydataops.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qarraydatapointer.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qbasictimer.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qbitarray.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qbuffer.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qbytearraymatcher.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qcache.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qcollator.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qcommandlineoption.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qcommandlineparser.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qcoreapplication.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qcryptographichash.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qdatastream.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qdatetime.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qdeadlinetimer.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qelapsedtimer.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qdir.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qfileinfo.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qfile.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qfiledevice.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qdiriterator.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qeasingcurve.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qendian.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qeventtransition.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qexception.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qfactoryinterface.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qfileselector.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QObject \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QStringList \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qfilesystemwatcher.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qfinalstate.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qfuture.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qfutureinterface.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qrunnable.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qresultstore.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qfuturesynchronizer.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qfuturewatcher.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qhistorystate.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qidentityproxymodel.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qisenum.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qjsonarray.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qjsonvalue.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qjsondocument.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qjsonobject.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qlibrary.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qlibraryinfo.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qversionnumber.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qline.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qlinkedlist.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qlockfile.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qloggingcategory.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qmargins.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qmath.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qmessageauthenticationcode.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qmetaobject.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qmimedata.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qmimedatabase.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qmimetype.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qobjectcleanuphandler.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qoperatingsystemversion.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qparallelanimationgroup.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qpauseanimation.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qplugin.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qpointer.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qpluginloader.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qprocess.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qpropertyanimation.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qvariantanimation.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qqueue.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qrandom.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qreadwritelock.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qrect.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsize.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qregularexpression.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qresource.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsavefile.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qscopedvaluerollback.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsemaphore.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsequentialanimationgroup.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsettings.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsharedmemory.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsignalmapper.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsignaltransition.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsocketnotifier.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsortfilterproxymodel.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstack.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstandardpaths.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstate.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstatemachine.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstorageinfo.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstringlistmodel.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsystemsemaphore.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtemporarydir.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtemporaryfile.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtextboundaryfinder.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtextcodec.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qthread.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qthreadpool.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qthreadstorage.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtimeline.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtimer.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtimezone.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtranslator.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtypetraits.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qurl.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qurlquery.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\quuid.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qwaitcondition.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qwineventnotifier.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qxmlstream.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtcoreversion.h \
+		C:\TreeFrog\1.22.0\include\TreeFrogView \
+		C:\TreeFrog\1.22.0\include\tactionview.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QTextStream \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QVariant \
+		C:\TreeFrog\1.22.0\include\TGlobal \
+		C:\TreeFrog\1.22.0\include\tglobal.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QtGlobal \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QMetaType \
+		C:\TreeFrog\1.22.0\include\TfNamespace \
+		C:\TreeFrog\1.22.0\include\tfnamespace.h \
+		C:\TreeFrog\1.22.0\include\TDebug \
+		C:\TreeFrog\1.22.0\include\tdebug.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QString \
+		C:\TreeFrog\1.22.0\include\TWebApplication \
+		C:\TreeFrog\1.22.0\include\twebapplication.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QCoreApplication \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QVector \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QSettings \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QBasicTimer \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\win32-msvc\qplatformdefs.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\common\c89\qplatformdefs.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QAbstractNativeEventFilter \
+		C:\TreeFrog\1.22.0\include\tfexception.h \
+		C:\TreeFrog\1.22.0\include\TActionHelper \
+		C:\TreeFrog\1.22.0\include\tactionhelper.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QByteArray \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QUrl \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QPair \
+		C:\TreeFrog\1.22.0\include\TViewHelper \
+		C:\TreeFrog\1.22.0\include\tviewhelper.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QPoint \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QSize \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QFileInfo \
+		C:\TreeFrog\1.22.0\include\THtmlAttribute \
+		C:\TreeFrog\1.22.0\include\thtmlattribute.h \
+		C:\TreeFrog\1.22.0\include\THttpRequest \
+		C:\TreeFrog\1.22.0\include\thttprequest.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QList \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtNetwork\QHostAddress \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtNetwork\qhostaddress.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtNetwork\qtnetworkglobal.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtNetwork\qtnetwork-config.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtNetwork\qabstractsocket.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QSharedData \
+		C:\TreeFrog\1.22.0\include\TMultipartFormData \
+		C:\TreeFrog\1.22.0\include\tmultipartformdata.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QMap \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QFile \
+		C:\TreeFrog\1.22.0\include\TCookieJar \
+		C:\TreeFrog\1.22.0\include\tcookiejar.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtNetwork\QNetworkCookie \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtNetwork\qnetworkcookie.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QSharedDataPointer \
+		C:\TreeFrog\1.22.0\include\THttpRequestHeader \
+		C:\TreeFrog\1.22.0\include\thttprequestheader.h \
+		C:\TreeFrog\1.22.0\include\THttpHeader \
+		C:\TreeFrog\1.22.0\include\thttpheader.h \
+		C:\TreeFrog\1.22.0\include\TInternetMessageHeader \
+		C:\TreeFrog\1.22.0\include\tinternetmessageheader.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QDateTime \
+		C:\TreeFrog\1.22.0\include\TCookie \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QJsonDocument \
+		C:\TreeFrog\1.22.0\include\TPrototypeAjaxHelper \
+		C:\TreeFrog\1.22.0\include\tprototypeajaxhelper.h \
+		C:\TreeFrog\1.22.0\include\TOption \
+		C:\TreeFrog\1.22.0\include\toption.h \
+		C:\TreeFrog\1.22.0\include\TJavaScriptObject \
+		C:\TreeFrog\1.22.0\include\tjavascriptobject.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QLatin1String \
+		C:\TreeFrog\1.22.0\include\THttpUtility \
+		C:\TreeFrog\1.22.0\include\thttputility.h \
+		C:\TreeFrog\1.22.0\include\tactioncontroller.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtXml\QDomDocument \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtXml\qdom.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtXml\qtxmlglobal.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtXml\qtxml-config.h \
+		C:\TreeFrog\1.22.0\include\TAbstractController \
+		C:\TreeFrog\1.22.0\include\tabstractcontroller.h \
+		C:\TreeFrog\1.22.0\include\THttpResponse \
+		C:\TreeFrog\1.22.0\include\thttpresponse.h \
+		C:\TreeFrog\1.22.0\include\THttpResponseHeader \
+		C:\TreeFrog\1.22.0\include\thttpresponseheader.h \
+		C:\TreeFrog\1.22.0\include\TSession \
+		C:\TreeFrog\1.22.0\include\tsession.h \
+		C:\TreeFrog\1.22.0\include\TAccessValidator \
+		C:\TreeFrog\1.22.0\include\taccessvalidator.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QJsonObject \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QJsonArray \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QJsonValue \
+		C:\TreeFrog\1.22.0\include\thtmlparser.h \
+		..\..\models\user.h \
+		C:\TreeFrog\1.22.0\include\TAbstractUser \
+		C:\TreeFrog\1.22.0\include\tabstractuser.h \
+		C:\TreeFrog\1.22.0\include\TAbstractModel \
+		C:\TreeFrog\1.22.0\include\tabstractmodel.h \
+		..\..\helpers\applicationhelper.h \
+		jstools_base64transferView.cpp \
+		.obj\moc_predefs.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe
+	C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/_src/.obj/moc_predefs.h -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/mkspecs/win32-msvc -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/_src -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/helpers -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/models -IC:/TreeFrog/1.22.0/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtQml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtNetwork -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtXml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" jstools_base64transferView.cpp -o .obj\jstools_base64transferView.moc
 
 .obj\user_loginView.moc: C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QtCore \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QtCoreDepends \
@@ -1868,7 +2159,7 @@ compiler_moc_source_clean:
 		user_loginView.cpp \
 		.obj\moc_predefs.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe
-	C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Caiyi/source/repos/cplusplus/mywebsite/views/_src/.obj/moc_predefs.h -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/mkspecs/win32-msvc -IC:/Users/Caiyi/source/repos/cplusplus/mywebsite/views/_src -IC:/Users/Caiyi/source/repos/cplusplus/mywebsite/helpers -IC:/Users/Caiyi/source/repos/cplusplus/mywebsite/models -IC:/TreeFrog/1.22.0/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtQml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtNetwork -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtXml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" user_loginView.cpp -o .obj\user_loginView.moc
+	C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/_src/.obj/moc_predefs.h -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/mkspecs/win32-msvc -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/_src -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/helpers -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/models -IC:/TreeFrog/1.22.0/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtQml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtNetwork -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtXml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" user_loginView.cpp -o .obj\user_loginView.moc
 
 .obj\user_userregisterView.moc: C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QtCore \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QtCoreDepends \
@@ -2155,7 +2446,7 @@ compiler_moc_source_clean:
 		user_userregisterView.cpp \
 		.obj\moc_predefs.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe
-	C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Caiyi/source/repos/cplusplus/mywebsite/views/_src/.obj/moc_predefs.h -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/mkspecs/win32-msvc -IC:/Users/Caiyi/source/repos/cplusplus/mywebsite/views/_src -IC:/Users/Caiyi/source/repos/cplusplus/mywebsite/helpers -IC:/Users/Caiyi/source/repos/cplusplus/mywebsite/models -IC:/TreeFrog/1.22.0/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtQml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtNetwork -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtXml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" user_userregisterView.cpp -o .obj\user_userregisterView.moc
+	C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/_src/.obj/moc_predefs.h -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/mkspecs/win32-msvc -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/views/_src -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/helpers -IC:/Users/Caiyi/source/repos/cplusplus/startTreeFrog/blogapp_cmake/models -IC:/TreeFrog/1.22.0/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtQml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtNetwork -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtXml -IC:/Qt/Qt5.11.2/5.11.2/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" user_userregisterView.cpp -o .obj\user_userregisterView.moc
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -3579,6 +3870,290 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_source_clean
 		..\..\helpers\applicationhelper.h \
 		.obj\blog_showView.moc
 
+.obj\jstools_base64transferView.obj: jstools_base64transferView.cpp C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QtCore \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QtCoreDepends \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qglobal.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qconfig-bootstrapped.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qconfig.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtcore-config.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsystemdetection.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qprocessordetection.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qcompilerdetection.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtypeinfo.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsysinfo.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qlogging.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qflags.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qatomic.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qbasicatomic.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qgenericatomic.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qatomic_msvc.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qglobalstatic.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qmutex.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qnumeric.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qversiontagging.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qabstractanimation.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qobject.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qobjectdefs.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qnamespace.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstring.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qchar.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qbytearray.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qrefcount.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qarraydata.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstringliteral.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstringalgorithms.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstringview.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstringbuilder.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qlist.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qalgorithms.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qiterator.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qhashfunctions.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qpair.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qbytearraylist.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstringlist.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qregexp.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstringmatcher.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qcoreevent.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qscopedpointer.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qmetatype.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qvarlengtharray.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qcontainerfwd.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qobject_impl.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qabstracteventdispatcher.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qeventloop.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qvariant.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qmap.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qdebug.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qhash.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtextstream.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qiodevice.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qlocale.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qshareddata.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qvector.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qpoint.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qset.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qcontiguouscache.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsharedpointer.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qabstractnativeeventfilter.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qabstractproxymodel.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qabstractstate.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qabstracttransition.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qanimationgroup.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qarraydataops.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qarraydatapointer.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qbasictimer.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qbitarray.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qbuffer.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qbytearraymatcher.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qcache.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qcollator.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qcommandlineoption.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qcommandlineparser.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qcoreapplication.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qcryptographichash.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qdatastream.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qdatetime.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qdeadlinetimer.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qelapsedtimer.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qdir.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qfileinfo.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qfile.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qfiledevice.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qdiriterator.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qeasingcurve.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qendian.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qeventtransition.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qexception.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qfactoryinterface.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qfileselector.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QObject \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QStringList \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qfilesystemwatcher.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qfinalstate.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qfuture.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qfutureinterface.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qrunnable.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qresultstore.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qfuturesynchronizer.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qfuturewatcher.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qhistorystate.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qidentityproxymodel.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qisenum.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qjsonarray.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qjsonvalue.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qjsondocument.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qjsonobject.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qlibrary.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qlibraryinfo.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qversionnumber.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qline.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qlinkedlist.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qlockfile.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qloggingcategory.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qmargins.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qmath.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qmessageauthenticationcode.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qmetaobject.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qmimedata.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qmimedatabase.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qmimetype.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qobjectcleanuphandler.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qoperatingsystemversion.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qparallelanimationgroup.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qpauseanimation.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qplugin.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qpointer.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qpluginloader.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qprocess.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qpropertyanimation.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qvariantanimation.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qqueue.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qrandom.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qreadwritelock.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qrect.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsize.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qregularexpression.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qresource.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsavefile.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qscopedvaluerollback.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsemaphore.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsequentialanimationgroup.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsettings.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsharedmemory.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsignalmapper.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsignaltransition.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsocketnotifier.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsortfilterproxymodel.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstack.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstandardpaths.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstate.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstatemachine.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstorageinfo.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qstringlistmodel.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qsystemsemaphore.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtemporarydir.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtemporaryfile.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtextboundaryfinder.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtextcodec.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qthread.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qthreadpool.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qthreadstorage.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtimeline.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtimer.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtimezone.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtranslator.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtypetraits.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qurl.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qurlquery.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\quuid.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qwaitcondition.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qwineventnotifier.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qxmlstream.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qtcoreversion.h \
+		C:\TreeFrog\1.22.0\include\TreeFrogView \
+		C:\TreeFrog\1.22.0\include\tactionview.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QTextStream \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QVariant \
+		C:\TreeFrog\1.22.0\include\TGlobal \
+		C:\TreeFrog\1.22.0\include\tglobal.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QtGlobal \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QMetaType \
+		C:\TreeFrog\1.22.0\include\TfNamespace \
+		C:\TreeFrog\1.22.0\include\tfnamespace.h \
+		C:\TreeFrog\1.22.0\include\TDebug \
+		C:\TreeFrog\1.22.0\include\tdebug.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QString \
+		C:\TreeFrog\1.22.0\include\TWebApplication \
+		C:\TreeFrog\1.22.0\include\twebapplication.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QCoreApplication \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QVector \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QSettings \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QBasicTimer \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\win32-msvc\qplatformdefs.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\common\c89\qplatformdefs.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QAbstractNativeEventFilter \
+		C:\TreeFrog\1.22.0\include\tfexception.h \
+		C:\TreeFrog\1.22.0\include\TActionHelper \
+		C:\TreeFrog\1.22.0\include\tactionhelper.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QByteArray \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QUrl \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QPair \
+		C:\TreeFrog\1.22.0\include\TViewHelper \
+		C:\TreeFrog\1.22.0\include\tviewhelper.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QPoint \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QSize \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QFileInfo \
+		C:\TreeFrog\1.22.0\include\THtmlAttribute \
+		C:\TreeFrog\1.22.0\include\thtmlattribute.h \
+		C:\TreeFrog\1.22.0\include\THttpRequest \
+		C:\TreeFrog\1.22.0\include\thttprequest.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QList \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtNetwork\QHostAddress \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtNetwork\qhostaddress.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtNetwork\qtnetworkglobal.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtNetwork\qtnetwork-config.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtNetwork\qabstractsocket.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QSharedData \
+		C:\TreeFrog\1.22.0\include\TMultipartFormData \
+		C:\TreeFrog\1.22.0\include\tmultipartformdata.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QMap \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QFile \
+		C:\TreeFrog\1.22.0\include\TCookieJar \
+		C:\TreeFrog\1.22.0\include\tcookiejar.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtNetwork\QNetworkCookie \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtNetwork\qnetworkcookie.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QSharedDataPointer \
+		C:\TreeFrog\1.22.0\include\THttpRequestHeader \
+		C:\TreeFrog\1.22.0\include\thttprequestheader.h \
+		C:\TreeFrog\1.22.0\include\THttpHeader \
+		C:\TreeFrog\1.22.0\include\thttpheader.h \
+		C:\TreeFrog\1.22.0\include\TInternetMessageHeader \
+		C:\TreeFrog\1.22.0\include\tinternetmessageheader.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QDateTime \
+		C:\TreeFrog\1.22.0\include\TCookie \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QJsonDocument \
+		C:\TreeFrog\1.22.0\include\TPrototypeAjaxHelper \
+		C:\TreeFrog\1.22.0\include\tprototypeajaxhelper.h \
+		C:\TreeFrog\1.22.0\include\TOption \
+		C:\TreeFrog\1.22.0\include\toption.h \
+		C:\TreeFrog\1.22.0\include\TJavaScriptObject \
+		C:\TreeFrog\1.22.0\include\tjavascriptobject.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QLatin1String \
+		C:\TreeFrog\1.22.0\include\THttpUtility \
+		C:\TreeFrog\1.22.0\include\thttputility.h \
+		C:\TreeFrog\1.22.0\include\tactioncontroller.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtXml\QDomDocument \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtXml\qdom.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtXml\qtxmlglobal.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtXml\qtxml-config.h \
+		C:\TreeFrog\1.22.0\include\TAbstractController \
+		C:\TreeFrog\1.22.0\include\tabstractcontroller.h \
+		C:\TreeFrog\1.22.0\include\THttpResponse \
+		C:\TreeFrog\1.22.0\include\thttpresponse.h \
+		C:\TreeFrog\1.22.0\include\THttpResponseHeader \
+		C:\TreeFrog\1.22.0\include\thttpresponseheader.h \
+		C:\TreeFrog\1.22.0\include\TSession \
+		C:\TreeFrog\1.22.0\include\tsession.h \
+		C:\TreeFrog\1.22.0\include\TAccessValidator \
+		C:\TreeFrog\1.22.0\include\taccessvalidator.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QJsonObject \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QJsonArray \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QJsonValue \
+		C:\TreeFrog\1.22.0\include\thtmlparser.h \
+		..\..\models\user.h \
+		C:\TreeFrog\1.22.0\include\TAbstractUser \
+		C:\TreeFrog\1.22.0\include\tabstractuser.h \
+		C:\TreeFrog\1.22.0\include\TAbstractModel \
+		C:\TreeFrog\1.22.0\include\tabstractmodel.h \
+		..\..\helpers\applicationhelper.h \
+		.obj\jstools_base64transferView.moc
+
 .obj\user_loginView.obj: user_loginView.cpp C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QtCore \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QtCoreDepends \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qglobal.h \
@@ -4150,38 +4725,42 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_source_clean
 ####### Install
 
 install_views: first FORCE
-	@if not exist C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy mkdir C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy & if not exist C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy exit 1
-	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\mywebsite\views\blog\create.html C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\create.html
-	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\mywebsite\views\blog\create.otm C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\create.otm
-	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\mywebsite\views\blog\index.html C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\index.html
-	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\mywebsite\views\blog\index.otm C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\index.otm
-	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\mywebsite\views\blog\save.html C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\save.html
-	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\mywebsite\views\blog\save.otm C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\save.otm
-	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\mywebsite\views\blog\share.html C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\share.html
-	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\mywebsite\views\blog\share.otm C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\share.otm
-	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\mywebsite\views\blog\show.html C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\show.html
-	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\mywebsite\views\blog\show.otm C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\show.otm
-	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\mywebsite\views\user\login.html C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\login.html
-	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\mywebsite\views\user\login.otm C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\login.otm
-	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\mywebsite\views\user\userregister.html C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\userregister.html
-	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\mywebsite\views\user\userregister.otm C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\userregister.otm
+	@if not exist C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy mkdir C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy & if not exist C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy exit 1
+	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\blog\create.html C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\create.html
+	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\blog\create.otm C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\create.otm
+	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\blog\index.html C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\index.html
+	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\blog\index.otm C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\index.otm
+	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\blog\save.html C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\save.html
+	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\blog\save.otm C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\save.otm
+	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\blog\share.html C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\share.html
+	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\blog\share.otm C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\share.otm
+	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\blog\show.html C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\show.html
+	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\blog\show.otm C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\show.otm
+	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\jstools\base64transfer.html C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\base64transfer.html
+	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\jstools\base64transfer.otm C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\base64transfer.otm
+	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\user\login.html C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\login.html
+	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\user\login.otm C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\login.otm
+	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\user\userregister.html C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\userregister.html
+	-$(QINSTALL) C:\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\user\userregister.otm C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\userregister.otm
 
 uninstall_views: FORCE
-	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\userregister.otm
-	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\userregister.html
-	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\login.otm
-	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\login.html
-	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\show.otm
-	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\show.html
-	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\share.otm
-	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\share.html
-	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\save.otm
-	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\save.html
-	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\index.otm
-	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\index.html
-	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\create.otm
-	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy\create.html
-	-$(DEL_DIR) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\mywebsite\views\_src\.dummy 
+	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\userregister.otm
+	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\userregister.html
+	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\login.otm
+	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\login.html
+	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\base64transfer.otm
+	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\base64transfer.html
+	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\show.otm
+	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\show.html
+	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\share.otm
+	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\share.html
+	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\save.otm
+	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\save.html
+	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\index.otm
+	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\index.html
+	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\create.otm
+	-$(DEL_FILE) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy\create.html
+	-$(DEL_DIR) C:$(INSTALL_ROOT)\Users\Caiyi\source\repos\cplusplus\startTreeFrog\blogapp_cmake\views\_src\.dummy 
 
 
 install: install_views  FORCE

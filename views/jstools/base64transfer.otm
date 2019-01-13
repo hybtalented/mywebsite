@@ -1,0 +1,10 @@
+#include "user.h"
+#pragma execution_character_set("utf-8") 
+
+#init 
+tfetch(QString,notice) 
+
+@head_title ~= controller()->name()+" "+controller()->activeAction()
+
+@entry_login |== formTag(urla("base64transfer"))
+
