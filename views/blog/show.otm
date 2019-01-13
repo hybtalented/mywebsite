@@ -24,3 +24,5 @@
 @link_to_edit |== linkTo("编辑", urla("save", blog.id()))
 
 @link_to_index |== linkTo("后退", urla("index"))
+
+@link_to_share |== linkTo("分享", urla("share",blog.id()))

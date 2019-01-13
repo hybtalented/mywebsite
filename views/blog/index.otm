@@ -12,7 +12,7 @@ for (const auto &i : blogList) {
 
 @title ~= i.title()
 
-@body ~= i.body()
+@body ~== i.body().split("\n").mid(0,10).join("<br>")
 
 @link_to_entry |== linkTo("创建新的博客!", urla("create"))
 
@@ -20,4 +20,4 @@ for (const auto &i : blogList) {
 
 @link_to_edit |== linkTo("编辑", urla("save", i.id()))
 
-@link_to_remove |== linkTo("删除", urla("remove", i.id()), Tf::Post, "confirm('Are you sure?')")
+@link_to_remove |== linkTo("删除", urla("remove", i.id()), Tf::Post, "confirm('确定要删除吗?')")

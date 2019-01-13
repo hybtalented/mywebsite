@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -7,10 +7,11 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css"  >
+    
     <title>主页</title>
   </head>
   <body>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark bd-navbar" role="navigation">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark bd-navbar animated" role="navigation">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
           </button>
@@ -28,36 +29,87 @@
                       <a class="dropdown-item" href="/doc/qmllive/qmllive/qmllive-index.html"> QMLLive文档</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="http://ai.baidu.com/docs#/Face-Detect-V3/top">百度人脸识别文档</a>
+                      <a class="dropdown-item" href="./modules/editor.md/examples/index.html">EditMD文档</a>
+                      <a href="./doc/cef3doc/Home.md" class="dropdown-item">cef3文档</a>
+                      <a href="https://docs.docker.com/get-started/" class="dropdown-item">Docker——容器化</a>
+                      <a href="./doc/opencv/4.0.0/index.html" class="dropdown-item">OPENCV——图像处理</a>
+                      <a href="http://www.doxygen.nl/manual/index.html" class="dropdown-item">Doxygen——文档自动生成</a>
+                      <a href="./doc/ffmpeg/ffmpeg-all.html" class="dropdown-item">FFMPEG库</a>
+                      <a href="./doc/jspdfdoc/index.html" class="dropdown-item">jspdf</a>
                     </div>
-                   </li>
+                  </li>
+                  <li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" id="mydocdropdown"  href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    我的文档
+						</a>
+                    <div class="dropdown-menu" aria-labelledby="mydocdropdown">
+                      <a href="./mydoc/sqlbrowser/index.html" class="dropdown-item">Doxygen——sqlbrowser文档</a>
+                    </div>
+				</li>
+                  <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="repodropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 仓库</a>
+                    <div class="dropdown-menu" aria-labelledby="repodropdown">
+                      <a href="https://github.com/hybtalented/" class="dropdown-item"> github</a>
+                      <a href="https://bitbucket.org/heyoubiao/" class="dropdown-item">Bitbucket</a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="tooldropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">工具</a>
+                    <div class="dropdown-menu" aria-labelledby="tooldropdown">
+                      <a href="./modules/editor.md/examples/full.html" class="dropdown-item">MarkDown编辑工具</a>
+                      <a href="./modules/flowchart.js/example/index.html" class="dropdown-item">flowChart 流程图工具</a>
+                      <a href="http://47.110.71.66:5601/" class="dropdown-item">日志管理工具</a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="logdropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">日志</a>
+                    <div class="dropdown-menu" aria-labelledby="logdropdown">
+                      <a href="http://47.110.71.66:5601/app/kibana#/visualize/edit/3dd02630-1488-11e9-a4e3-efeb2239b22e?embed=true&_g=(refreshInterval%3A(pause%3A!f%2Cvalue%3A10000)%2Ctime%3A(from%3Anow-4h%2Cmode%3Aquick%2Cto%3Anow))" class="dropdown-item">treefrog监控日志</a>
+                    </div>
+                  </li>
               </ul>
           </div>
-           <ul class="navbar-nav mr-auto float-right">
+          <form action="" target="_blank" :w
+          id="iframe-form" class="form-inline my-2 my-lg-0">
+            <span class="navbar-text"> 无法打开？点击按钮跳转。</span>
+            <button class="btn-outline-success" type="submit">跳转</button>
+          </form>
+            <ul class="navbar-nav mr-auto float-right">
               <li class="nav-item" id="i_login"> <a href="/User/login" class="nav-link"><span class="glyphicon glyphicon-user"></span> 登录 </a> </li>
               <li class="nav-item" id="i_register"> <a href="/User/userregister" class="nav-link"><span class="glyphicon glyphicon-log-in"></span> 注册</a></li>
           </ul>
       </nav>
-      <div class="embed-responsive col-12 embed-responsive-21by9 embed-responsive-4by3" width="100%">
-         <iframe class="embed-responsive-item " id="main-page" src="index-page.html"  onload="this.height=this.contentWindow.document.documentElement.scrollHeight" frameborder="0"></iframe>
-      </div>
-
+         <iframe  id="main-page" src="index-page.html"  onload="changeFrameHeight()" width="100%" frameborder="0"></iframe>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="/js/bootstrap/jquery-3.3.1.min.js"  ></script>
     <script src="/js/bootstrap/popper.min.js"  ></script>
     <script src="/js/bootstrap/bootstrap.min.js"  ></script>
     <script>
+    function changeFrameHeight(){
+      var ifm= document.getElementById("main-page"); 
+      ifm.height=window.innerHeight-$(".navbar")[0].offsetHeight;
+    }
+    window.onresize=function(){  
+      changeFrameHeight();  
+    } 
       $(document).ready(function(){
            $("[href]").click(function(){
-             if($(this).hasClass("nav-item")){
-               $(".nav-item").removeClass("active");
-               $(this).addClass("active");
-             }
-          if(!$(this).hasClass("dropdown-toggle")){
-            $(".dropdown-menu").removeClass("show");
-            var mainpage= document.getElementById("main-page");
-            mainpage.src=this.href;
-            return false;
+            if($(this).hasClass("nav-item")){
+              $(".nav-item").removeClass("active");
+              $(this).addClass("active");
+            }
+            if(!$(this).hasClass("dropdown-toggle")){
+              $(".collapse").removeClass("show");
+              $(".dropdown-menu").removeClass("show");
+              var mainpage= document.getElementById("main-page");
+              if(this.href.endsWith(".md")){
+                mainpage.src="readmd.html"+"?src="+this.href;
+              }else{
+                mainpage.src=this.href;
+              }
+              $("#iframe-form")[0].action=mainpage.src;
+              return false;
           }
         });
     });

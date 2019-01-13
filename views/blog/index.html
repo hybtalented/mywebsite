@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
   <meta charset="UTF-8">
@@ -16,22 +16,24 @@
 
 </div>
 <br />
-<div class="table-responsive"></div>
-<table border="1" cellpadding="5" class="table table-hover" style="border: 1px #d0d0d0 solid; border-collapse: collapse;">
+<div class="table-responsive">
+<table border="1" cellpadding="10" class="table table-hover table-bordered table-striped" style="word-break:break-all;word-wrap:break-word;border: 1px #d0d0d0 solid; border-collapse: collapse;">
   <thead class="thead-dark">
-    <tr>
-      <th  scope="col">用户ID</th>
-      <th  scope="col">标题</th>
-      <th  scope="col">内容</th>
-      <th  scope="col">操作</th>
+    <tr class="row mx-0">
+      <th scope="col" class="col-1">博客序号</th>
+      <th scope="col" class="col-2">标题</th>
+      <th scope="col" class="col-7">内容</th>
+      <th scope="col" class="col-2">操作</th>
     </tr>
   </thead>
   <tbody>
-    <tr data-tf="@for" >
-      <td  data-tf="@id"></td>
-      <td  data-tf="@title"></td>
-      <td  data-tf="@body"></td>
-      <td >
+    <tr data-tf="@for" class="row mx-0 bg-light">
+      <th  data-tf="@id"  class="col-1"></th>
+      <td  data-tf="@title" class="col-2"></td>
+      <td  class="col-7">
+		  <div data-tf="@body"></div>
+	  </td>
+      <td class="col-2">
         <div class="btn-group">
           <a href="#" data-tf="@link_to_show" class="btn btn-primary">详情</a>
           <a href="#" data-tf="@link_to_edit" class="btn btn-success">编辑</a>
@@ -41,6 +43,7 @@
     </tr>
   </tbody>
 </table>
+</div>
     <script src="/js/bootstrap/jquery-3.3.1.min.js"  ></script>
     <script src="/js/bootstrap/popper.min.js"  ></script>
     <script src="/js//bootstrap/bootstrap.min.js"  ></script>

@@ -15,6 +15,12 @@ void BlogController::show(const QString &id)
     texport(blog);
     render();
 }
+void BlogController::share(const QString &id)
+{
+    auto blog = Blog::get(id.toInt());
+    texport(blog);
+    render();
+}
 
 void BlogController::create()
 {

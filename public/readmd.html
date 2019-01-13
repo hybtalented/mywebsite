@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./modules/editor.md/css/editormd.preview.min.css" />
+    <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+    <div class="container-overview" >
+        <div class="row">
+            <div id="sidebar" class="col-lg-4 col-md-2 col-sm-3">
+                <div class="sidebar-brand text-left glyphicon-text-size form-control-plaintext text-primary"> <i class="fas fa-font-awesome" style="font-size:36px"> 目录</i></div>
+                <div class="bg-light text-lg-left text-info markdown-toc editormd-preview-container sidebar-content" id="toc_container"></div>
+            </div>
+            <div class="col-lg-8 col-md-10 col-sm-9" id="remote-md-doc-view">
+                <textarea style="display:none;" name="remote-md-doc">###Hello world!</textarea>     
+            </div>
+        </div>
+    </div>
+<script src="./js/bootstrap/jquery-3.3.1.min.js"></script>
+<script src="./modules/editor.md/lib/marked.min.js"></script>
+<script src="./modules/editor.md/lib/prettify.min.js"></script>
+<script src="./modules/editor.md/lib/raphael.min.js"></script>
+<script src="./modules/editor.md/lib/underscore.min.js"></script>
+<script src="./modules/editor.md/lib/sequence-diagram.min.js"></script>
+<script src="./modules/editor.md/lib/flowchart.min.js"></script>
+<script src="./modules/editor.md/lib/jquery.flowchart.min.js"></script>
+<script src="./modules/editor.md/editormd.min.js"></script>
+<script type="text/javascript">
+    function getRequest(){
+        var url=window.location.search;
+        var theRequest={}
+        if(url.indexOf('?')!=-1){
+            var str=url.substr(1);
+            var pairs = str.split('&');
+            for(var i = 0 ; i< pairs.length;++i){
+                var pair=pairs[i].split('=');
+                theRequest[pair[0]]=unescape( pair[1]);
+            }
+        }
+        return theRequest;
+    }
+    var docbase;
+    function getMD(src){
+         $("#remote-md-doc-view").empty();
+         $.get(src, function(markdown) {
+			    testEditormdView = editormd.markdownToHTML("remote-md-doc-view", {
+                markdown        : markdown ,//+ "\r\n" + $("#append-test").text(),
+                //htmlDecode      : true,       // 开启 HTML 标签解析，为了安全性，默认不开启
+                htmlDecode      : "style,script,iframe",  // you can filter tags decode
+                //toc             : false,
+                tocm            : true,    // Using [TOCM]
+                atLink          : true,
+                tocContainer    : "#toc_container", // 自定义 ToC 容器层
+                tocDropdown: false,
+                //gfm             : false,
+                //tocDropdown     : true,
+                // markdownSourceCode : true, // 是否保留 Markdown 源码，即是否删除保存源码的 Textarea 标签
+                emoji           : true,
+                taskList        : true,
+                tex             : true,  // 默认不解析
+                flowChart       : true,  // 默认不解析
+                sequenceDiagram : true,  // 默认不解析
+            });
+            $("#remote-md-doc-view [href]").click(function(){
+                var b =this.href.match(window.location.host);
+                if( b){
+                    getMD(docbase+'/'+this.href.substr(b.index + window.location.host.length+1));
+                    return false;
+                }
+                return true;
+            });
+        });
+    }
+    $(function() {
+        var request=getRequest();
+        docbase = request.src.substr(0,request.src.lastIndexOf("/"));
+        editormd.urls.atLinkBase =docbase+"/"; 
+        getMD(request["src"]);
+    });
+</script>
+</body>
+</html>
