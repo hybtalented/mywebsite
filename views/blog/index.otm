@@ -12,7 +12,7 @@ for (const auto &i : blogList) {
 
 @title ~= i.title()
 
-@body ~= i.body()
+@body ~== i.body().split("\n").mid(0,10).join("<br>")
 
 @link_to_entry |== linkTo("创建新的博客!", urla("create"))
 
