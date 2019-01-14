@@ -17,7 +17,7 @@ void JstoolsController::base64transfer()
 				auto base64 = obj["base64"].toString();
 				auto filename = obj["filename"].toString();
 				auto fileobj = QByteArray::fromBase64(base64.toLocal8Bit(), QByteArray::Base64Option::Base64Encoding);
-				response.header().setContentType("multipart/form-data");
+				response.header().setContentType(u8"multipart/form-data");
 				response.header().setRawHeader("Content-Disposition", QString(u8"attachment; filename=\"%1\"").arg(filename).toUtf8());
 				response.setBody(fileobj);
 			}
