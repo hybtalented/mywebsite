@@ -4,6 +4,8 @@
 #init 
 tfetch(QString,notice) 
 
+@notice ~= notice;
+
 @head_title ~= controller()->name()+" "+controller()->activeAction()
 
 @entry_login |== formTag(urla("base64transfer"))
