@@ -119,7 +119,7 @@ $(LIBS)
 <<
 
 qmake: FORCE
-	@$(QMAKE) -o Makefile.Debug models.pro "CONFIG+=debug¡°"
+	@$(QMAKE) -o Makefile.Debug models.pro "CONFIG+=debug"
 
 qmake_all: FORCE
 

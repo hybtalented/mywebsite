@@ -2,7 +2,8 @@
 #pragma execution_character_set("utf-8") 
 
 #init 
-tfetch(QString,notice) 
+tfetch(QString,notice);
+tfetch(QString,json)
 
 @notice ~= notice;
 

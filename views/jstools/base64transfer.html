@@ -17,13 +17,48 @@
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
-    <form data-tf="@entry_login" method="post">
+    <div
+      class="btn-group btn-group-lg type-group"
+      id="tool-group"
+      role="group"
+      aria-label="javascript工具类型"
+    >
+      <button class="btn-primary btn" type="button" name="base64-tool">
+        base64相关
+      </button>
+      <button class="btn-light btn" type="button" name="json-tool">
+        json相关
+      </button>
+    </div>
+    <form action="" data-tf="@entry_login" method="post" name="json-tool">
+      <div class="form-group">
+        <label for="jsonOperType"> 请选择转换类型 </label>
+        <select name="jstools[type]" class="form-control" id="jsonOperType">
+          <option value="jsonformat" selected = "selected"> json 格式优化</option>
+          <option value="jsoncompress">json 压缩</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="jsontext">json&nbsp;文本</label>
+        <textarea
+         wrap="off"
+          name="jstools[jsontext]"
+          id="jsontext"
+          cols="100"
+          rows="20"
+          class="form-control adjust-item"
+           style="overflow:auto;"
+        ></textarea>
+      </div>
+      <input id="jsonsubmit" type="submit" class="btn btn-primary adjust-item" value="提交" />
+    </form>
+    <form data-tf="@entry_login" method="post" name="base64-tool">
       <div class="form-group">
         <label for="transfertype">方法: </label>
         <select class="form-control" name="jstools[type]" id="transfertype">
           <option value="download">base64->文件</option>
           <option value="tobase64">文件-->base64</option>
-          <option value="texttobase64">base64加密</option>
+          <option value="texttobase64" selected = "selected">base64加密</option>
           <option value="base64totext">base64解密</option>
         </select>
       </div>
@@ -43,23 +78,41 @@
         />
       </div>
       <div class="form-group">
-          <label for="inputtext">待加密文本：</label>
-          <textarea name="" id="inputtext" cols="100" rows="20" class="form-control adjust-item" ></textarea>
+        <label for="inputtext">待加密文本：</label>
+        <textarea
+         wrap="off"
+          name=""
+          id="inputtext"
+          cols="100"
+          rows="20"
+          class="form-control adjust-item"
+           style="overflow:auto;"
+        ></textarea>
       </div>
       <div class="form-group">
         <label for="InputUsename1 adjust-item">base64文本: </label>
         <textarea
+         wrap="off"
           id="inputUseName1"
           class="form-control"
           rows="20"
           cols="100"
           name="jstools[base64]"
           placeholder="请输入base64文本"
+           style="overflow:auto;"
         ></textarea>
       </div>
-       <div class="form-group">
-          <label for="inputtext">解密后文本：</label>
-          <textarea name="" id="outputtext" cols="100" rows="20" class="form-control adjust-item" ></textarea>
+      <div class="form-group">
+        <label for="inputtext">解密后文本：</label>
+        <textarea
+         wrap="off"
+          name=""
+          id="outputtext"
+          cols="100"
+          rows="20"
+          class="form-control adjust-item"
+           style="overflow:auto;"
+        ></textarea>
       </div>
       <input
         class="btn btn-primary adjust-item"
@@ -95,65 +148,166 @@
         console.log("******** base64 encoded string ********");
       }
       $(document).ready(function() {
-        $("#transfertype")
-          .change(function() {
-            $(".form-group").hide();
-            $(".adjust-item").hide();
-            $("#transfertype")
-              .parent(".form-group")
-              .show();
-            var sv = $(this)
-              .children("option:selected")
-              .val();
-            switch (sv) {
-              case "download":
-                $("#filename")
-                  .show()
-                  .parent(".form-group")
-                  .show();
-                $("#inputUseName1")
-                  .show().removeAttr("readonly")
-                  .parent(".form-group")
-                  .show();
-                $("#opersubmit").show();
-                break;
-              case "tobase64":
-                $("#fileopen")
-                  .show()
-                  .parent(".form-group")
-                  .show();
-                $("#inputUseName1")
-                  .show().attr("readonly",true)
-                  .parent(".form-group")
-                  .show();
-                break;
-              case "base64totext":
-                $("#inputUseName1").show().removeAttr("readonly").bind("input",function(){
-                    $("#outputtext").val(atob($(this).val()));
-                }).parent(".form-group").show();
-                $("#outputtext").attr("readonly",true).show().parent(".form-group").show();
+        $("#transfertype").change(function() {
+          $(".form-group").hide();
+          $(".adjust-item").hide();
+          $("#transfertype")
+            .parent(".form-group")
+            .show();
+          var sv = $(this)
+            .children("option:selected")
+            .val();
+          switch (sv) {
+            case "download":
+              $("#filename")
+                .show()
+                .parent(".form-group")
+                .show();
+              $("#inputUseName1")
+                .show()
+                .removeAttr("readonly")
+                .parent(".form-group")
+                .show();
+              $("#opersubmit").show();
               break;
-              case "texttobase64":
-                $("#inputtext").show().removeAttr("readonly").bind("input",function(){
-                    $("#inputUseName1").val(btoa($(this).val()));
-                }).parent(".form-group").show();
-                $("#inputUseName1").attr("readonly",true).show().parent(".form-group").show();
+            case "tobase64":
+              $("#fileopen")
+                .show()
+                .parent(".form-group")
+                .show();
+              $("#inputUseName1")
+                .show()
+                .attr("readonly", true)
+                .parent(".form-group")
+                .show();
               break;
-            }
-          })
-          .trigger("change");
-        $("#fileopen").change(function() {
-            var filereader = new FileReader();
-            if(!filereader){
-                $("#notice_msg").text("你的浏览器不支持文件转换! ");
-                return true;
-            }
-            filereader.onload = function(e){
-                $("#inputUseName1").val(btoa(e.target.result));
-            }
-            filereader.readAsBinaryString(this.files[0]);
+            case "base64totext":
+              $("#inputUseName1")
+                .show()
+                .removeAttr("readonly")
+                .bind("input", function() {
+                  $("#outputtext").val(atob($(this).val()));
+                })
+                .parent(".form-group")
+                .show();
+              $("#outputtext")
+                .attr("readonly", true)
+                .show()
+                .parent(".form-group")
+                .show();
+              break;
+            case "texttobase64":
+              $("#inputtext")
+                .show()
+                .removeAttr("readonly")
+                .bind("input", function() {
+                  $("#inputUseName1").val(btoa($(this).val()));
+                })
+                .parent(".form-group")
+                .show();
+              $("#inputUseName1")
+                .attr("readonly", true)
+                .show()
+                .parent(".form-group")
+                .show();
+              break;
+          }
         });
+        $("#jsonOperType").change(function() {
+          $(".form-group").hide();
+          $(".adjust-item").hide();
+          $("#jsonOperType")
+            .parent(".form-group")
+            .show();
+          var sv = $(this)
+            .children("option:selected")
+            .val();
+          switch(sv){
+            case "jsonformat":
+             $("#jsontext")
+                .removeAttr("readonly")
+                .show()
+                .parent(".form-group")
+                .show();
+            $("#jsonsubmit").show();
+            break;
+            case "jsoncompress":
+              $("#jsontext")
+                .removeAttr("readonly")
+                .show()
+                .parent(".form-group")
+                .show();
+            $("#jsonsubmit").show();
+            break;
+          }
+        });
+        $("#fileopen").change(function() {
+          var filereader = new FileReader();
+          if (!filereader) {
+            $("#notice_msg").text("你的浏览器不支持文件转换! ");
+            return true;
+          }
+
+          filereader.onload = function(e) {
+            $("#inputUseName1").val(btoa(e.content || e.target.result));
+          };
+          filereader.readAsBinaryString(this.files[0]);
+        });
+        if (!FileReader.prototype.readAsBinaryString) {
+          FileReader.prototype.readAsBinaryString = function(fileData) {
+            var binary = "";
+            var pt = this;
+            var reader = new FileReader();
+            reader.onload = function(e) {
+              var bytes = new Uint8Array(reader.result);
+              var length = bytes.byteLength;
+              for (var i = 0; i < length; i++) {
+                binary += String.fromCharCode(bytes[i]);
+              }
+              //pt.resut  - readonly so assign binary
+              pt.content = binary;
+              pt.onload(pt);
+            };
+            reader.readAsArrayBuffer(fileData);
+          };
+        }
+        $tool_group_btn = $("#tool-group .btn");
+        $tool_group_btn
+          .click(function() {
+            $this = $(this);
+            var group_name = $this.attr("name");
+            $tool_group_btn.removeClass("btn-primary").addClass("btn-light");
+            $this.removeClass("btn-light").addClass("btn-primary");
+            $("form")
+              .hide()
+              .filter("[name=" + group_name + "]")
+              .show()
+              .find("select")
+              .trigger("change");
+          }).filter("[name=base64-tool]")
+          .trigger("click");
+          $("#jsonsubmit").click(function(){
+            submit.apply(this,[$("#jsontext")]);
+            return false;
+          })
       });
+      var test;
+       function submit(tarobj) {
+            $.ajax({
+            //几个参数需要注意一下
+                type: "POST",//方法类型
+                dataType: "text",//预期服务器返回的数据类型
+                url: $(this).parent("form").attr("action") ,//url
+                data: $(this).parent("form").serialize(),
+                success: function (result) {
+                  console.log(result);
+                  tarobj.val(result);
+                },
+                error : function() {
+                    alert("表单提交异常! ");
+                }
+            });
+        }
     </script>
   </body>
 </html>
