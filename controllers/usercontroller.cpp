@@ -1,4 +1,5 @@
 ﻿#include "usercontroller.h"
+#include "informationmailer.h"
 #include "user.h"
 #pragma execution_character_set("utf-8") 
 
@@ -7,6 +8,7 @@ void UserController::login()
 {
     switch(httpRequest().method()){
     case Tf::Get:
+		InformationMailer().send("hybtalented@163.com", "hello from hybtalented","hello");
         render();
         break;
     case Tf::Post:
@@ -28,6 +30,7 @@ void UserController::userregister()
     // write code
     switch(httpRequest().method()){
         case Tf::Get:
+			
             render();
             break;
     }

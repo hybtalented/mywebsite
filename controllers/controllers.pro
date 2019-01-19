@@ -21,3 +21,5 @@ HEADERS += usercontroller.h
 SOURCES += usercontroller.cpp
 HEADERS += jstoolscontroller.h
 SOURCES += jstoolscontroller.cpp
+HEADERS += informationmailer.h
+SOURCES += informationmailer.cpp
