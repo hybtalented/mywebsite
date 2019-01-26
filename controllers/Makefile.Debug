@@ -1283,11 +1283,17 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qjsonarray.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QJsonValue \
 		..\helpers\applicationhelper.h \
+		informationmailer.h \
+		C:\TreeFrog\1.22.0\include\TActionMailer \
+		C:\TreeFrog\1.22.0\include\tactionmailer.h \
+		C:\TreeFrog\1.22.0\include\tappsettings.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QMutex \
 		..\models\user.h \
 		C:\TreeFrog\1.22.0\include\TAbstractUser \
 		C:\TreeFrog\1.22.0\include\tabstractuser.h \
 		C:\TreeFrog\1.22.0\include\TAbstractModel \
-		C:\TreeFrog\1.22.0\include\tabstractmodel.h
+		C:\TreeFrog\1.22.0\include\tabstractmodel.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qrandom.h
 
 .obj\jstoolscontroller.obj: jstoolscontroller.cpp jstoolscontroller.h \
 		applicationcontroller.h \
@@ -1537,7 +1543,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\mkspecs\common\c89\qplatformdefs.h \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QAbstractNativeEventFilter \
 		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\qabstractnativeeventfilter.h \
-		C:\TreeFrog\1.22.0\include\tfexception.h
+		C:\TreeFrog\1.22.0\include\tfexception.h \
+		C:\TreeFrog\1.22.0\include\tappsettings.h \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QMap \
+		C:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore\QMutex
 
 .obj\moc_applicationcontroller.obj: .obj\moc_applicationcontroller.cpp 
 

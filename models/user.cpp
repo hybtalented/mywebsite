@@ -22,12 +22,10 @@ User::~User()
     // If the reference count becomes 0,
     // the shared data object 'UserObject' is deleted.
 }
-
 int User::id() const
 {
-    return d->id;
+	return d->id;
 }
-
 QString User::username() const
 {
     return d->username;
@@ -78,7 +76,7 @@ User User::authenticate(const QString &username, const QString &password)
         return User();
 
     TSqlORMapper<UserObject> mapper;
-    UserObject obj = mapper.findFirst(TCriteria(UserObject::Username, username));
+    UserObject obj = mapper.findFirstBy(UserObject::Username,username);
     if (obj.isNull() || obj.password != password) {
         obj.clear();
     }
@@ -107,10 +105,10 @@ User User::create(const QVariantMap &values)
     return model;
 }
 
-User User::get(int id)
+User User::get(const QString& username)
 {
     TSqlORMapper<UserObject> mapper;
-    return User(mapper.findByPrimaryKey(id));
+    return User(mapper.findFirstBy(UserObject::Username,username));
 }
 
 int User::count()

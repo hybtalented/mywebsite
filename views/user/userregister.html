@@ -13,8 +13,14 @@
     <div class="container">
         <p class="h1 text-dark" >用户注册</p>
     </div>
-    <div class="alert alert-danger alert-dismissible fade show" id="notice_bar">
+    <div class="alert alert-info alert-dismissible fade show" id="notice_bar">
         <p data-tf="@notice" id="notice"></p>
+        <button class="close" data-dismisse="alert" aria-label="close">
+            <span aria-hidden="true">x</span>
+        </button>
+    </div>
+     <div class="alert alert-danger alert-dismissible fade show" id="error_bar">
+        <p data-tf="@error" id="error"></p>
         <button class="close" data-dismisse="alert" aria-label="close">
             <span aria-hidden="true">x</span>
         </button>
@@ -26,14 +32,21 @@
             <label for="password">密码: </label>
             <input type="text" class="form-control" id="password" data-tf="@password">
         </div>
-        <div class="form-group">
+        <div class="form-group" id="emailsend">
             <label for="email">邮箱: </label>
-            <input type="email" class="form-control" id="email" data-tf="@email">
-            <div class="fade show">
-                <form action="" method="post" data-tf="@emailsend"></form>
+            <div class="row">
+                <div class="col-8">
+                    <input type="email" class="form-control" id="email" data-tf="@email">
+                </div>
+                <div class="col-2" style="display:none;" id="emailcode">
+                    <input type="text" class="form-control" autocomplete="off" name="emailcode">
+                </div>
+                <div class="col-2">
+                    <input class="btn btn-primary" type="submit" value="发送验证码" id="sendemail">
+                </div>
             </div>
         </div>
-
+        <input class="btn btn-success col-2" type="submit" value="注册">
     </form>
 
     <!-- Optional JavaScript -->
@@ -42,7 +55,64 @@
     <script src="/js/bootstrap/popper.min.js"  ></script>
     <script src="/js//bootstrap/bootstrap.min.js"  ></script>
     <script>
-        $(function(){if($("#notice").text().empty())$("#notice").hide();});
+        if(!$.prototype.toFormData){
+            $.prototype.toFormData = function(){
+                var children = this.find("[name]");
+                var form = $("<form>");
+                for(var i = 0 ; i < children.length ; ++ i){
+                    $("<input name='" + children.eq(i).attr("name") + "'>").val(children.eq(i).val()).appendTo(form);
+                }
+                return form.serialize();
+            }
+        }
+        $(function(){
+            if(top.window.checkLogin && typeof top.window.checkLogin == "function") top.window.checkLogin();
+            if($("#notice").text().length==0)$("#notice_bar").hide();
+            if($("#error").text().length==0)$("#error_bar").hide();
+            $("#sendemail").click(function(){
+                var time2send;
+                $this = $(this);
+                console.log($("#emailsend").toFormData());
+                if($this.hasClass("btn-primary")){
+                    $.ajax({
+                        type:"POST",
+                        dataType:"text",
+                        url: "/User/sendcode" ,//url
+                        data:$("#emailsend").toFormData(),
+                        success:function(result){
+                            console.log(result);
+                            $("#notice").html(result);
+                            $("#notice_bar").show();
+                            $this.removeClass("btn-primary").addClass("btn-secondary");
+                            $("#emailcode").show();
+                            time2send = 60;
+                            $this.attr("text-before",$this.val())
+                            var resettimer = setInterval(1000,function(){
+                                if(time2send>0){
+                                    time2send -- ;
+                                    $this.val("("+time2send + ")秒后再次发送！");
+                                }else{
+                                    $this.removeClass("btn-secondary").addClass("btn-primary");
+                                    $this.val($this.attr("text-before"));
+                                    $this.removeAttr("text-before");
+                                    clearInterval(resettimer);
+                                }
+                            })
+
+                        },
+                        error:function(){
+                            alert("发送验证码失败...");
+                        }
+                    });
+
+                }
+                return false;
+            });
+            $("emailcode").bind("input",function(){
+                var text = $(this).val();
+                $(this).val(text.substr(0,6));
+            })
+        });
     </script>
   </body>
 </html>

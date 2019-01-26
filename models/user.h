@@ -21,8 +21,7 @@ public:
     User(const User &other);
     User(const UserObject &object);
     ~User();
-
-    int id() const;
+	int id()const;
     QString username() const;
     void setUsername(const QString &username);
     QString password() const;
@@ -42,7 +41,7 @@ public:
     static User authenticate(const QString &username, const QString &password);
     static User create(const QString &username, const QString &password,const QString&email);
     static User create(const QVariantMap &values);
-    static User get(int id);
+    static User get(const QString& username);
     static int count();
     static QList<User> getAll();
     static QJsonArray getAllJson();

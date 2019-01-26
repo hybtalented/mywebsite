@@ -7,10 +7,16 @@
 </header>
 <body>
     <h1>用户登陆</h1>
-    <div class="alert alert-danger alert-dismissible fade show" role="alert" >
-        <p   data-tf="@notice_msg"></p>
+    <div class="alert alert-info alert-dismissible fade show" role="alert" id="notice_bar">
+        <p   data-tf="@notice_msg"  id="notice"></p>
         <button type="button" class="close" data-dismiss="alert" aria-label="close">
             <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="alert alert-danger alert-dismissible fade show" id="error_bar">
+        <p data-tf="@error" id="error"></p>
+        <button class="close" data-dismisse="alert" aria-label="close">
+            <span aria-hidden="true">x</span>
         </button>
     </div>
     <form data-tf="@entry_login" method="post" >
@@ -20,10 +26,17 @@
         <div class="form-group">
             <label for="exampleInputPassword1">密码: </label> <input class="form-control" data-tf="@password" placeholder="password">
         </div>
-            <input class="btn btn-primary" type="submit" value="登录">
+            <input id="btn-login" class="btn btn-primary" type="submit" value="登录">
        </form> 
     <script src="/js/bootstrap/jquery-3.3.1.min.js"></script>
     <script src="/js/bootstrap/popper.min.js"  ></script>
     <script src="/js/bootstrap/bootstrap.min.js"  ></script>
+    <script>
+        $(function(){
+            if($("#notice").text().length==0)$("#notice_bar").hide();
+            if($("#error").text().length==0)$("#error_bar").hide();
+            if(top.window.checkLogin && typeof top.window.checkLogin == "function") top.window.checkLogin();
+        });
+    </script>
 </body>
 </html>

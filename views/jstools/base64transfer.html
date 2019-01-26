@@ -301,7 +301,6 @@
                 url: $(this).parent("form").attr("action") ,//url
                 data: $(this).parent("form").serialize(),
                 success: function (result) {
-                  console.log(result);
                   tarobj.val(result);
                 },
                 error : function() {

@@ -7,9 +7,61 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css"  >
+    <link href="/css/open-iconic/font/css/open-iconic-bootstrap.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">`
-    
     <title>主页</title>
+     <script src="/js/bootstrap/jquery-3.3.1.min.js"  ></script>
+    <script src="/js/bootstrap/popper.min.js"  ></script>
+    <script src="/js/bootstrap/bootstrap.min.js"  ></script>
+        <script>
+    function changeFrameHeight(){
+      var ifm= document.getElementById("main-page"); 
+      ifm.height=window.innerHeight-$(".navbar")[0].offsetHeight;
+    }
+    window.onresize=function(){  
+      changeFrameHeight();  
+    } 
+     function checkLogin(){
+        $.ajax({
+          type:"POST",
+          dataType:"json",
+          url: "/user/isLogin" ,//url
+          data: {},
+          success:function(result){
+            if(result.login && typeof result.username != "undefined" ){
+              $("#i_login").html("<div class='navbar-text navbar-primary'>欢迎<a href='/user' class='btn-success'>"+result.username + "</a></div>").find("[href]").click(btn_click);
+              $("#i_register").html("<a href='/User/logout' class='nav-link btn-error'><span class='oi oi-account-logout warning'></span>退出</a>").children("[href]").click(btn_click);
+            }else{
+              $('#i_login').html("<a href='/User/login' class='nav-link'><span class='oi oi-account-login'></span> 登录 </a>").children("a").click(btn_click);
+              $("#i_register").html('<a href="/User/userregister" class="nav-link"><span class="oi oi-random"></span> 注册</a>').children("a").click(btn_click);
+            }
+          },
+          error:function(){
+            console.log("请求登录状态失败")
+          }
+        });
+      };
+    function btn_click(){
+      if($(this).hasClass("nav-item")){
+          $(".nav-item").removeClass("active");
+          $(this).addClass("active");
+        }
+        if(!$(this).hasClass("dropdown-toggle")){
+          $(".collapse").removeClass("show");
+          $(".dropdown-menu").removeClass("show");
+          var mainpage= document.getElementById("main-page");
+          if(this.href && typeof this.href == "string"){
+            if(this.href.endsWith(".md")){
+              mainpage.src="readmd.html"+"?src="+this.href;
+            }else{
+              mainpage.src=this.href;
+            }
+          }
+          $("#i_jump").find("a")[0].href=mainpage.src;
+          return false;
+        }
+    }
+    </script>
   </head>
   <body>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark bd-navbar animated" role="navigation">
@@ -18,11 +70,12 @@
           </button>
           <div class="collapse navbar-collapse float-left" id="navbarNavDropdown">
               <ul class="navbar-nav mr-auto">
-                  <li class="nav-item" id="i_index"><a href="index-page.html" class="nav-link"> <span class="gybphicon glyphicon-index"></span> 主页</a></li>
-                  <li class="nav-item" id="i_face"><a href="index-page.html" class="nav-link"> <span class="gybphicon glyphicon-index"></span> 人脸识别</a></li>
-                  <li class="nav-item" id="i_blog"><a href="/Blog" class="nav-link"> <span class="gybphicon glyphicon-index"></span> 博客 </a></li>
+                  <li class="nav-item" id="i_index"><a href="index-page.html" class="nav-link"> <span class="oi oi-home"></span> 主页</a></li>
+                  <li class="nav-item" id="i_face"><a href="index-page.html" class="nav-link"> <span class="oi oi-video"></span> 人脸识别</a></li>
+                  <li class="nav-item check_login" id="i_blog"><a href="/Blog" class="nav-link"> <span class="oi oi-document"></span> 博客 </a></li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="docdropdown"  href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="oi oi-book"></span>
                     文档
                     </a>
                     <div class="dropdown-menu" aria-labelledby="docdropdown">
@@ -40,80 +93,70 @@
                     </div>
                   </li>
                   <li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" id="mydocdropdown"  href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    我的文档
-						</a>
+					        	<a class="nav-link dropdown-toggle" id="mydocdropdown"  href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="oi oi-text" ></span>
+                        我的文档
+         						</a>
                     <div class="dropdown-menu" aria-labelledby="mydocdropdown">
                       <a href="./mydoc/sqlbrowser/index.html" class="dropdown-item">Doxygen——sqlbrowser文档</a>
                     </div>
-				</li>
+				          </li>
                   <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" id="repodropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 仓库</a>
+                    <a href="#" class="nav-link dropdown-toggle" id="repodropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="oi oi-basket"></span> 仓库</a>
                     <div class="dropdown-menu" aria-labelledby="repodropdown">
                       <a href="https://github.com/hybtalented/" class="dropdown-item"> github</a>
                       <a href="https://bitbucket.org/heyoubiao/" class="dropdown-item">Bitbucket</a>
                     </div>
                   </li>
                   <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" id="tooldropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">工具</a>
+                    <a href="#" class="nav-link dropdown-toggle" id="tooldropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="oi oi-wrench"></span>工具</a>
                     <div class="dropdown-menu" aria-labelledby="tooldropdown">
                       <a href="./modules/editor.md/examples/full.html" class="dropdown-item">MarkDown编辑工具</a>
                       <a href="./modules/flowchart.js/example/index.html" class="dropdown-item">flowChart 流程图工具</a>
-                      <a href="http://47.110.71.66:5601/" class="dropdown-item">日志管理工具</a>
+                      <a href="http://47.110.71.66:5601/" class="dropdown-item check_login">日志管理工具</a>
                       <a href="/jstools/base64transfer" class="dropdown-item">javascript工具</a>
+                      <div class="btn-group dropright">
+                        <button type="button"></button>
+                      </div>
                     </div>
                   </li>
                   <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" id="logdropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">日志</a>
+                    <a href="#" class="nav-link dropdown-toggle" id="logdropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="oi oi-list"></span>日志</a>
                     <div class="dropdown-menu" aria-labelledby="logdropdown">
                       <a href="http://47.110.71.66:5601/app/kibana#/visualize/edit/3dd02630-1488-11e9-a4e3-efeb2239b22e?embed=true&_g=(refreshInterval%3A(pause%3A!f%2Cvalue%3A10000)%2Ctime%3A(from%3Anow-4h%2Cmode%3Aquick%2Cto%3Anow))" class="dropdown-item">treefrog监控日志</a>
                     </div>
                   </li>
               </ul>
           </div>
-          <form action="" target="_blank" :w
-          id="iframe-form" class="form-inline my-2 my-lg-0">
-            <span class="navbar-text"> 无法打开？点击按钮跳转。</span>
-            <button class="btn-outline-success" type="submit">跳转</button>
-          </form>
-            <ul class="navbar-nav mr-auto float-right">
-              <li class="nav-item" id="i_login"> <a href="/User/login" class="nav-link"><span class="glyphicon glyphicon-user"></span> 登录 </a> </li>
-              <li class="nav-item" id="i_register"> <a href="/User/userregister" class="nav-link"><span class="glyphicon glyphicon-log-in"></span> 注册</a></li>
+          <ul class="navbar-nav mr-auto float-right">
+            <li class="nav-item"><span class="navbar-text navbar-light"> 无法打开？点击按钮跳转。</span></li>
+              <li class="nav-item" id="i_jump"> <a id="jump_buttom" href="/index-page.html" target="_blank" class="nav-link btn-success"><span class="oi oi-external-link"></span> 跳转 </a> </li>
+              <li class="nav-item" id="i_login"> <a href="/User/login" class="nav-link"><span class="oi oi-account-login"></span> 登录 </a> </li>
+              <li class="nav-item" id="i_register"> <a href="/User/userregister" class="nav-link"><span class="oi oi-random"></span> 注册</a></li>
           </ul>
       </nav>
          <iframe  id="main-page" src="index-page.html"  onload="changeFrameHeight()" width="100%" frameborder="0"></iframe>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="/js/bootstrap/jquery-3.3.1.min.js"  ></script>
-    <script src="/js/bootstrap/popper.min.js"  ></script>
-    <script src="/js/bootstrap/bootstrap.min.js"  ></script>
+   
+
     <script>
-    function changeFrameHeight(){
-      var ifm= document.getElementById("main-page"); 
-      ifm.height=window.innerHeight-$(".navbar")[0].offsetHeight;
-    }
-    window.onresize=function(){  
-      changeFrameHeight();  
-    } 
-      $(document).ready(function(){
-           $("[href]").click(function(){
-            if($(this).hasClass("nav-item")){
-              $(".nav-item").removeClass("active");
-              $(this).addClass("active");
-            }
-            if(!$(this).hasClass("dropdown-toggle")){
-              $(".collapse").removeClass("show");
-              $(".dropdown-menu").removeClass("show");
-              var mainpage= document.getElementById("main-page");
-              if(this.href.endsWith(".md")){
-                mainpage.src="readmd.html"+"?src="+this.href;
-              }else{
-                mainpage.src=this.href;
-              }
-              $("#iframe-form")[0].action=mainpage.src;
-              return false;
-          }
-        });
+    $(document).ready(function(){
+      if(!String.prototype.endsWith){
+        String.prototype.endsWith = function(str){
+          var reg =new RegExp(str + "$")
+          return reg.test(this);
+        }
+      }
+      if(!String.prototype.startsWith){
+        String.prototype.startsWith = function(str){
+          var reg =new RegExp("^" + str );
+          return reg.test(this);
+        }
+      }
+      $("[href]:not(#jump_buttom)").click(btn_click);
+      $(".check_login").click(checkLogin);
+      checkLogin();  // 确认登录状态
     });
     </script>
   </body>
