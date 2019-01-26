@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD></HEAD><BODY>
+<OBJECT type="text/site properties">
+<param name="FrameName" value="right">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="类"><param name="Local" value="annotated.html"><param name="ImageNumber" value="1"></OBJECT>
+  <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="类列表"><param name="Local" value="annotated.html"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="activeSqlLib"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="activeSql"><param name="Local" value="classactive_sql_lib_1_1active_sql.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IactiveSql"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="closeDB"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#a1de443346694934c5cefbf4cece12ed3"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getDatabase"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#a39f8d7da09249fd8d6b919aaad9677e3"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="getTables"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#a5c11b858fd5e99f50623623946c1f4de"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="isDBExist"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#abc64c20b56c28c8269fb573c431ed3f6"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="isTableExist"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#a489a9f0105377dfe16b210f6250c664f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="openSqlite"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#a8c2c4a6fb0f77b4bb150627da6cfdb84"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="query"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#a3a984a23b89bba7ea1ac276e99354ad3"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="readQueryResult"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#a0867e66d38cfbb05777f144f9db5ad70"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="supportDriver"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#ab7569fe013eb8c53445cff12b65606a5"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IactiveSqlEvents"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql_events.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="destroyed_1"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql_events.html#a1fdc806d14ef53aea4dacfe75f77e04e"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="info"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql_events.html#ae28c0993d6cfd93c2edfb2b3dcd90989"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="objectNameChanged"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql_events.html#a65adb14cdde457b168758123db5abff2"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="QPoint"><param name="Local" value="structactive_sql_lib_1_1_q_point.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="x"><param name="Local" value="structactive_sql_lib_1_1_q_point.html#a61bf3b6c4c7edd08cdc4d27640eb8a95"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="y"><param name="Local" value="structactive_sql_lib_1_1_q_point.html#afa3f90b55ccb575e47ad8489987c1ee3"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="QRect"><param name="Local" value="structactive_sql_lib_1_1_q_rect.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="bottom"><param name="Local" value="structactive_sql_lib_1_1_q_rect.html#aed078ff52272a0359c21166652a62fef"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="left"><param name="Local" value="structactive_sql_lib_1_1_q_rect.html#a80558489b30dd053d3cffd23ab9fe5bc"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="right"><param name="Local" value="structactive_sql_lib_1_1_q_rect.html#a765d0404fa61fc0d0273956803b0c398"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="top"><param name="Local" value="structactive_sql_lib_1_1_q_rect.html#a041f9c6e07df600569dd10f215972b19"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="QSize"><param name="Local" value="structactive_sql_lib_1_1_q_size.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="height"><param name="Local" value="structactive_sql_lib_1_1_q_size.html#a781dd9dc2d8084c90c9c6e05aeee7124"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="width"><param name="Local" value="structactive_sql_lib_1_1_q_size.html#a840dc6a32b3f3cb3f432628c769a2ae3"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="activeSql"><param name="Local" value="classactive_sql.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MSG_RET_CODE"><param name="Local" value="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="MSG_DEBUG"><param name="Local" value="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a32b501ff9926cc986601295dbc39aa0b"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="MSG_OPEN_OK"><param name="Local" value="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a9a0f610d7e912329ae46ee2408e531b6"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="MSG_QUERY_OK"><param name="Local" value="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a35bf4a77a571066dbc99be1373848e9b"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="MSG_QUERY_FAIL"><param name="Local" value="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a8b647e65d1ab67cd0638d4e9040d62f9"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="MSG_TIMEOUT"><param name="Local" value="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4ae59d6ff10fecc8c0fb2840aa9105d1bd"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="MSG_DATABASE_OPEN_FAILED"><param name="Local" value="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a4563354966790c1f7001b0493080cf6c"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="MSG_INTERNAL_ERROR"><param name="Local" value="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a0d1a78ec2571d79d23e314091e66a9bd"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="activeSql"><param name="Local" value="classactive_sql.html#a62879e2e04344bf781e016fb5b3625dd"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="closeDB"><param name="Local" value="classactive_sql.html#a86a9c6c72235513d23fceb1a30703d3b"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="getDatabase"><param name="Local" value="classactive_sql.html#a2eb80331b9aeccb31b62e0d27e5e289c"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="getTables"><param name="Local" value="classactive_sql.html#a8e2131ef599c89bc1996f6d0fc1aa72c"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="info"><param name="Local" value="classactive_sql.html#a2e531969e1824b8b7ae722affbc79d61"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="isDBExist"><param name="Local" value="classactive_sql.html#a1b97848c72ce8552e9979ac6b0b58a2e"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="isTableExist"><param name="Local" value="classactive_sql.html#a88272e0847b983568fcc5dc9995b253d"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="openSqlite"><param name="Local" value="classactive_sql.html#aef3b0bb805ac6212427b80f5602b66b5"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Q_ENUM"><param name="Local" value="classactive_sql.html#af198685a144bca0a4e6341d2d13db08b"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="query"><param name="Local" value="classactive_sql.html#ad2c39876b4b9fbd52cabc4829c96c2d4"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="readQueryResult"><param name="Local" value="classactive_sql.html#a52c9ce1541e2219b3095aef63c95ca33"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="supportDriver"><param name="Local" value="classactive_sql.html#aa4ef8b85d367bafa8de6e8ca7de774b2"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="类索引"><param name="Local" value="classes.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="类继承关系"><param name="Local" value="hierarchy.html"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="activeSqlLib::activeSql"><param name="Local" value="classactive_sql_lib_1_1active_sql.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="activeSqlLib::IactiveSql"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="activeSqlLib::IactiveSqlEvents"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql_events.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="QObject"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="activeSql"><param name="Local" value="classactive_sql.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="activeSqlLib::QPoint"><param name="Local" value="structactive_sql_lib_1_1_q_point.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="activeSqlLib::QRect"><param name="Local" value="structactive_sql_lib_1_1_q_rect.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="activeSqlLib::QSize"><param name="Local" value="structactive_sql_lib_1_1_q_size.html"><param name="ImageNumber" value="11"></OBJECT>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="类成员"><param name="Local" value="functions.html"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="全部"><param name="Local" value="functions.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="函数"><param name="Local" value="functions_func.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="枚举"><param name="Local" value="functions_enum.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="枚举值"><param name="Local" value="functions_eval.html"><param name="ImageNumber" value="11"></OBJECT>
+    </UL>
+  </UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文件"><param name="Local" value="files.html"><param name="ImageNumber" value="1"></OBJECT>
+  <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="文件列表"><param name="Local" value="files.html"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="activeSql"><param name="Local" value="dir_2f7da07efc56ae1ea16e0912c8cf4ed8.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Release"><param name="Local" value="dir_24baf3c0f4a445bfbd9cb87f5f911772.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="activeSql.idl"><param name="Local" value="active_sql_8idl_source.html"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="activeSql.cpp"><param name="Local" value="active_sql_8cpp_source.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="activeSql.h"><param name="Local" value="active_sql_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    </UL>
+  </UL>
+</UL>
+</BODY>
+</HTML>

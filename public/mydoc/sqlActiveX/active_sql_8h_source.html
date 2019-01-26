@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SQLActiveX: C:/Users/Caiyi/source/repos/cplusplus/activeSql/activeSql/activeSql.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="faviconfull.ico"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SQLActiveX
+   &#160;<span id="projectnumber">v1.0</span>
+   </div>
+   <div id="projectbrief">ie浏览器的sqlite控件</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('active_sql_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">activeSql.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="active_sql_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;QtCore/QObject&gt;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include&lt;qvariant.h&gt;</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include&lt;qjsonobject.h&gt;</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/******************************************************************************************************</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * @defgroup outclass  导出类                                           </span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> *     该类的接口和事件做未ActiveX接口                                      </span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * @{</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">*******************************************************************************************************/</span></div><div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classactive_sql.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classactive_sql.html">activeSql</a> : <span class="keyword">public</span> QObject</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    Q_OBJECT</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        Q_CLASSINFO(<span class="stringliteral">&quot;ClassID&quot;</span>, <span class="stringliteral">&quot;{cc927524-33b0-409d-ac35-b1fa754f5136}&quot;</span>)</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        Q_CLASSINFO(<span class="stringliteral">&quot;InterfaceID&quot;</span>, <span class="stringliteral">&quot;{493a8e9e-6a79-483d-839b-ab8949dd3143}&quot;</span>)</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        Q_CLASSINFO(<span class="stringliteral">&quot;EventsID&quot;</span>, <span class="stringliteral">&quot;{e823c70a-840a-4713-82da-fe6ad7f2d344}&quot;</span>)</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classactive_sql.html">activeSql</a>(QObject *parent = Q_NULLPTR);</div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4">   34</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4">MSG_RET_CODE</a> {</div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a32b501ff9926cc986601295dbc39aa0b">   36</a></span>&#160;        <a class="code" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a32b501ff9926cc986601295dbc39aa0b">MSG_DEBUG</a> = 2,</div><div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a9a0f610d7e912329ae46ee2408e531b6">   38</a></span>&#160;        <a class="code" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a9a0f610d7e912329ae46ee2408e531b6">MSG_OPEN_OK</a> = 1,</div><div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a35bf4a77a571066dbc99be1373848e9b">   40</a></span>&#160;        <a class="code" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a35bf4a77a571066dbc99be1373848e9b">MSG_QUERY_OK</a> = 0,</div><div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a8b647e65d1ab67cd0638d4e9040d62f9">   42</a></span>&#160;        <a class="code" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a8b647e65d1ab67cd0638d4e9040d62f9">MSG_QUERY_FAIL</a> = -1,</div><div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4ae59d6ff10fecc8c0fb2840aa9105d1bd">   44</a></span>&#160;        <a class="code" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4ae59d6ff10fecc8c0fb2840aa9105d1bd">MSG_TIMEOUT</a> = -2,</div><div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a4563354966790c1f7001b0493080cf6c">   46</a></span>&#160;        <a class="code" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a4563354966790c1f7001b0493080cf6c">MSG_DATABASE_OPEN_FAILED</a> = -3,</div><div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a0d1a78ec2571d79d23e314091e66a9bd">   48</a></span>&#160;        <a class="code" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a0d1a78ec2571d79d23e314091e66a9bd">MSG_INTERNAL_ERROR</a> = -1000</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    };</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;     Q_ENUM(<a class="code" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4">MSG_RET_CODE</a>);</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">public</span> slots:</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classactive_sql.html#ad2c39876b4b9fbd52cabc4829c96c2d4">query</a>(<span class="keyword">const</span> QString&amp; name, <span class="keyword">const</span> QString&amp; sql);</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classactive_sql.html#aef3b0bb805ac6212427b80f5602b66b5">openSqlite</a>(<span class="keyword">const</span> QString&amp;path, <span class="keyword">const</span> QString&amp; name);</div><div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classactive_sql.html#aa4ef8b85d367bafa8de6e8ca7de774b2">   65</a></span>&#160;    QString <a class="code" href="classactive_sql.html#aa4ef8b85d367bafa8de6e8ca7de774b2">supportDriver</a>() {</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">return</span> drivers.join(<span class="stringliteral">&quot;;&quot;</span>);</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    QString <a class="code" href="classactive_sql.html#a52c9ce1541e2219b3095aef63c95ca33">readQueryResult</a>(<span class="keyword">const</span> QString&amp; name);</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;     QString <a class="code" href="classactive_sql.html#a8e2131ef599c89bc1996f6d0fc1aa72c">getTables</a>(<span class="keyword">const</span> QString&amp; name);</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    QString <a class="code" href="classactive_sql.html#a2eb80331b9aeccb31b62e0d27e5e289c">getDatabase</a>();</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classactive_sql.html#a1b97848c72ce8552e9979ac6b0b58a2e">isDBExist</a>(<span class="keyword">const</span> QString&amp; name);</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classactive_sql.html#a88272e0847b983568fcc5dc9995b253d">isTableExist</a>(<span class="keyword">const</span> QString&amp; name, <span class="keyword">const</span> QString&amp; table);</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classactive_sql.html#a86a9c6c72235513d23fceb1a30703d3b">closeDB</a>(<span class="keyword">const</span> QString&amp; name);</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;signals:</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> info(<a class="code" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4">MSG_RET_CODE</a> code,<span class="keyword">const</span> QString&amp;msg);</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">int</span> ret_code;        </div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    QString ret_msg;     </div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    QStringList drivers; </div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    QJsonObject ret;     </div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;};</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">//! @}</span></div><div class="ttc" id="classactive_sql_html_a91845a2bd55ee0850698ae978b658bc4"><div class="ttname"><a href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4">activeSql::MSG_RET_CODE</a></div><div class="ttdeci">MSG_RET_CODE</div><div class="ttdoc">错误代码 </div><div class="ttdef"><b>Definition:</b> <a href="active_sql_8h_source.html#l00034">activeSql.h:34</a></div></div>
+<div class="ttc" id="classactive_sql_html_a1b97848c72ce8552e9979ac6b0b58a2e"><div class="ttname"><a href="classactive_sql.html#a1b97848c72ce8552e9979ac6b0b58a2e">activeSql::isDBExist</a></div><div class="ttdeci">bool isDBExist(const QString &amp;name)</div><div class="ttdoc">查询是否存在对应名称的数据库 </div><div class="ttdef"><b>Definition:</b> <a href="active_sql_8cpp_source.html#l00098">activeSql.cpp:98</a></div></div>
+<div class="ttc" id="classactive_sql_html_ad2c39876b4b9fbd52cabc4829c96c2d4"><div class="ttname"><a href="classactive_sql.html#ad2c39876b4b9fbd52cabc4829c96c2d4">activeSql::query</a></div><div class="ttdeci">void query(const QString &amp;name, const QString &amp;sql)</div><div class="ttdoc">执行SQL语句 </div><div class="ttdef"><b>Definition:</b> <a href="active_sql_8cpp_source.html#l00032">activeSql.cpp:32</a></div></div>
+<div class="ttc" id="classactive_sql_html_a52c9ce1541e2219b3095aef63c95ca33"><div class="ttname"><a href="classactive_sql.html#a52c9ce1541e2219b3095aef63c95ca33">activeSql::readQueryResult</a></div><div class="ttdeci">QString readQueryResult(const QString &amp;name)</div><div class="ttdoc">返回数据库查询结果 </div><div class="ttdef"><b>Definition:</b> <a href="active_sql_8cpp_source.html#l00083">activeSql.cpp:83</a></div></div>
+<div class="ttc" id="classactive_sql_html_a88272e0847b983568fcc5dc9995b253d"><div class="ttname"><a href="classactive_sql.html#a88272e0847b983568fcc5dc9995b253d">activeSql::isTableExist</a></div><div class="ttdeci">bool isTableExist(const QString &amp;name, const QString &amp;table)</div><div class="ttdoc">查询数据库是否包含表 </div><div class="ttdef"><b>Definition:</b> <a href="active_sql_8cpp_source.html#l00101">activeSql.cpp:101</a></div></div>
+<div class="ttc" id="classactive_sql_html_a91845a2bd55ee0850698ae978b658bc4ae59d6ff10fecc8c0fb2840aa9105d1bd"><div class="ttname"><a href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4ae59d6ff10fecc8c0fb2840aa9105d1bd">activeSql::MSG_TIMEOUT</a></div><div class="ttdef"><b>Definition:</b> <a href="active_sql_8h_source.html#l00044">activeSql.h:44</a></div></div>
+<div class="ttc" id="classactive_sql_html_a8e2131ef599c89bc1996f6d0fc1aa72c"><div class="ttname"><a href="classactive_sql.html#a8e2131ef599c89bc1996f6d0fc1aa72c">activeSql::getTables</a></div><div class="ttdeci">QString getTables(const QString &amp;name)</div><div class="ttdoc">查询数据库内的所有表 </div><div class="ttdef"><b>Definition:</b> <a href="active_sql_8cpp_source.html#l00088">activeSql.cpp:88</a></div></div>
+<div class="ttc" id="classactive_sql_html_a91845a2bd55ee0850698ae978b658bc4a35bf4a77a571066dbc99be1373848e9b"><div class="ttname"><a href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a35bf4a77a571066dbc99be1373848e9b">activeSql::MSG_QUERY_OK</a></div><div class="ttdef"><b>Definition:</b> <a href="active_sql_8h_source.html#l00040">activeSql.h:40</a></div></div>
+<div class="ttc" id="classactive_sql_html_a91845a2bd55ee0850698ae978b658bc4a8b647e65d1ab67cd0638d4e9040d62f9"><div class="ttname"><a href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a8b647e65d1ab67cd0638d4e9040d62f9">activeSql::MSG_QUERY_FAIL</a></div><div class="ttdef"><b>Definition:</b> <a href="active_sql_8h_source.html#l00042">activeSql.h:42</a></div></div>
+<div class="ttc" id="classactive_sql_html_aef3b0bb805ac6212427b80f5602b66b5"><div class="ttname"><a href="classactive_sql.html#aef3b0bb805ac6212427b80f5602b66b5">activeSql::openSqlite</a></div><div class="ttdeci">void openSqlite(const QString &amp;path, const QString &amp;name)</div><div class="ttdoc">打开Sqlite 数据库 </div><div class="ttdef"><b>Definition:</b> <a href="active_sql_8cpp_source.html#l00065">activeSql.cpp:65</a></div></div>
+<div class="ttc" id="classactive_sql_html"><div class="ttname"><a href="classactive_sql.html">activeSql</a></div><div class="ttdef"><b>Definition:</b> <a href="active_sql_8h_source.html#l00023">activeSql.h:23</a></div></div>
+<div class="ttc" id="classactive_sql_html_a91845a2bd55ee0850698ae978b658bc4a4563354966790c1f7001b0493080cf6c"><div class="ttname"><a href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a4563354966790c1f7001b0493080cf6c">activeSql::MSG_DATABASE_OPEN_FAILED</a></div><div class="ttdef"><b>Definition:</b> <a href="active_sql_8h_source.html#l00046">activeSql.h:46</a></div></div>
+<div class="ttc" id="classactive_sql_html_a91845a2bd55ee0850698ae978b658bc4a32b501ff9926cc986601295dbc39aa0b"><div class="ttname"><a href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a32b501ff9926cc986601295dbc39aa0b">activeSql::MSG_DEBUG</a></div><div class="ttdef"><b>Definition:</b> <a href="active_sql_8h_source.html#l00036">activeSql.h:36</a></div></div>
+<div class="ttc" id="classactive_sql_html_a86a9c6c72235513d23fceb1a30703d3b"><div class="ttname"><a href="classactive_sql.html#a86a9c6c72235513d23fceb1a30703d3b">activeSql::closeDB</a></div><div class="ttdeci">void closeDB(const QString &amp;name)</div><div class="ttdoc">关闭数据库 </div><div class="ttdef"><b>Definition:</b> <a href="active_sql_8cpp_source.html#l00079">activeSql.cpp:79</a></div></div>
+<div class="ttc" id="classactive_sql_html_aa4ef8b85d367bafa8de6e8ca7de774b2"><div class="ttname"><a href="classactive_sql.html#aa4ef8b85d367bafa8de6e8ca7de774b2">activeSql::supportDriver</a></div><div class="ttdeci">QString supportDriver()</div><div class="ttdoc">返回支持的驱动列表 </div><div class="ttdef"><b>Definition:</b> <a href="active_sql_8h_source.html#l00065">activeSql.h:65</a></div></div>
+<div class="ttc" id="classactive_sql_html_a91845a2bd55ee0850698ae978b658bc4a9a0f610d7e912329ae46ee2408e531b6"><div class="ttname"><a href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a9a0f610d7e912329ae46ee2408e531b6">activeSql::MSG_OPEN_OK</a></div><div class="ttdef"><b>Definition:</b> <a href="active_sql_8h_source.html#l00038">activeSql.h:38</a></div></div>
+<div class="ttc" id="classactive_sql_html_a2eb80331b9aeccb31b62e0d27e5e289c"><div class="ttname"><a href="classactive_sql.html#a2eb80331b9aeccb31b62e0d27e5e289c">activeSql::getDatabase</a></div><div class="ttdeci">QString getDatabase()</div><div class="ttdoc">查询所有打开的数据库 </div><div class="ttdef"><b>Definition:</b> <a href="active_sql_8cpp_source.html#l00093">activeSql.cpp:93</a></div></div>
+<div class="ttc" id="classactive_sql_html_a91845a2bd55ee0850698ae978b658bc4a0d1a78ec2571d79d23e314091e66a9bd"><div class="ttname"><a href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a0d1a78ec2571d79d23e314091e66a9bd">activeSql::MSG_INTERNAL_ERROR</a></div><div class="ttdef"><b>Definition:</b> <a href="active_sql_8h_source.html#l00048">activeSql.h:48</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_2f7da07efc56ae1ea16e0912c8cf4ed8.html">activeSql</a></li><li class="navelem"><a class="el" href="active_sql_8h.html">activeSql.h</a></li>
+    <li class="footer">制作者
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
+</body>
+</html>

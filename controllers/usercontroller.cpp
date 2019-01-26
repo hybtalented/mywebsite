@@ -8,7 +8,7 @@ void UserController::login()
 {
     switch(httpRequest().method()){
     case Tf::Get:
-		InformationMailer().send("hybtalented@163.com", "hello from hybtalented","hello");
+		InformationMailer().send("hybtalented@163.com", "hello from hybtalented");
         render();
         break;
     case Tf::Post:

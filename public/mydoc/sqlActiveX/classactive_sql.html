@@ -1,0 +1,587 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SQLActiveX: activeSql类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="faviconfull.ico"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SQLActiveX
+   &#160;<span id="projectnumber">v1.0</span>
+   </div>
+   <div id="projectbrief">ie浏览器的sqlite控件</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classactive_sql.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-slots">Public 槽</a> &#124;
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classactive_sql-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">activeSql类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="active_sql_8h_source.html">activeSql.h</a>&gt;</code></p>
+<div class="dynheader">
+类 activeSql 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classactive_sql__inherit__graph.png" border="0" usemap="#active_sql_inherit__map" alt="Inheritance graph"/></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+activeSql 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classactive_sql__coll__graph.png" border="0" usemap="#active_sql_coll__map" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a91845a2bd55ee0850698ae978b658bc4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4">MSG_RET_CODE</a> { <br />
+&#160;&#160;<a class="el" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a32b501ff9926cc986601295dbc39aa0b">MSG_DEBUG</a> = 2, 
+<a class="el" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a9a0f610d7e912329ae46ee2408e531b6">MSG_OPEN_OK</a> = 1, 
+<a class="el" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a35bf4a77a571066dbc99be1373848e9b">MSG_QUERY_OK</a> = 0, 
+<a class="el" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a8b647e65d1ab67cd0638d4e9040d62f9">MSG_QUERY_FAIL</a> = -1, 
+<br />
+&#160;&#160;<a class="el" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4ae59d6ff10fecc8c0fb2840aa9105d1bd">MSG_TIMEOUT</a> = -2, 
+<a class="el" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a4563354966790c1f7001b0493080cf6c">MSG_DATABASE_OPEN_FAILED</a> = -3, 
+<a class="el" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a0d1a78ec2571d79d23e314091e66a9bd">MSG_INTERNAL_ERROR</a> = -1000
+<br />
+ }</td></tr>
+<tr class="memdesc:a91845a2bd55ee0850698ae978b658bc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">错误代码  <a href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4">更多...</a><br /></td></tr>
+<tr class="separator:a91845a2bd55ee0850698ae978b658bc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Public 槽</h2></td></tr>
+<tr class="memitem:ad2c39876b4b9fbd52cabc4829c96c2d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classactive_sql.html#ad2c39876b4b9fbd52cabc4829c96c2d4">query</a> (const QString &amp;name, const QString &amp;sql)</td></tr>
+<tr class="memdesc:ad2c39876b4b9fbd52cabc4829c96c2d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行SQL语句  <a href="#ad2c39876b4b9fbd52cabc4829c96c2d4">更多...</a><br /></td></tr>
+<tr class="separator:ad2c39876b4b9fbd52cabc4829c96c2d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef3b0bb805ac6212427b80f5602b66b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classactive_sql.html#aef3b0bb805ac6212427b80f5602b66b5">openSqlite</a> (const QString &amp;path, const QString &amp;name)</td></tr>
+<tr class="memdesc:aef3b0bb805ac6212427b80f5602b66b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">打开Sqlite 数据库  <a href="#aef3b0bb805ac6212427b80f5602b66b5">更多...</a><br /></td></tr>
+<tr class="separator:aef3b0bb805ac6212427b80f5602b66b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4ef8b85d367bafa8de6e8ca7de774b2"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classactive_sql.html#aa4ef8b85d367bafa8de6e8ca7de774b2">supportDriver</a> ()</td></tr>
+<tr class="memdesc:aa4ef8b85d367bafa8de6e8ca7de774b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回支持的驱动列表  <a href="#aa4ef8b85d367bafa8de6e8ca7de774b2">更多...</a><br /></td></tr>
+<tr class="separator:aa4ef8b85d367bafa8de6e8ca7de774b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52c9ce1541e2219b3095aef63c95ca33"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classactive_sql.html#a52c9ce1541e2219b3095aef63c95ca33">readQueryResult</a> (const QString &amp;name)</td></tr>
+<tr class="memdesc:a52c9ce1541e2219b3095aef63c95ca33"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回数据库查询结果  <a href="#a52c9ce1541e2219b3095aef63c95ca33">更多...</a><br /></td></tr>
+<tr class="separator:a52c9ce1541e2219b3095aef63c95ca33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e2131ef599c89bc1996f6d0fc1aa72c"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classactive_sql.html#a8e2131ef599c89bc1996f6d0fc1aa72c">getTables</a> (const QString &amp;name)</td></tr>
+<tr class="memdesc:a8e2131ef599c89bc1996f6d0fc1aa72c"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询数据库内的所有表  <a href="#a8e2131ef599c89bc1996f6d0fc1aa72c">更多...</a><br /></td></tr>
+<tr class="separator:a8e2131ef599c89bc1996f6d0fc1aa72c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eb80331b9aeccb31b62e0d27e5e289c"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classactive_sql.html#a2eb80331b9aeccb31b62e0d27e5e289c">getDatabase</a> ()</td></tr>
+<tr class="memdesc:a2eb80331b9aeccb31b62e0d27e5e289c"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询所有打开的数据库  <a href="#a2eb80331b9aeccb31b62e0d27e5e289c">更多...</a><br /></td></tr>
+<tr class="separator:a2eb80331b9aeccb31b62e0d27e5e289c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b97848c72ce8552e9979ac6b0b58a2e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classactive_sql.html#a1b97848c72ce8552e9979ac6b0b58a2e">isDBExist</a> (const QString &amp;name)</td></tr>
+<tr class="memdesc:a1b97848c72ce8552e9979ac6b0b58a2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询是否存在对应名称的数据库  <a href="#a1b97848c72ce8552e9979ac6b0b58a2e">更多...</a><br /></td></tr>
+<tr class="separator:a1b97848c72ce8552e9979ac6b0b58a2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88272e0847b983568fcc5dc9995b253d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classactive_sql.html#a88272e0847b983568fcc5dc9995b253d">isTableExist</a> (const QString &amp;name, const QString &amp;table)</td></tr>
+<tr class="memdesc:a88272e0847b983568fcc5dc9995b253d"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询数据库是否包含表  <a href="#a88272e0847b983568fcc5dc9995b253d">更多...</a><br /></td></tr>
+<tr class="separator:a88272e0847b983568fcc5dc9995b253d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86a9c6c72235513d23fceb1a30703d3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classactive_sql.html#a86a9c6c72235513d23fceb1a30703d3b">closeDB</a> (const QString &amp;name)</td></tr>
+<tr class="memdesc:a86a9c6c72235513d23fceb1a30703d3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">关闭数据库  <a href="#a86a9c6c72235513d23fceb1a30703d3b">更多...</a><br /></td></tr>
+<tr class="separator:a86a9c6c72235513d23fceb1a30703d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:a2e531969e1824b8b7ae722affbc79d61"><td class="memItemLeft" align="right" valign="top"><a id="a2e531969e1824b8b7ae722affbc79d61"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>info</b> (<a class="el" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4">MSG_RET_CODE</a> code, const QString &amp;msg)</td></tr>
+<tr class="separator:a2e531969e1824b8b7ae722affbc79d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a62879e2e04344bf781e016fb5b3625dd"><td class="memItemLeft" align="right" valign="top"><a id="a62879e2e04344bf781e016fb5b3625dd"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>activeSql</b> (QObject *parent=Q_NULLPTR)</td></tr>
+<tr class="separator:a62879e2e04344bf781e016fb5b3625dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af198685a144bca0a4e6341d2d13db08b"><td class="memItemLeft" align="right" valign="top"><a id="af198685a144bca0a4e6341d2d13db08b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Q_ENUM</b> (<a class="el" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4">MSG_RET_CODE</a>)</td></tr>
+<tr class="separator:af198685a144bca0a4e6341d2d13db08b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>sqlite ActiveX类 </p>
+
+<p class="definition">在文件 <a class="el" href="active_sql_8h_source.html">activeSql.h</a> 第 <a class="el" href="active_sql_8h_source.html#l00023">23</a> 行定义.</p>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a91845a2bd55ee0850698ae978b658bc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91845a2bd55ee0850698ae978b658bc4">&#9670;&nbsp;</a></span>MSG_RET_CODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4">activeSql::MSG_RET_CODE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>错误代码 </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a91845a2bd55ee0850698ae978b658bc4a32b501ff9926cc986601295dbc39aa0b"></a>MSG_DEBUG&#160;</td><td class="fielddoc"><p>测试消息 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a91845a2bd55ee0850698ae978b658bc4a9a0f610d7e912329ae46ee2408e531b6"></a>MSG_OPEN_OK&#160;</td><td class="fielddoc"><p>数据库打开成功 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a91845a2bd55ee0850698ae978b658bc4a35bf4a77a571066dbc99be1373848e9b"></a>MSG_QUERY_OK&#160;</td><td class="fielddoc"><p>执行成功 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a91845a2bd55ee0850698ae978b658bc4a8b647e65d1ab67cd0638d4e9040d62f9"></a>MSG_QUERY_FAIL&#160;</td><td class="fielddoc"><p>执行失败 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a91845a2bd55ee0850698ae978b658bc4ae59d6ff10fecc8c0fb2840aa9105d1bd"></a>MSG_TIMEOUT&#160;</td><td class="fielddoc"><p>超时 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a91845a2bd55ee0850698ae978b658bc4a4563354966790c1f7001b0493080cf6c"></a>MSG_DATABASE_OPEN_FAILED&#160;</td><td class="fielddoc"><p>数据库连接失败 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a91845a2bd55ee0850698ae978b658bc4a0d1a78ec2571d79d23e314091e66a9bd"></a>MSG_INTERNAL_ERROR&#160;</td><td class="fielddoc"><p>数据库内部错误 </p>
+</td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="active_sql_8h_source.html">activeSql.h</a> 第 <a class="el" href="active_sql_8h_source.html#l00034">34</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a86a9c6c72235513d23fceb1a30703d3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86a9c6c72235513d23fceb1a30703d3b">&#9670;&nbsp;</a></span>closeDB</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void activeSql::closeDB </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>关闭数据库 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>数据库名 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="active_sql_8cpp_source.html">activeSql.cpp</a> 第 <a class="el" href="active_sql_8cpp_source.html#l00079">79</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2eb80331b9aeccb31b62e0d27e5e289c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2eb80331b9aeccb31b62e0d27e5e289c">&#9670;&nbsp;</a></span>getDatabase</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString activeSql::getDatabase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>查询所有打开的数据库 </p>
+<dl class="section return"><dt>返回</dt><dd>所有打开的数据库名。 </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="active_sql_8cpp_source.html">activeSql.cpp</a> 第 <a class="el" href="active_sql_8cpp_source.html#l00093">93</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8e2131ef599c89bc1996f6d0fc1aa72c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e2131ef599c89bc1996f6d0fc1aa72c">&#9670;&nbsp;</a></span>getTables</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString activeSql::getTables </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>查询数据库内的所有表 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>数据库名 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>所有表组成的列表。 </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="active_sql_8cpp_source.html">activeSql.cpp</a> 第 <a class="el" href="active_sql_8cpp_source.html#l00088">88</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1b97848c72ce8552e9979ac6b0b58a2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b97848c72ce8552e9979ac6b0b58a2e">&#9670;&nbsp;</a></span>isDBExist</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool activeSql::isDBExist </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>查询是否存在对应名称的数据库 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>数据库名 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool 是否存在数据库 </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="active_sql_8cpp_source.html">activeSql.cpp</a> 第 <a class="el" href="active_sql_8cpp_source.html#l00098">98</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a88272e0847b983568fcc5dc9995b253d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88272e0847b983568fcc5dc9995b253d">&#9670;&nbsp;</a></span>isTableExist</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool activeSql::isTableExist </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>table</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>查询数据库是否包含表 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>数据库名 </td></tr>
+    <tr><td class="paramname">table</td><td>表名 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool 是否存在表名 </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="active_sql_8cpp_source.html">activeSql.cpp</a> 第 <a class="el" href="active_sql_8cpp_source.html#l00101">101</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aef3b0bb805ac6212427b80f5602b66b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef3b0bb805ac6212427b80f5602b66b5">&#9670;&nbsp;</a></span>openSqlite</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void activeSql::openSqlite </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>打开Sqlite 数据库 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>数据库所在路径 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>数据库名 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="active_sql_8cpp_source.html">activeSql.cpp</a> 第 <a class="el" href="active_sql_8cpp_source.html#l00065">65</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad2c39876b4b9fbd52cabc4829c96c2d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2c39876b4b9fbd52cabc4829c96c2d4">&#9670;&nbsp;</a></span>query</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void activeSql::query </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>sql</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行SQL语句 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>数据库名，详见</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="classactive_sql.html#aef3b0bb805ac6212427b80f5602b66b5" title="打开Sqlite 数据库 ">openSqlite</a> 中的name参数 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sql</td><td>职需数据库语句 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="active_sql_8cpp_source.html">activeSql.cpp</a> 第 <a class="el" href="active_sql_8cpp_source.html#l00032">32</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a52c9ce1541e2219b3095aef63c95ca33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52c9ce1541e2219b3095aef63c95ca33">&#9670;&nbsp;</a></span>readQueryResult</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString activeSql::readQueryResult </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>返回数据库查询结果 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>数据库名 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>数据库query（</dd></dl>
+<dl class="section see"><dt>参见</dt><dd>activeSql::query）的JSON格式结果 </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="active_sql_8cpp_source.html">activeSql.cpp</a> 第 <a class="el" href="active_sql_8cpp_source.html#l00083">83</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa4ef8b85d367bafa8de6e8ca7de774b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4ef8b85d367bafa8de6e8ca7de774b2">&#9670;&nbsp;</a></span>supportDriver</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString activeSql::supportDriver </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>返回支持的驱动列表 </p>
+<dl class="section return"><dt>返回</dt><dd>驱动列表用";"分隔 </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="active_sql_8h_source.html">activeSql.h</a> 第 <a class="el" href="active_sql_8h_source.html#l00065">65</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>C:/Users/Caiyi/source/repos/cplusplus/activeSql/activeSql/<a class="el" href="active_sql_8h_source.html">activeSql.h</a></li>
+<li>C:/Users/Caiyi/source/repos/cplusplus/activeSql/activeSql/<a class="el" href="active_sql_8cpp_source.html">activeSql.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classactive_sql.html">activeSql</a></li>
+    <li class="footer">制作者
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
+</body>
+</html>

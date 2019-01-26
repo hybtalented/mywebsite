@@ -1,0 +1,67 @@
+[OPTIONS]
+Compiled file=SqlActiveX
+Compatibility=1.1
+Full-text search=Yes
+Contents file=index.hhc
+Default Window=main
+Default topic=index.html
+Index file=index.hhk
+Language=0x804 Chinese (PRC)
+Title=SQLActiveX
+
+[WINDOWS]
+main="SQLActiveX","index.hhc","index.hhk","index.html","index.html",,,,,0x23520,,0x10387e,,,,,,,,0
+
+[FILES]
+active_sql_8cpp_source.html
+active_sql_8h_source.html
+active_sql_8idl_source.html
+classactive_sql.html
+classactive_sql-members.html
+classactive_sql_lib_1_1active_sql.html
+interfaceactive_sql_lib_1_1_iactive_sql.html
+interfaceactive_sql_lib_1_1_iactive_sql-members.html
+interfaceactive_sql_lib_1_1_iactive_sql_events.html
+interfaceactive_sql_lib_1_1_iactive_sql_events-members.html
+structactive_sql_lib_1_1_q_point.html
+structactive_sql_lib_1_1_q_point-members.html
+structactive_sql_lib_1_1_q_rect.html
+structactive_sql_lib_1_1_q_rect-members.html
+structactive_sql_lib_1_1_q_size.html
+structactive_sql_lib_1_1_q_size-members.html
+graph_legend.html
+dir_2f7da07efc56ae1ea16e0912c8cf4ed8.html
+dir_24baf3c0f4a445bfbd9cb87f5f911772.html
+index.html
+annotated.html
+classes.html
+hierarchy.html
+inherits.html
+functions.html
+functions_func.html
+functions_enum.html
+functions_eval.html
+files.html
+tab_a.png
+tab_b.png
+tab_h.png
+tab_s.png
+nav_h.png
+nav_f.png
+bc_s.png
+doxygen.png
+closed.png
+open.png
+bdwn.png
+sync_on.png
+sync_off.png
+classactive_sql__inherit__graph.png
+classactive_sql__coll__graph.png
+graph_legend.png
+inherit_graph_0.png
+inherit_graph_1.png
+inherit_graph_2.png
+inherit_graph_3.png
+inherit_graph_4.png
+inherit_graph_5.png
+inherit_graph_6.png

@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD></HEAD><BODY>
+<OBJECT type="text/site properties">
+<param name="FrameName" value="right">
+</OBJECT>
+<UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html"><param name="Name" value="activeSql"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a62879e2e04344bf781e016fb5b3625dd"><param name="Name" value="activeSql"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a86a9c6c72235513d23fceb1a30703d3b"><param name="Name" value="closeDB"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a2eb80331b9aeccb31b62e0d27e5e289c"><param name="Name" value="getDatabase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a8e2131ef599c89bc1996f6d0fc1aa72c"><param name="Name" value="getTables"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a2e531969e1824b8b7ae722affbc79d61"><param name="Name" value="info"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a1b97848c72ce8552e9979ac6b0b58a2e"><param name="Name" value="isDBExist"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a88272e0847b983568fcc5dc9995b253d"><param name="Name" value="isTableExist"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a4563354966790c1f7001b0493080cf6c"><param name="Name" value="MSG_DATABASE_OPEN_FAILED"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a32b501ff9926cc986601295dbc39aa0b"><param name="Name" value="MSG_DEBUG"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a0d1a78ec2571d79d23e314091e66a9bd"><param name="Name" value="MSG_INTERNAL_ERROR"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a9a0f610d7e912329ae46ee2408e531b6"><param name="Name" value="MSG_OPEN_OK"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a8b647e65d1ab67cd0638d4e9040d62f9"><param name="Name" value="MSG_QUERY_FAIL"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a35bf4a77a571066dbc99be1373848e9b"><param name="Name" value="MSG_QUERY_OK"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4ae59d6ff10fecc8c0fb2840aa9105d1bd"><param name="Name" value="MSG_TIMEOUT"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#aef3b0bb805ac6212427b80f5602b66b5"><param name="Name" value="openSqlite"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#af198685a144bca0a4e6341d2d13db08b"><param name="Name" value="Q_ENUM"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#ad2c39876b4b9fbd52cabc4829c96c2d4"><param name="Name" value="query"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a52c9ce1541e2219b3095aef63c95ca33"><param name="Name" value="readQueryResult"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#aa4ef8b85d367bafa8de6e8ca7de774b2"><param name="Name" value="supportDriver"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql_lib_1_1active_sql.html"><param name="Name" value="activeSqlLib::activeSql"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html"><param name="Name" value="activeSqlLib::IactiveSql"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#a1de443346694934c5cefbf4cece12ed3"><param name="Name" value="closeDB"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#a39f8d7da09249fd8d6b919aaad9677e3"><param name="Name" value="getDatabase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#a5c11b858fd5e99f50623623946c1f4de"><param name="Name" value="getTables"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#abc64c20b56c28c8269fb573c431ed3f6"><param name="Name" value="isDBExist"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#a489a9f0105377dfe16b210f6250c664f"><param name="Name" value="isTableExist"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#a8c2c4a6fb0f77b4bb150627da6cfdb84"><param name="Name" value="openSqlite"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#a3a984a23b89bba7ea1ac276e99354ad3"><param name="Name" value="query"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#a0867e66d38cfbb05777f144f9db5ad70"><param name="Name" value="readQueryResult"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#ab7569fe013eb8c53445cff12b65606a5"><param name="Name" value="supportDriver"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql_events.html"><param name="Name" value="activeSqlLib::IactiveSqlEvents"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql_events.html#a1fdc806d14ef53aea4dacfe75f77e04e"><param name="Name" value="destroyed_1"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql_events.html#ae28c0993d6cfd93c2edfb2b3dcd90989"><param name="Name" value="info"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql_events.html#a65adb14cdde457b168758123db5abff2"><param name="Name" value="objectNameChanged"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structactive_sql_lib_1_1_q_point.html"><param name="Name" value="activeSqlLib::QPoint"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structactive_sql_lib_1_1_q_point.html#a61bf3b6c4c7edd08cdc4d27640eb8a95"><param name="Name" value="x"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structactive_sql_lib_1_1_q_point.html#afa3f90b55ccb575e47ad8489987c1ee3"><param name="Name" value="y"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structactive_sql_lib_1_1_q_rect.html"><param name="Name" value="activeSqlLib::QRect"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structactive_sql_lib_1_1_q_rect.html#aed078ff52272a0359c21166652a62fef"><param name="Name" value="bottom"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structactive_sql_lib_1_1_q_rect.html#a80558489b30dd053d3cffd23ab9fe5bc"><param name="Name" value="left"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structactive_sql_lib_1_1_q_rect.html#a765d0404fa61fc0d0273956803b0c398"><param name="Name" value="right"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structactive_sql_lib_1_1_q_rect.html#a041f9c6e07df600569dd10f215972b19"><param name="Name" value="top"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structactive_sql_lib_1_1_q_size.html"><param name="Name" value="activeSqlLib::QSize"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structactive_sql_lib_1_1_q_size.html#a781dd9dc2d8084c90c9c6e05aeee7124"><param name="Name" value="height"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structactive_sql_lib_1_1_q_size.html#a840dc6a32b3f3cb3f432628c769a2ae3"><param name="Name" value="width"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structactive_sql_lib_1_1_q_rect.html#aed078ff52272a0359c21166652a62fef"><param name="Name" value="bottom"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a86a9c6c72235513d23fceb1a30703d3b"><param name="Name" value="closeDB"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a86a9c6c72235513d23fceb1a30703d3b"><param name="Name" value="activeSql"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#a1de443346694934c5cefbf4cece12ed3"><param name="Name" value="activeSqlLib::IactiveSql"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql_events.html#a1fdc806d14ef53aea4dacfe75f77e04e"><param name="Name" value="destroyed_1"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a2eb80331b9aeccb31b62e0d27e5e289c"><param name="Name" value="getDatabase"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a2eb80331b9aeccb31b62e0d27e5e289c"><param name="Name" value="activeSql"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#a39f8d7da09249fd8d6b919aaad9677e3"><param name="Name" value="activeSqlLib::IactiveSql"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a8e2131ef599c89bc1996f6d0fc1aa72c"><param name="Name" value="getTables"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a8e2131ef599c89bc1996f6d0fc1aa72c"><param name="Name" value="activeSql"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#a5c11b858fd5e99f50623623946c1f4de"><param name="Name" value="activeSqlLib::IactiveSql"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structactive_sql_lib_1_1_q_size.html#a781dd9dc2d8084c90c9c6e05aeee7124"><param name="Name" value="height"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a2e531969e1824b8b7ae722affbc79d61"><param name="Name" value="info"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a2e531969e1824b8b7ae722affbc79d61"><param name="Name" value="activeSql"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql_events.html#ae28c0993d6cfd93c2edfb2b3dcd90989"><param name="Name" value="activeSqlLib::IactiveSqlEvents"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a1b97848c72ce8552e9979ac6b0b58a2e"><param name="Name" value="isDBExist"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a1b97848c72ce8552e9979ac6b0b58a2e"><param name="Name" value="activeSql"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#abc64c20b56c28c8269fb573c431ed3f6"><param name="Name" value="activeSqlLib::IactiveSql"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a88272e0847b983568fcc5dc9995b253d"><param name="Name" value="isTableExist"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a88272e0847b983568fcc5dc9995b253d"><param name="Name" value="activeSql"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#a489a9f0105377dfe16b210f6250c664f"><param name="Name" value="activeSqlLib::IactiveSql"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structactive_sql_lib_1_1_q_rect.html#a80558489b30dd053d3cffd23ab9fe5bc"><param name="Name" value="left"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a4563354966790c1f7001b0493080cf6c"><param name="Name" value="MSG_DATABASE_OPEN_FAILED"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a32b501ff9926cc986601295dbc39aa0b"><param name="Name" value="MSG_DEBUG"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a0d1a78ec2571d79d23e314091e66a9bd"><param name="Name" value="MSG_INTERNAL_ERROR"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a9a0f610d7e912329ae46ee2408e531b6"><param name="Name" value="MSG_OPEN_OK"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a8b647e65d1ab67cd0638d4e9040d62f9"><param name="Name" value="MSG_QUERY_FAIL"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4a35bf4a77a571066dbc99be1373848e9b"><param name="Name" value="MSG_QUERY_OK"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a91845a2bd55ee0850698ae978b658bc4ae59d6ff10fecc8c0fb2840aa9105d1bd"><param name="Name" value="MSG_TIMEOUT"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql_events.html#a65adb14cdde457b168758123db5abff2"><param name="Name" value="objectNameChanged"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#aef3b0bb805ac6212427b80f5602b66b5"><param name="Name" value="openSqlite"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#aef3b0bb805ac6212427b80f5602b66b5"><param name="Name" value="activeSql"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#a8c2c4a6fb0f77b4bb150627da6cfdb84"><param name="Name" value="activeSqlLib::IactiveSql"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#af198685a144bca0a4e6341d2d13db08b"><param name="Name" value="Q_ENUM"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#ad2c39876b4b9fbd52cabc4829c96c2d4"><param name="Name" value="query"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#ad2c39876b4b9fbd52cabc4829c96c2d4"><param name="Name" value="activeSql"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#a3a984a23b89bba7ea1ac276e99354ad3"><param name="Name" value="activeSqlLib::IactiveSql"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a52c9ce1541e2219b3095aef63c95ca33"><param name="Name" value="readQueryResult"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#a52c9ce1541e2219b3095aef63c95ca33"><param name="Name" value="activeSql"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#a0867e66d38cfbb05777f144f9db5ad70"><param name="Name" value="activeSqlLib::IactiveSql"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structactive_sql_lib_1_1_q_rect.html#a765d0404fa61fc0d0273956803b0c398"><param name="Name" value="right"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#aa4ef8b85d367bafa8de6e8ca7de774b2"><param name="Name" value="supportDriver"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classactive_sql.html#aa4ef8b85d367bafa8de6e8ca7de774b2"><param name="Name" value="activeSql"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfaceactive_sql_lib_1_1_iactive_sql.html#ab7569fe013eb8c53445cff12b65606a5"><param name="Name" value="activeSqlLib::IactiveSql"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structactive_sql_lib_1_1_q_rect.html#a041f9c6e07df600569dd10f215972b19"><param name="Name" value="top"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structactive_sql_lib_1_1_q_size.html#a840dc6a32b3f3cb3f432628c769a2ae3"><param name="Name" value="width"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structactive_sql_lib_1_1_q_point.html#a61bf3b6c4c7edd08cdc4d27640eb8a95"><param name="Name" value="x"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structactive_sql_lib_1_1_q_point.html#afa3f90b55ccb575e47ad8489987c1ee3"><param name="Name" value="y"></OBJECT>
+</UL>
+</BODY>
+</HTML>
