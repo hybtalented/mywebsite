@@ -4,7 +4,9 @@
 #init 
 tfetch(QString,notice) 
 
-@notice_msg ~== notice + "前往" + linkTo("注册",urla("userregister"))
+@notice_msg ~== notice.length()==0?  ("前往" + linkTo("注册",urla("userregister"))) : notice
+
+@error ~=$ error;
 
 @head_title ~= controller()->name()+" "+controller()->activeAction()
 

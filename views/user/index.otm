@@ -1,0 +1,11 @@
+#include "user.h"
+#pragma execution_character_set("utf-8") 
+
+#init 
+tfetch(QString,notice) 
+
+@notice_msg ~=$ notice
+
+@error ~=$ error;
+
+@head_title ~= controller()->name()+" "+controller()->activeAction()
