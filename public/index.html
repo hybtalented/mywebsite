@@ -1,163 +1,733 @@
-<!doctype html>
-<html lang="zh-CN">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html>
+<html lang="en-us">	
+	<head>
+		<meta charset="utf-8">
+		<title> SmartAdmin (AJAX)</title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<!-- #CSS Links -->
+		<!-- Basic Styles -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css"  >
-    <link href="/css/open-iconic/font/css/open-iconic-bootstrap.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">`
-    <title>主页</title>
-     <script src="/js/bootstrap/jquery-3.3.1.min.js"  ></script>
-    <script src="/js/bootstrap/popper.min.js"  ></script>
-    <script src="/js/bootstrap/bootstrap.min.js"  ></script>
-        <script>
-    function changeFrameHeight(){
-      var ifm= document.getElementById("main-page"); 
-      ifm.height=window.innerHeight-$(".navbar")[0].offsetHeight;
-    }
-    window.onresize=function(){  
-      changeFrameHeight();  
-    } 
-     function checkLogin(){
+		<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production-plugins.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+		<link rel="stylesheet" href="./css/open-iconic/font/css/open-iconic-bootstrap.min.css">
+
+		<!-- DEV links : turn this on when you like to develop directly -->
+		<!--<link rel="stylesheet" type="text/css" media="screen" href="../Source_UNMINIFIED_CSS/smartadmin-production.css">-->
+		<!--<link rel="stylesheet" type="text/css" media="screen" href="../Source_UNMINIFIED_CSS/smartadmin-skins.css">-->
+
+		<!-- SmartAdmin RTL Support -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css"> 
+
+		<!-- We recommend you use "your_style.css" to override SmartAdmin
+		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
+		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+
+		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css">
+
+		<!-- #FAVICONS -->
+		<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+
+		<!-- #GOOGLE FONT -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+		<!-- Vue.js -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+		</script>
+
+	</head>
+
+	<!--
+
+	TABLE OF CONTENTS.
+	
+	Use search to find needed section.
+	
+	===================================================================
+	
+	|  01. #CSS Links                |  all CSS links and file paths  |
+	|  02. #FAVICONS                 |  Favicon links and file paths  |
+	|  03. #GOOGLE FONT              |  Google font link              |
+	|  04. #APP SCREEN / ICONS       |  app icons, screen backdrops   |
+	|  05. #BODY                     |  body tag                      |
+	|  06. #HEADER                   |  header tag                    |
+	|  07. #PROJECTS                 |  project lists                 |
+	|  08. #TOGGLE LAYOUT BUTTONS    |  layout buttons and actions    |
+	|  09. #MOBILE                   |  mobile view dropdown          |
+	|  10. #SEARCH                   |  search field                  |
+	|  11. #NAVIGATION               |  left panel & navigation       |
+	|  12. #MAIN PANEL               |  main panel                    |
+	|  13. #MAIN CONTENT             |  content holder                |
+	|  14. #PAGE FOOTER              |  page footer                   |
+	|  15. #SHORTCUT AREA            |  dropdown shortcuts area       |
+	|  16. #PLUGINS                  |  all scripts and plugins       |
+	
+	===================================================================
+	
+	-->
+	
+	<!-- #BODY -->
+	<!-- Possible Classes
+
+		* 'smart-style-{SKIN#}'
+		* 'smart-rtl'         - Switch theme mode to RTL
+		* 'menu-on-top'       - Switch to top navigation (no DOM change required)
+		* 'no-menu'			  - Hides the menu completely
+		* 'hidden-menu'       - Hides the main menu but still accessable by hovering over left edge
+		* 'fixed-header'      - Fixes the header
+		* 'fixed-navigation'  - Fixes the main menu
+		* 'fixed-ribbon'      - Fixes breadcrumb
+		* 'fixed-page-footer' - Fixes footer
+		* 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
+	-->
+	<body class="smart-style-0">
+
+		<!-- #HEADER -->
+		<header id="header">
+			<div id="logo-group">
+
+				<!-- PLACE YOUR LOGO HERE -->
+				<span id="logo"> <img src="img/logo.png" alt="SmartAdmin"> </span>
+				<!-- END LOGO PLACEHOLDER -->
+
+				<!-- Note: The activity badge color changes when clicked and resets the number to 0
+					 Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
+				<span id="activity" class="activity-dropdown"> <i class="oi oi-person"></i> <b class="badge"> {{user_message}} </b> </span>
+
+				<!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
+				<div class="ajax-dropdown">
+
+					<!-- the ID links are fetched via AJAX to the ajax container "ajax-notifications" -->
+					<div class="btn-group btn-group-justified" data-toggle="buttons">
+						<label class="btn btn-default">
+							<input type="radio" name="activity" id="ajax/blog.html">
+							博客数 {{NOblog}} </label>
+					</div>
+
+					<!-- notification content -->
+					<div class="ajax-notifications custom-scroll">
+
+						<div class="alert alert-transparent">
+							<h4>Click a button to show messages here</h4>
+							This blank page message helps protect your privacy, or you can show the first message here automatically.
+						</div>
+
+						<i class="fa fa-lock fa-4x fa-border"></i>
+
+					</div>
+					<!-- end notification content -->
+
+					<!-- footer: refresh area -->
+					<span> {{user_message_update_time}}
+						<button type="button" data-loading-text="<i class='oi oi-reload'></i> 加载中..." class="btn btn-xs btn-default pull-right">
+							<i class="fa fa-refresh"></i>
+						</button> </span>
+					<!-- end footer -->
+
+				</div>
+				<!-- END AJAX-DROPDOWN -->
+			</div>
+
+			<!-- #PROJECTS: projects dropdown -->
+			<div class="project-context hidden-xs">
+
+				<span class="label">博客集:</span>
+				<span class="project-selector dropdown-toggle" data-toggle="dropdown">最近的博客 <i class="fa fa-angle-down"></i></span>
+
+				<!-- Suggestion: populate this list with fetch and push technique -->
+				<ul class="dropdown-menu">
+					<li  v-for="blog in blogs">
+						<a v-bind:href="blog.href">{{blog.title}}</a>
+					</li>
+				</ul>
+				<!-- end dropdown-menu-->
+
+			</div>
+			<!-- end projects dropdown -->
+			
+			<!-- #TOGGLE LAYOUT BUTTONS -->
+			<!-- pulled right: nav area -->
+			<div class="pull-right">
+				
+				<!-- collapse menu button -->
+				<div id="hide-menu" class="btn-header pull-right">
+					<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+				</div>
+				<!-- end collapse menu -->
+				
+				<!-- #MOBILE -->
+				<!-- Top menu profile link : this shows only when top menu is active -->
+				<ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
+					<li class="">
+						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown"> 
+							<img src="img/avatars/sunny.png" alt="John Doe" class="online" />  
+						</a>
+						<ul class="dropdown-menu pull-right">
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0"><i class="oi oi-wrench"></i> 设置</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#ajax/profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="oi oi-person"></i> <u>用户</u>配置</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="toggleShortcut"><i class="oi oi-collapse-down"></i> <u>S</u>hortcut</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> 全 <u>屏</u>显示</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="/user/logout" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout" data-check="checkLogin()"><i class="oi oi-account-logout"></i> <strong>用户<u>退出</u></strong></a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+				<!-- logout button -->
+				<div id="logout" class="btn-header transparent pull-right">
+					<span> <a href="User/logout" title="Sign Out" data-action="userLogout" data-logout-msg="您确定要退出吗？" data-check="checkLogin()"><i class="oi oi-account-logout"></i></a> </span>
+				</div>
+				<!-- end logout button -->
+
+				<!-- search mobile button (this is hidden till mobile view port) -->
+				<div id="search-mobile" class="btn-header transparent pull-right">
+					<span> <a href="javascript:void(0)" title="Search"><i class="oi oi-magnifying-glass"></i></a> </span>
+				</div>
+				<!-- end search mobile button -->
+				
+				<!-- #SEARCH -->
+				<!-- input: search field -->
+				<form action="#ajax/search.html" class="header-search pull-right">
+					<input id="search-fld" type="text" name="param" placeholder="Find reports and more">
+					<button type="submit">
+						<i class="fa fa-search"></i>
+					</button>
+					<a href="javascript:void(0);" id="cancel-search-js" title="Cancel Search"><i class="fa fa-times"></i></a>
+				</form>
+				<!-- end input: search field -->
+
+				<!-- fullscreen button -->
+				<div id="fullscreen" class="btn-header transparent pull-right">
+					<span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
+				</div>
+				<!-- end fullscreen button -->
+
+				<!-- #Voice Command: Start Speech -->
+				<!-- NOTE: Voice command button will only show in browsers that support it. Currently it is hidden under mobile browsers. 
+						   You can take off the "hidden-sm" and "hidden-xs" class to display inside mobile browser-->
+				<div id="speech-btn" class="btn-header transparent pull-right hidden-sm hidden-xs">
+					<div> 
+						<a href="javascript:void(0)" title="Voice Command" data-action="voiceCommand"><i class="fa fa-microphone"></i></a> 
+						<div class="popover bottom"><div class="arrow"></div>
+							<div class="popover-content">
+								<h4 class="vc-title">Voice command activated <br><small>Please speak clearly into the mic</small></h4>
+								<h4 class="vc-title-error text-center">
+									<i class="fa fa-microphone-slash"></i> Voice command failed
+									<br><small class="txt-color-red">Must <strong>"Allow"</strong> Microphone</small>
+									<br><small class="txt-color-red">Must have <strong>Internet Connection</strong></small>
+								</h4>
+								<a href="javascript:void(0);" class="btn btn-success" onclick="commands.help()">See Commands</a> 
+								<a href="javascript:void(0);" class="btn bg-color-purple txt-color-white" onclick="$('#speech-btn .popover').fadeOut(50);">Close Popup</a> 
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end voice command -->
+
+				<!-- multiple lang dropdown : find all flags in the flags page -->
+				<ul class="header-dropdown-list hidden-xs">
+					<li>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="img/blank.gif" class="flag flag-us" alt="United States"> <span> US</span> <i class="fa fa-angle-down"></i> </a>
+						<ul class="dropdown-menu pull-right">
+							<li class="active">
+								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-us" alt="United States"> English (US)</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-fr" alt="France"> Français</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-es" alt="Spanish"> Español</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-de" alt="German"> Deutsch</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-jp" alt="Japan"> 日本語</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-cn" alt="China"> 中文</a>
+							</li>	
+							<li>
+								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-it" alt="Italy"> Italiano</a>
+							</li>	
+							<li>
+								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-pt" alt="Portugal"> Portugal</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-ru" alt="Russia"> Русский язык</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-kr" alt="Korea"> 한국어</a>
+							</li>						
+							
+						</ul>
+					</li>
+				</ul>
+				<!-- end multiple lang -->
+
+			</div>
+			<!-- end pulled right: nav area -->
+
+		</header>
+		<!-- END HEADER -->
+
+		<!-- #NAVIGATION -->
+		<!-- Left panel : Navigation area -->
+		<!-- Note: This width of the aside area can be adjusted through LESS/SASS variables -->
+		<aside id="left-panel" >
+
+			<!-- User info -->
+			<div class="login-info">
+				<span> <!-- User image size is adjusted inside CSS, it should stay as is --> 
+					
+					<a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+						<img v-bind:src="'data:image/x-icon;base64,'+user['icon']" v-bind:alt="user['name']" class="online" /> 
+						<span>
+							{{user['name']}}
+						</span>
+						<i class="oi oi-chevron-bottom"></i>
+					</a> 
+					
+				</span>
+			</div>
+			<!-- end user info -->
+
+			<!-- NAVIGATION : This navigation is also responsive
+
+			To make this navigation dynamic please make sure to link the node
+			(the reference to the nav > ul) after page load. Or the navigation
+			will not initialize.
+			-->
+			<nav>
+				<!-- 
+				NOTE: Notice the gaps after each icon usage <i></i>..
+				Please note that these links work a bit different than
+				traditional href="" links. See documentation for details.
+				-->
+
+				<ul>
+					<li class="">
+						<a href="./index-page.html" title="Dashboard"><i class="oi oi-home"></i> <span class="menu-item-parent">主页</span></a>
+					</li>
+					<li class="top-menu-invisible">
+						<a href="./index-page.html"><i class="oi oi-person"></i> <span class="menu-item-parent">人脸识别</span></a>
+					</li>
+					<li>
+						<a href="/Blog"><i class="oi oi-document"></i> <span class="menu-item-parent">博客</span> <span class="badge pull-right inbox-badge margin-right-13">{{user_message}}</span></a>
+					</li>
+					<li>
+						<a href="#"><i class="oi oi-book"></i> <span class="menu-item-parent">文档</span></a>
+						<ul>
+							<li>
+								<a href="doc/qtdoc/qtdoc/index.html">Qt5</a>
+							</li>
+							<li>
+								<a href="doc/qmllive/qmllive/qmllive-index.html">QMLlive</a>
+							</li>
+							<li>
+								<a href="iframe:http://ai.baidu.com/docs#/Face-Detect-V3/top">百度人脸识别</a>
+							</li>
+							<li>
+								<a href="./modules/editor.md/examples/index.html">EditormD</a>
+							</li>
+							<li>
+								<a href="./doc/cef3doc/Home.md">Cef3</a>
+							</li>
+							<li>
+								<a href="iframe:https://docs.docker.com/get-started/">Docker容器化</a>
+							</li>
+							<li>
+								<a href="./doc/opencv/4.0.0/index.html">OPENCV——图像处理 </a>
+							</li>
+							<li>
+								<a href="iframe:http://www.doxygen.nl/manual/index.html">Doxygen——文档自动生成 <span class="badge pull-right inbox-badge bg-color-yellow">new</span></a>
+							</li>
+							<li>
+								<a href="./doc/ffmpeg/ffmpeg-all.html">FFMPEG库 <span class="badge pull-right inbox-badge bg-color-yellow">new</span></a>
+							</li>
+							<li>
+								<a href="./doc/jspdfdoc/index.html">jspdf <span class="badge pull-right inbox-badge bg-color-yellow">new</span>
+								</a>
+							</li>
+							<li>
+								<a href="./SmartAdmin_1.9.x/index.html"> SmartAdmin_1.9.x<span class="badge pull-right inbox-badge bg-color-yellow">new</span></a>
+							</li>
+							<li>
+								<a href="iframe:https://cn.vuejs.org/v2/guide/#%E5%A3%B0%E6%98%8E%E5%BC%8F%E6%B8%B2%E6%9F%93"> Vue.js<span class="badge pull-right inbox-badge bg-color-yellow">new</span></a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#"><i class="oi oi-text"></i> <span class="menu-item-parent">我的文档</span></a>
+						<ul>
+							<li>
+								<a href="./mydoc/sqlbrowser/index.html">Doxygen——sqlbrowser文档</a>
+							</li>
+							<li>
+								<a href="./mydoc/sqlActiveX/index.html">sql数据库 activeX插件</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#"><i class="oi oi-basket"></i> <span class="menu-item-parent">仓库</span></a>
+						<ul>
+							<li>
+								<a href="iframe:https://github.com/hybtalented/"> github</a>
+							</li>
+							<li>
+								<a href="iframe:https://bitbucket.org/heyoubiao/">Bitbucket</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#"><i class="oi oi-wrench"></i> <span class="menu-item-parent">工具</span></a>
+						<ul>
+							<li>
+								<a href="./modules/editor.md/examples/full.html">MarkDown编辑工具</a>
+							</li>
+							<li>
+								<a href="./modules/flowchart.js/example/index.html">flowChart 流程图工具</a>
+							</li>
+							<li>
+								<a href="iframe:http://47.110.71.66:5601/">日志管理工具</a>
+							</li>
+							<li>
+								<a href="/jstools/base64transfer">javascript工具</a>
+							</li>
+							<li>
+								<a href="iframe:http://naotu.baidu.com/home"> 百度脑图<span class="badge pull-right inbox-badge bg-color-yellow">new</span></a>
+							</li>
+						</ul>
+					<li>
+						<a href="#"><i class="oi oi-pie-chart"><em>3</em></i> <span class="menu-item-parent">图表</span></a>
+						<ul>
+							<li>
+								<a href="iframe:http://47.110.71.66:5601/app/kibana#/visualize/edit/3dd02630-1488-11e9-a4e3-efeb2239b22e?embed=true&_g=(refreshInterval%3A(pause%3A!f%2Cvalue%3A10000)%2Ctime%3A(from%3Anow-4h%2Cmode%3Aquick%2Cto%3Anow))"><i class="fa fa-lg fa-fw fa-calendar"></i> <span class="menu-item-parent">监控日志</span></a>
+							</li>
+						</ul>
+					</li>	
+				</ul>
+			</nav>
+			<!-- <a href="#ajax/difver.html" class="btn btn-primary nav-demo-btn"><i class="fa fa-info-circle"></i> SmartAdmin Package (187 MB)</a> -->
+			
+			
+
+			<span class="minifyme" data-action="minifyMenu"> <i class="fa fa-arrow-circle-left hit"></i> </span>
+
+		</aside>
+		<!-- END NAVIGATION -->
+		
+		<!-- #MAIN PANEL -->
+		<div id="main" role="main">
+
+			<!-- RIBBON -->
+			<div id="ribbon">
+
+				<span class="ribbon-button-alignment"> 
+					<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true" data-reset-msg="Would you like to RESET all your saved widgets and clear LocalStorage?"><i class="fa fa-refresh"></i></span> 
+				</span>
+
+				<!-- breadcrumb -->
+				<ol class="breadcrumb">
+					<!-- This is auto generated -->
+				</ol>
+				<!-- end breadcrumb -->
+
+				<!-- You can also add more buttons to the
+				ribbon for further usability
+
+				Example below:
+
+				<span class="ribbon-button-alignment pull-right" style="margin-right:25px">
+					<a href="#" id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa fa-grid"></i> Change Grid</a>
+					<span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa fa-plus"></i> Add</span>
+					<button id="search" class="btn btn-ribbon" data-title="search"><i class="fa fa-search"></i> <span class="hidden-mobile">Search</span></button>
+				</span> -->
+
+			</div>
+			<!-- END RIBBON -->
+
+			<!-- #MAIN CONTENT -->
+			<iframe src="index-page.html" frameborder="0" id="iframecontent" onload="onloadcontent()"  scrollbar="none" style="padding:0;width:100%;"></iframe>
+			<div id="content">
+
+			</div>
+			
+			<!-- END #MAIN CONTENT -->
+
+		</div>
+		<!-- END #MAIN PANEL -->
+
+		<!-- #PAGE FOOTER -->
+		<div class="page-footer">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<span class="txt-color-white">SmartAdmin 1.9.0 <span class="hidden-xs"> - Web Application Framework</span> © 2017-2019</span>
+				</div>
+
+				<div class="col-xs-6 col-sm-6 text-right hidden-xs">
+					<div class="txt-color-white inline-block">
+						<i class="txt-color-blueLight hidden-mobile">Last account activity <i class="fa fa-clock-o"></i> <strong>52 mins ago &nbsp;</strong> </i>
+						<div class="btn-group dropup">
+							<button class="btn btn-xs dropdown-toggle bg-color-blue txt-color-white" data-toggle="dropdown">
+								<i class="fa fa-link"></i> <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu pull-right text-left">
+								<li>
+									<div class="padding-5">
+										<p class="txt-color-darken font-sm no-margin">Download Progress</p>
+										<div class="progress progress-micro no-margin">
+											<div class="progress-bar progress-bar-success" style="width: 50%;"></div>
+										</div>
+									</div>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<div class="padding-5">
+										<p class="txt-color-darken font-sm no-margin">Server Load</p>
+										<div class="progress progress-micro no-margin">
+											<div class="progress-bar progress-bar-success" style="width: 20%;"></div>
+										</div>
+									</div>
+								</li>
+								<li class="divider"></li>
+								<li >
+									<div class="padding-5">
+										<p class="txt-color-darken font-sm no-margin">Memory Load <span class="text-danger">*critical*</span></p>
+										<div class="progress progress-micro no-margin">
+											<div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
+										</div>
+									</div>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<div class="padding-5">
+										<button class="btn btn-block btn-default">refresh</button>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- end btn-group-->
+					</div>
+					<!-- end div-->
+				</div>
+				<!-- end col -->
+			</div>
+			<!-- end row -->
+		</div>
+		<!-- END FOOTER -->
+
+		<!-- #SHORTCUT AREA : With large tiles (activated via clicking user name tag)
+			 Note: These tiles are completely responsive, you can add as many as you like -->
+		<div id="shortcut">
+			<ul>
+				<li>
+					<a href="#ajax/inbox.html" class="jarvismetro-tile big-cubes bg-color-blue"> <span class="iconbox"> <i class="fa fa-envelope fa-4x"></i> <span>Mail <span class="label pull-right bg-color-darken">14</span></span> </span> </a>
+				</li>
+				<li>
+					<a href="#ajax/calendar.html" class="jarvismetro-tile big-cubes bg-color-orangeDark"> <span class="iconbox"> <i class="fa fa-calendar fa-4x"></i> <span>Calendar</span> </span> </a>
+				</li>
+				<li>
+					<a href="#ajax/gmap-xml.html" class="jarvismetro-tile big-cubes bg-color-purple"> <span class="iconbox"> <i class="fa fa-map-marker fa-4x"></i> <span>Maps</span> </span> </a>
+				</li>
+				<li>
+					<a href="#ajax/invoice.html" class="jarvismetro-tile big-cubes bg-color-blueDark"> <span class="iconbox"> <i class="fa fa-book fa-4x"></i> <span>Invoice <span class="label pull-right bg-color-darken">99</span></span> </span> </a>
+				</li>
+				<li>
+					<a href="#ajax/gallery.html" class="jarvismetro-tile big-cubes bg-color-greenLight"> <span class="iconbox"> <i class="fa fa-picture-o fa-4x"></i> <span>Gallery </span> </span> </a>
+				</li>
+				<li>
+					<a href="#ajax/profile.html" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-user fa-4x"></i> <span>My Profile </span> </span> </a>
+				</li>
+			</ul>
+		</div>
+		<!-- END SHORTCUT AREA -->
+
+		<!--================================================== -->
+
+		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)
+		<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>-->
+		
+		<script id="vueapp">
+		    var v_header = new Vue({
+	  			el: '#header',
+				data: {
+					user_message: '21',
+					NOblog: 10,
+					user_message_update_time: "20190129 14:40",
+					blogs:[{
+						href:"/Blog/share/1",
+						title:"博客1"
+					},{
+						href:"/Blog/share/12",
+						title:"博客2"
+					}
+					]
+			    }
+			});
+			var v_leftpanel = new Vue({
+				el: "#left-panel",
+				data:{
+					user_message: v_header.user_message,
+					user:{
+						name:"hello world",
+						icon:"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"
+					}
+				}
+			});
+			var v_content = new Vue({
+				el: "#content",
+			});
+		</script>
+
+
+		<!-- #PLUGINS -->
+		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+		<script src="js/bootstrap/jquery-3.3.1.min.js"></script>
+
+		<script src="js/jquery-ui.min.js"></script>;
+		
+		<!-- IMPORTANT: APP CONFIG -->
+		<script src="js/app.config.js"></script>
+
+		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
+		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> 
+
+		<!-- Popper JS-->
+		<script src="js/bootstrap/popper.min.js"></script>
+
+		<!-- BOOTSTRAP JS -->
+		<script src="js/bootstrap/bootstrap.min.js"></script>
+
+		<!-- CUSTOM NOTIFICATION -->
+		<script src="js/notification/SmartNotification.min.js"></script>
+
+		<!-- JARVIS WIDGETS -->
+		<script src="js/smartwidgets/jarvis.widget.min.js"></script>
+
+		<!-- EASY PIE CHARTS -->
+		<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+
+		<!-- SPARKLINES -->
+		<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
+
+		<!-- JQUERY VALIDATE -->
+		<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+
+		<!-- JQUERY MASKED INPUT -->
+		<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+
+		<!-- JQUERY SELECT2 INPUT -->
+		<script src="js/plugin/select2/select2.min.js"></script>
+
+		<!-- JQUERY UI + Bootstrap Slider -->
+		<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+
+		<!-- browser msie issue fix -->
+		<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+
+		<!-- FastClick: For mobile devices: you can disable this in app.js -->
+		<script src="js/plugin/fastclick/fastclick.min.js"></script>
+
+		<!--[if IE 8]>
+			<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+		<![endif]-->
+
+		<!-- Demo purpose only -->
+		<script src="js/demo.min.js"></script>
+
+		<!-- MAIN APP JS FILE -->
+		<script src="js/app.min.js"></script>
+
+		<!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
+		<!-- Voice command : plugin -->
+		<script src="js/speech/voicecommand.min.js"></script>
+
+		<!-- SmartChat UI : plugin -->
+		<script src="js/smart-chat-ui/smart.chat.ui.min.js"></script>
+		<script src="js/smart-chat-ui/smart.chat.manager.min.js"></script>
+
+		<!-- Your GOOGLE ANALYTICS CODE Below -->
+		<script>
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-43548732-6']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		 function onloadcontent(){
+			 var $content = $("#iframecontent");
+			 var content = $content.get(0);
+			 var iframeWin = content.contentWindow || content.contentDocument.parentWindow;
+			 content.style.visibility = 'hidden';
+			 content.height = 'auto'; 
+			 setTimeout(function() {
+				 try{
+					 content.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+				 }catch(ex){
+					 console.log(ex);
+					 content.height =  "900px" ;
+				}
+					content.style.visibility = 'visible';
+			},1000);
+		 }
+	function checkLogin(){
+	    function login_success(name,icon){
+			v_leftpanel.user = {name:name,icon:icon};
+			console.log("login success");
+		}
+		function login_fail(){
+			v_leftpanel.user = {name:"未登录",icon:"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"};
+			console.log("login fail");
+		}
         $.ajax({
-          type:"POST",
-          dataType:"json",
-          url: "/user/isLogin" ,//url
-          data: {},
-          success:function(result){
-            if(result.login && typeof result.username != "undefined" ){
-              $("#i_login").html("<div class='navbar-text navbar-primary'>欢迎<a href='/user' class='btn-success'>"+result.username + "</a></div>").find("[href]").click(btn_click);
-              $("#i_register").html("<a href='/User/logout' class='nav-link btn-error'><span class='oi oi-account-logout warning'></span>退出</a>").children("[href]").click(btn_click);
-            }else{
-              $('#i_login').html("<a href='/User/login' class='nav-link'><span class='oi oi-account-login'></span> 登录 </a>").children("a").click(btn_click);
-              $("#i_register").html('<a href="/User/userregister" class="nav-link"><span class="oi oi-random"></span> 注册</a>').children("a").click(btn_click);
+            type:"POST",
+            dataType:"json",
+            url: "/user/isLogin" ,//url
+            data: {},
+            success:function(result){
+                if(result.login && typeof result.username != "undefined" ){
+				    login_success(result.username,result.icon);
+                }else{
+	    			login_fail();
+                }
+            },
+            error:function(){
+                login_fail();
             }
-          },
-          error:function(){
-            console.log("请求登录状态失败")
-          }
         });
-      };
-    function btn_click(){
-      if($(this).hasClass("nav-item")){
-          $(".nav-item").removeClass("active");
-          $(this).addClass("active");
-        }
-        if(!$(this).hasClass("dropdown-toggle")){
-          $(".collapse").removeClass("show");
-          $(".dropdown-menu").removeClass("show");
-          var mainpage= document.getElementById("main-page");
-          if(this.href && typeof this.href == "string"){
-            if(this.href.endsWith(".md")){
-              mainpage.src="readmd.html"+"?src="+this.href;
-            }else{
-              mainpage.src=this.href;
-            }
-          }
-          $("#i_jump").find("a")[0].href=mainpage.src;
-          return false;
-        }
-    }
-    </script>
-  </head>
-  <body>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark bd-navbar animated" role="navigation">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse float-left" id="navbarNavDropdown">
-              <ul class="navbar-nav mr-auto">
-                  <li class="nav-item" id="i_index"><a href="index-page.html" class="nav-link"> <span class="oi oi-home"></span> 主页</a></li>
-                  <li class="nav-item" id="i_face"><a href="index-page.html" class="nav-link"> <span class="oi oi-video"></span> 人脸识别</a></li>
-                  <li class="nav-item check_login" id="i_blog"><a href="/Blog" class="nav-link"> <span class="oi oi-document"></span> 博客 </a></li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="docdropdown"  href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="oi oi-book"></span>
-                    文档
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="docdropdown">
-                      <a href="/doc/qtdoc/qtdoc/index.html" class="dropdown-item">QT文档</a>
-                      <a class="dropdown-item" href="/doc/qmllive/qmllive/qmllive-index.html"> QMLLive文档</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="http://ai.baidu.com/docs#/Face-Detect-V3/top">百度人脸识别文档</a>
-                      <a class="dropdown-item" href="./modules/editor.md/examples/index.html">EditMD文档</a>
-                      <a href="./doc/cef3doc/Home.md" class="dropdown-item">cef3文档</a>
-                      <a href="https://docs.docker.com/get-started/" class="dropdown-item">Docker——容器化</a>
-                      <a href="./doc/opencv/4.0.0/index.html" class="dropdown-item">OPENCV——图像处理</a>
-                      <a href="http://www.doxygen.nl/manual/index.html" class="dropdown-item">Doxygen——文档自动生成</a>
-                      <a href="./doc/ffmpeg/ffmpeg-all.html" class="dropdown-item">FFMPEG库</a>
-                      <a href="./doc/jspdfdoc/index.html" class="dropdown-item">jspdf</a>
-                    </div>
-                  </li>
-                  <li class="nav-item dropdown">
-					        	<a class="nav-link dropdown-toggle" id="mydocdropdown"  href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="oi oi-text" ></span>
-                        我的文档
-         						</a>
-                    <div class="dropdown-menu" aria-labelledby="mydocdropdown">
-                      <a href="./mydoc/sqlbrowser/index.html" class="dropdown-item">Doxygen——sqlbrowser文档</a>
-                    </div>
-				          </li>
-                  <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" id="repodropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="oi oi-basket"></span> 仓库</a>
-                    <div class="dropdown-menu" aria-labelledby="repodropdown">
-                      <a href="https://github.com/hybtalented/" class="dropdown-item"> github</a>
-                      <a href="https://bitbucket.org/heyoubiao/" class="dropdown-item">Bitbucket</a>
-                    </div>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" id="tooldropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="oi oi-wrench"></span>工具</a>
-                    <div class="dropdown-menu" aria-labelledby="tooldropdown">
-                      <a href="./modules/editor.md/examples/full.html" class="dropdown-item">MarkDown编辑工具</a>
-                      <a href="./modules/flowchart.js/example/index.html" class="dropdown-item">flowChart 流程图工具</a>
-                      <a href="http://47.110.71.66:5601/" class="dropdown-item check_login">日志管理工具</a>
-                      <a href="/jstools/base64transfer" class="dropdown-item">javascript工具</a>
-                      <div class="btn-group dropright">
-                        <button type="button"></button>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" id="logdropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="oi oi-list"></span>日志</a>
-                    <div class="dropdown-menu" aria-labelledby="logdropdown">
-                      <a href="http://47.110.71.66:5601/app/kibana#/visualize/edit/3dd02630-1488-11e9-a4e3-efeb2239b22e?embed=true&_g=(refreshInterval%3A(pause%3A!f%2Cvalue%3A10000)%2Ctime%3A(from%3Anow-4h%2Cmode%3Aquick%2Cto%3Anow))" class="dropdown-item">treefrog监控日志</a>
-                    </div>
-                  </li>
-              </ul>
-          </div>
-          <ul class="navbar-nav mr-auto float-right">
-            <li class="nav-item"><span class="navbar-text navbar-light"> 无法打开？点击按钮跳转。</span></li>
-              <li class="nav-item" id="i_jump"> <a id="jump_buttom" href="/index-page.html" target="_blank" class="nav-link btn-success"><span class="oi oi-external-link"></span> 跳转 </a> </li>
-              <li class="nav-item" id="i_login"> <a href="/User/login" class="nav-link"><span class="oi oi-account-login"></span> 登录 </a> </li>
-              <li class="nav-item" id="i_register"> <a href="/User/userregister" class="nav-link"><span class="oi oi-random"></span> 注册</a></li>
-          </ul>
-      </nav>
-         <iframe  id="main-page" src="index-page.html"  onload="changeFrameHeight()" width="100%" frameborder="0"></iframe>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-   
+    };
+		
+		checkLogin();  // 确认登录状态
+	
+		</script>
 
-    <script>
-    $(document).ready(function(){
-      if(!String.prototype.endsWith){
-        String.prototype.endsWith = function(str){
-          var reg =new RegExp(str + "$")
-          return reg.test(this);
-        }
-      }
-      if(!String.prototype.startsWith){
-        String.prototype.startsWith = function(str){
-          var reg =new RegExp("^" + str );
-          return reg.test(this);
-        }
-      }
-      $("[href]:not(#jump_buttom)").click(btn_click);
-      $(".check_login").click(checkLogin);
-      checkLogin();  // 确认登录状态
-    });
-    </script>
-  </body>
+
+	</body>
+
 </html>

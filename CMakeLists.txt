@@ -23,6 +23,7 @@ add_subdirectory(helpers)
 add_subdirectory(models)
 add_subdirectory(views)
 add_subdirectory(controllers)
+add_subdirectory(plugin)
 
 message(STATUS "Set CMAKE_GENERATOR: ${CMAKE_GENERATOR}")
 message(STATUS "Set CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")

@@ -23,6 +23,7 @@ target_include_directories(model PUBLIC
   ${Qt5Sql_INCLUDE_DIRS}
   ${Qt5Concurrent_INCLUDE_DIRS}
   ${TreeFrog_INCLUDE_DIR}
+  ${PROJECT_SOURCE_DIR}/helpers
   ${PROJECT_SOURCE_DIR}/models
   ${PROJECT_SOURCE_DIR}/models/sqlobjects
   ${PROJECT_SOURCE_DIR}/models/mongoobjects

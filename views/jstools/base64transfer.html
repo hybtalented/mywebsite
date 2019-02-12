@@ -7,16 +7,17 @@
   </header>
   <body>
     <h1>javascript工具</h1>
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <p data-tf="@notice_msg" id="notice_msg"></p>
-      <button
-        type="button"
-        class="close"
-        data-dismiss="alert"
-        aria-label="close"
-      >
-        <span aria-hidden="true">&times;</span>
-      </button>
+    <div class="alert alert-info alert-dismissible fade show" id="notice_bar">
+        <p data-tf="@notice" id="notice"></p>
+        <button class="close" data-dismisse="alert" aria-label="close">
+            <span aria-hidden="true">x</span>
+        </button>
+    </div>
+     <div class="alert alert-danger alert-dismissible fade show" id="error_bar">
+        <p data-tf="@error" id="error"></p>
+        <button class="close" data-dismisse="alert" aria-label="close">
+            <span aria-hidden="true">x</span>
+        </button>
     </div>
     <div
       class="btn-group btn-group-lg type-group"
@@ -126,6 +127,12 @@
     <script src="/js/bootstrap/popper.min.js"></script>
     <script src="/js/bootstrap/bootstrap.min.js"></script>
     <script>
+      function Str2Base64(){
+        return btoa(unescape(encodeURIComponent(str)));
+      }
+      function Base642Str(str){
+        return decodeURIComponent(escape(atob(str)));
+      }
       function base64_encode(file) {
         // read binary data
         var bitmap = fs.readFileSync(file);
@@ -149,6 +156,8 @@
         console.log("******** base64 encoded string ********");
       }
       $(document).ready(function() {
+        if($("#notice").text().length==0)$("#notice_bar").hide();
+        if($("#error").text().length==0)$("#error_bar").hide();
         $("#transfertype").change(function() {
           $(".form-group").hide();
           $(".adjust-item").hide();
@@ -187,7 +196,7 @@
                 .show()
                 .removeAttr("readonly")
                 .bind("input", function() {
-                  $("#outputtext").val(atob($(this).val()));
+                  $("#outputtext").val(Base642Str($(this).val()));
                 })
                 .parent(".form-group")
                 .show();
@@ -202,7 +211,7 @@
                 .show()
                 .removeAttr("readonly")
                 .bind("input", function() {
-                  $("#inputUseName1").val(btoa($(this).val()));
+                  $("#inputUseName1").val(Str2Base64($(this).val()));
                 })
                 .parent(".form-group")
                 .show();
@@ -250,7 +259,7 @@
           }
 
           filereader.onload = function(e) {
-            $("#inputUseName1").val(btoa(e.content || e.target.result));
+            $("#inputUseName1").val(Str2Base64(e.content || e.target.result));
           };
           filereader.readAsBinaryString(this.files[0]);
         });

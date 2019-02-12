@@ -1,6 +1,6 @@
 add_definitions(-DTF_DLL)
 
-find_package(Qt5 COMPONENTS Core REQUIRED)
+find_package(Qt5 COMPONENTS Core Network Sql REQUIRED)
 
 if (NOT Qt5_FOUND)
   message(FATAL_ERROR "Qt5 was not found. Consider setting QT5_CMAKE_PATH to the Qt5Config.cmake directory.")
@@ -14,10 +14,13 @@ add_library(helper SHARED
 )
 target_include_directories(helper PUBLIC
   ${Qt5Core_INCLUDE_DIRS}
+  ${Qt5Network_INCLUDE_DIRS}
+  ${Qt5Sql_INCLUDE_DIRS}
   ${TreeFrog_INCLUDE_DIR}
+  ../plugin
 )
 target_link_libraries(helper
-  Qt5::Core
+  Qt5::Core Qt5::Network Qt5::Sql
   ${TreeFrog_LIB}
 )
 set_target_properties(helper PROPERTIES

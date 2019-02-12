@@ -1,12 +1,12 @@
 #include <TreeFrogModel>
 #include "blog.h"
 #include "blogobject.h"
-
 Blog::Blog()
     : TAbstractModel(), d(new BlogObject())
 {
     d->id = 0;
     d->lock_revision = 0;
+    d->userid = 0;
 }
 
 Blog::Blog(const Blog &other)
@@ -63,17 +63,39 @@ int Blog::lockRevision() const
     return d->lock_revision;
 }
 
+int Blog::userid() const
+{
+    return d->userid;
+}
+
+void Blog::setUserid(int userid)
+{
+    d->userid = userid;
+}
+
+bool Blog::otherR() const
+{
+    return d->other_r;
+}
+
+void Blog::setOtherR(const bool &otherR)
+{
+    d->other_r = otherR;
+}
+
 Blog &Blog::operator=(const Blog &other)
 {
     d = other.d;  // increments the reference count of the data
     return *this;
 }
 
-Blog Blog::create(const QString &title, const QString &body)
+Blog Blog::create(const QString &title, const QString &body, int userid, const bool &otherR)
 {
     BlogObject obj;
     obj.title = title;
     obj.body = body;
+    obj.userid = userid;
+    obj.other_r = otherR;
     if (!obj.create()) {
         return Blog();
     }

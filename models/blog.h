@@ -29,14 +29,18 @@ public:
     QString createdAt() const;
     QString updatedAt() const;
     int lockRevision() const;
+    int userid() const;
+    void setUserid(int userid);
+    bool otherR() const;
+    void setOtherR(const bool &otherR);
     Blog &operator=(const Blog &other);
-
+	
     bool create() override { return TAbstractModel::create(); }
     bool update() override { return TAbstractModel::update(); }
     bool save()   override { return TAbstractModel::save(); }
     bool remove() override { return TAbstractModel::remove(); }
 
-    static Blog create(const QString &title, const QString &body);
+    static Blog create(const QString &title, const QString &body, int userid, const bool &otherR);
     static Blog create(const QVariantMap &values);
     static Blog get(int id);
     static Blog get(int id, int lockRevision);
@@ -46,7 +50,6 @@ public:
 
 private:
     QSharedDataPointer<BlogObject> d;
-
     TModelObject *modelData() override;
     const TModelObject *modelData() const override;
     friend QDataStream &operator<<(QDataStream &ds, const Blog &model);

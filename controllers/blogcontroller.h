@@ -17,6 +17,7 @@ public slots:
     void save(const QString &id);
     void remove(const QString &id);
     void share(const QString &id);
+	void getblog();
 };
 
 #endif // BLOGCONTROLLER_H

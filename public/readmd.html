@@ -79,6 +79,7 @@
     }
     $(function() {
         var request=getRequest();
+        console.log(request["src"]);
         docbase = request.src.substr(0,request.src.lastIndexOf("/"));
         editormd.urls.atLinkBase =docbase+"/"; 
         getMD(request["src"]);

@@ -23,3 +23,5 @@ HEADERS += jstoolscontroller.h
 SOURCES += jstoolscontroller.cpp
 HEADERS += informationmailer.h
 SOURCES += informationmailer.cpp
+HEADERS += outercontroller.h
+SOURCES += outercontroller.cpp

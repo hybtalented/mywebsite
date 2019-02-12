@@ -22,10 +22,12 @@ User::~User()
     // If the reference count becomes 0,
     // the shared data object 'UserObject' is deleted.
 }
+
 int User::id() const
 {
-	return d->id;
+    return d->id;
 }
+
 QString User::username() const
 {
     return d->username;
@@ -46,14 +48,6 @@ void User::setPassword(const QString &password)
     d->password = password;
 }
 
-QString User::email() const{
-    return d->email;
-}
-
-void User::setEmail(const QString& email){
-    d->email=email;
-}
-
 QString User::createdAt() const
 {
     return d->created_at;
@@ -62,6 +56,26 @@ QString User::createdAt() const
 QString User::updatedAt() const
 {
     return d->updated_at;
+}
+
+QString User::email() const
+{
+    return d->email;
+}
+
+void User::setEmail(const QString &email)
+{
+    d->email = email;
+}
+
+QByteArray User::icon() const
+{
+    return d->icon;
+}
+
+void User::setIcon(const QByteArray &icon)
+{
+    d->icon = icon;
 }
 
 User &User::operator=(const User &other)
@@ -76,19 +90,20 @@ User User::authenticate(const QString &username, const QString &password)
         return User();
 
     TSqlORMapper<UserObject> mapper;
-    UserObject obj = mapper.findFirstBy(UserObject::Username,username);
+    UserObject obj = mapper.findFirst(TCriteria(UserObject::Username, username));
     if (obj.isNull() || obj.password != password) {
         obj.clear();
     }
     return User(obj);
 }
 
-User User::create(const QString &username, const QString &password,const QString&email)
+User User::create(const QString &username, const QString &password, const QString &email, const QByteArray &icon)
 {
     UserObject obj;
     obj.username = username;
     obj.password = password;
     obj.email = email;
+    obj.icon = icon;
     if (!obj.create()) {
         return User();
     }
@@ -105,10 +120,15 @@ User User::create(const QVariantMap &values)
     return model;
 }
 
-User User::get(const QString& username)
+User User::get(int id)
 {
     TSqlORMapper<UserObject> mapper;
-    return User(mapper.findFirstBy(UserObject::Username,username));
+    return User(mapper.findByPrimaryKey(id));
+}
+User User::get(const QString& name)
+{
+    TSqlORMapper<UserObject> mapper;
+    return User(mapper.findFirstBy(UserObject::Username,name));
 }
 
 int User::count()

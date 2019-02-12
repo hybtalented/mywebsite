@@ -1,7 +1,8 @@
-#include "blogcontroller.h"
+﻿#include "blogcontroller.h"
 #include "blog.h"
-
-
+#include<tsqlquery.h>
+#include <groups.h>
+#include"usercontroller.h"
 void BlogController::index()
 {
     auto blogList = Blog::getAll();
@@ -22,6 +23,19 @@ void BlogController::share(const QString &id)
     render();
 }
 
+void BlogController::getblog()
+{
+	const TSession& sess = session();
+	QJsonArray  bloglist;
+	if (UserController::isUserLogin(sess)) {
+		QString username = sess.value("username").toString();
+		
+		
+	}
+
+
+}
+
 void BlogController::create()
 {
     switch (httpRequest().method()) {
@@ -34,11 +48,11 @@ void BlogController::create()
         auto model = Blog::create(blog);
 
         if (!model.isNull()) {
-            QString notice = "Created successfully.";
+            QString notice = "博客创建成功。";
             tflash(notice);
             redirect(urla("show", model.id()));
         } else {
-            QString error = "Failed to create.";
+            QString error = "无法创建博客。";
             texport(error);
             texport(blog);
             render();
@@ -70,12 +84,11 @@ void BlogController::save(const QString &id)
         auto model = Blog::get(id.toInt(), rev);
         
         if (model.isNull()) {
-            error = "Original data not found. It may have been updated/removed by another transaction.";
+            error = u8"博客保存失败，可能已被删除或被他人更改.";
             tflash(error);
             redirect(urla("save", id));
             break;
         }
-
         auto blog = httpRequest().formItems("blog");
         model.setProperties(blog);
         if (model.save()) {

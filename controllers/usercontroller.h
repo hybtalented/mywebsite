@@ -3,13 +3,12 @@
 
 #include "applicationcontroller.h"
 
-
 class T_CONTROLLER_EXPORT UserController : public ApplicationController
 {
     Q_OBJECT
 public:
     UserController() : ApplicationController() { }
-	bool isUserLogin();
+	static bool isUserLogin(const TSession&);
 public slots:
 	void isLogin();
 	void index();

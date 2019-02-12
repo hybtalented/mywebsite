@@ -14,6 +14,8 @@ public:
     QString created_at;
     QString updated_at;
     int lock_revision {0};
+    int userid {0};
+    bool other_r;
 
     enum PropertyIndex {
         Id = 0,
@@ -22,6 +24,8 @@ public:
         CreatedAt,
         UpdatedAt,
         LockRevision,
+        Userid,
+        OtherR,
     };
 
     int primaryKeyIndex() const override { return Id; }
@@ -42,6 +46,10 @@ private:    /*** Don't modify below this line ***/
     T_DEFINE_PROPERTY(QString, updated_at)
     Q_PROPERTY(int lock_revision READ getlock_revision WRITE setlock_revision)
     T_DEFINE_PROPERTY(int, lock_revision)
+    Q_PROPERTY(int userid READ getuserid WRITE setuserid)
+    T_DEFINE_PROPERTY(int, userid)
+    Q_PROPERTY(bool other_r READ getother_r WRITE setother_r)
+    T_DEFINE_PROPERTY(bool, other_r)
 };
 
 #endif // BLOGOBJECT_H
